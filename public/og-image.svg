@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="60%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+
+    <!-- Purple Accent Gradient -->
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#6D28D9" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#cyberGrid)" />
+
+  <!-- Ambient Glow Behind Shield -->
+  <circle cx="200" cy="315" r="220" fill="#6D28D9" opacity="0.25" filter="blur(80px)" />
+  <circle cx="1000" cy="150" r="180" fill="#8B5CF6" opacity="0.15" filter="blur(60px)" />
+
+  <!-- Outer Brutalist Border -->
+  <rect x="30" y="30" width="1140" height="570" fill="none" stroke="#6D28D9" stroke-width="2" opacity="0.4" />
+  
+  <!-- Corner Crosshairs -->
+  <text x="45" y="60" fill="#E2F952" font-family="monospace" font-size="14" font-weight="bold">+ 0xBB_HQ</text>
+  <text x="1060" y="60" fill="#A855F7" font-family="monospace" font-size="14" font-weight="bold">// SOC_LIVE</text>
+  <text x="45" y="580" fill="#64748B" font-family="monospace" font-size="14">LAT: 43.6532° N // LON: 79.3832° W</text>
+  <text x="1020" y="580" fill="#E2F952" font-family="monospace" font-size="14" font-weight="bold">breachbarrier.in</text>
+
+  <!-- Left Shield Icon (High-Res Vector) -->
+  <g transform="translate(100, 195)">
+    <!-- Outer Shield Frame -->
+    <path d="M100 20 L180 55 L180 140 C180 200 100 240 100 240 C100 240 20 200 20 140 L20 55 Z" fill="#0F172A" stroke="url(#purpleGrad)" stroke-width="6" />
+    <!-- Inner Neon Outline -->
+    <path d="M100 40 L160 68 L160 135 C160 180 100 215 100 215 C100 215 40 180 40 135 L40 68 Z" fill="none" stroke="#E2F952" stroke-width="2" stroke-dasharray="6,4" />
+    <!-- Center 'B' Monogram -->
+    <path d="M75 75 L115 75 C130 75 140 85 140 98 C140 108 132 115 120 118 C135 120 145 130 145 145 C145 160 132 170 115 170 L75 170 Z M95 93 L95 112 L112 112 C118 112 122 108 122 102 C122 96 118 93 112 93 Z M95 128 L95 152 L115 152 C122 152 126 147 126 140 C126 133 122 128 115 128 Z" fill="#FFFFFF" />
+  </g>
+
+  <!-- Right Typography & Value Proposition -->
+  <g transform="translate(340, 160)">
+    <!-- Tagline Badge -->
+    <rect x="0" y="0" width="360" height="34" fill="#6D28D9" rx="0" />
+    <text x="15" y="23" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" letter-spacing="3">DETECT • DEFEND • STAY AHEAD</text>
+
+    <!-- Main Heading -->
+    <text x="0" y="105" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-size="64" font-weight="900" letter-spacing="-1">BREACHBARRIER</text>
+    <text x="0" y="165" fill="#A855F7" font-family="'Poppins', sans-serif" font-size="44" font-weight="800">24×7 Managed SOC &amp; Cyber Defense</text>
+
+    <!-- Value Bullet Points -->
+    <g transform="translate(0, 220)">
+      <rect x="0" y="0" width="16" height="16" fill="#E2F952" />
+      <text x="30" y="13" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">Sub-15 Min Threat Containment</text>
+
+      <rect x="360" y="0" width="16" height="16" fill="#E2F952" />
+      <text x="390" y="13" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">ISO 27001 &amp; SOC 2 Audit Ready</text>
+
+      <rect x="0" y="40" width="16" height="16" fill="#E2F952" />
+      <text x="30" y="53" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">Active MDR &amp; Penetration Testing</text>
+
+      <rect x="360" y="40" width="16" height="16" fill="#E2F952" />
+      <text x="390" y="53" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">80% Cost Reduction vs In-House Team</text>
+    </g>
+
+    <!-- Global Delivery Stamp -->
+    <text x="0" y="340" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="15">
+      GLOBAL SOC HUB (INDIA) ➔ SERVING CANADA &amp; WORLDWIDE ENTERPRISES
+    </text>
+  </g>
+</svg>
