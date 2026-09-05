@@ -57,7 +57,7 @@ export default function ContactForm() {
                   <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-800/50 flex items-center justify-center text-[#A855F7] shrink-0">
                     <Mail className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-slate-200 text-xs font-medium">contact@breachbarrier.in</span>
+                  <a href="mailto:info@breachbarriersecurity.com" className="text-slate-200 text-xs font-medium hover:text-[#A855F7] transition-colors">info@breachbarriersecurity.com</a>
                 </div>
 
                 <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">

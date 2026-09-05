@@ -69,7 +69,9 @@ export default function Footer() {
           <div className="space-y-2.5 text-xs text-slate-700 font-sans">
             <div className="flex items-start gap-2">
               <Mail className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
-              <span>contact@breachbarrier.in</span>
+              <a href="mailto:info@breachbarriersecurity.com" className="hover:text-[#6D28D9] transition-colors">
+                info@breachbarriersecurity.com
+              </a>
             </div>
             <div className="flex items-start gap-2">
               <Phone className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
