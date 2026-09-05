@@ -65,8 +65,8 @@ const TargetCursor = ({
 
   const constants = useMemo(
     () => ({
-      borderWidth: 3,
-      cornerSize: 12
+      borderWidth: 1.5,
+      cornerSize: 7
     }),
     []
   );
@@ -165,20 +165,18 @@ const TargetCursor = ({
     const moveHandler = e => moveCursor(e.clientX, e.clientY);
     window.addEventListener('mousemove', moveHandler);
 
+    let isScrolling = false;
+    let scrollTimeout = null;
+
     const scrollHandler = () => {
-      if (!activeTarget || !cursorRef.current) return;
-      const { x: offsetX, y: offsetY } = getOffset();
-      const mouseX = gsap.getProperty(cursorRef.current, 'x') + offsetX;
-      const mouseY = gsap.getProperty(cursorRef.current, 'y') + offsetY;
-      const elementUnderMouse = document.elementFromPoint(mouseX, mouseY);
-      const isStillOverTarget =
-        elementUnderMouse &&
-        (elementUnderMouse === activeTarget || elementUnderMouse.closest(targetSelector) === activeTarget);
-      if (!isStillOverTarget) {
-        if (currentLeaveHandler) {
-          currentLeaveHandler();
-        }
+      isScrolling = true;
+      if (activeTarget && currentLeaveHandler) {
+        currentLeaveHandler();
       }
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 150);
     };
     window.addEventListener('scroll', scrollHandler, { passive: true });
 
@@ -198,6 +196,7 @@ const TargetCursor = ({
     window.addEventListener('mouseup', mouseUpHandler);
 
     const enterHandler = e => {
+      if (isScrolling) return;
       const directTarget = e.target;
       const allTargets = [];
       let current = directTarget;
@@ -300,10 +299,10 @@ const TargetCursor = ({
           gsap.killTweensOf(corners, 'x,y');
           const { cornerSize } = constants;
           const positions = [
-            { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },
-            { x: cornerSize * 0.5, y: -cornerSize * 1.5 },
-            { x: cornerSize * 0.5, y: cornerSize * 0.5 },
-            { x: -cornerSize * 1.5, y: cornerSize * 0.5 }
+            { x: -cornerSize * 1.25, y: -cornerSize * 1.25 },
+            { x: cornerSize * 0.25, y: -cornerSize * 1.25 },
+            { x: cornerSize * 0.25, y: cornerSize * 0.25 },
+            { x: -cornerSize * 1.25, y: cornerSize * 0.25 }
           ];
           const tl = gsap.timeline();
           corners.forEach((corner, index) => {

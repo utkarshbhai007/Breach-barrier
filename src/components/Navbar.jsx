@@ -78,6 +78,15 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Close dropdown on scroll so no menu stays popped up
+  useEffect(() => {
+    const handleScroll = () => {
+      setServicesDropdown(false);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const isServicesActive = location.pathname.startsWith('/services');
 
   return (
@@ -85,8 +94,8 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2.5">
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center group">
-          <BreachBarrierLogo showTagline={true} />
+        <Link to="/" className="flex items-center group py-0.5">
+          <BreachBarrierLogo className="h-8 sm:h-9 max-h-[38px]" />
         </Link>
 
         {/* Center Nav */}
