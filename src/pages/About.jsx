@@ -81,10 +81,10 @@ export default function About() {
       
       {/* 1. Header Hero */}
       <PageHero
-        tag="// ABOUT BREACHBARRIER • CYBER DEFENSE REIMAGINED"
+        tag="About BreachBarrier • Cyber Defense Reimagined"
         title="BUILDING A SAFER"
         titleAccent="DIGITAL FUTURE."
-        pillars={['TRUST', 'INNOVATION', 'SECURITY FIRST']}
+        pillars={['Trust & Integrity', 'Continuous Innovation', 'Security First']}
         description="Breach Barrier delivers enterprise-grade cybersecurity protection to organizations worldwide. We combine elite cybersecurity talent with AI-driven detection to make world-class defense accessible without the massive overhead of an in-house team."
       />
 
@@ -94,7 +94,9 @@ export default function About() {
           
           {/* Why We Exist */}
           <div className="lg:col-span-6 bg-white border border-black p-8 sm:p-10 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] space-y-4">
-            <span className="text-xs font-black text-[#6D28D9] uppercase">// THE CHALLENGE</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#6D28D9] font-sans">
+              The Challenge
+            </span>
             <h2 className="font-brutal text-3xl sm:text-4xl font-black uppercase">WHY WE EXIST</h2>
             <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
               Cyberattacks are increasing every year, but most small and mid-sized businesses can't afford a full in-house security team — and the industry itself faces a global shortage of experienced professionals. We close that gap: 24×7 managed cybersecurity delivered remotely, so organizations get continuous protection and expert support at a fraction of the cost.
@@ -107,7 +109,9 @@ export default function About() {
           {/* Mission & Vision */}
           <div className="lg:col-span-6 space-y-6">
             <div className="bg-white border border-[#D4D4D8] p-8 space-y-3">
-              <span className="text-xs font-black text-[#6D28D9] uppercase">// PURPOSE</span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#6D28D9] font-sans">
+                Purpose
+              </span>
               <h3 className="font-brutal text-2xl font-black uppercase">OUR MISSION</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 To empower organizations with proactive, 24×7 cybersecurity services — SOC, MDR, Penetration Testing, Incident Response, Vulnerability Management, and Compliance Readiness — delivering cost-effective, scalable, enterprise-grade protection worldwide.
@@ -115,7 +119,9 @@ export default function About() {
             </div>
 
             <div className="bg-white border border-[#D4D4D8] p-8 space-y-3">
-              <span className="text-xs font-black text-[#6D28D9] uppercase">// HORIZON</span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#6D28D9] font-sans">
+                Horizon
+              </span>
               <h3 className="font-brutal text-2xl font-black uppercase">OUR VISION</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 To become a globally trusted cybersecurity partner, recognized for innovation, expertise, and customer success — and to build India's leading cybersecurity delivery center serving Canada and other international markets.
@@ -133,8 +139,8 @@ export default function About() {
         <div className="max-w-[1400px] mx-auto space-y-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-                OUR GUIDING VALUES // 6 PILLARS
+              <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+                Our Guiding Values • 6 Pillars
               </span>
             </div>
           </div>
@@ -197,12 +203,12 @@ export default function About() {
             {processSteps.map((p, idx) => (
               <div key={idx} className="border border-black bg-white p-6 space-y-3 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex flex-col justify-between">
                 <div className="space-y-2">
-                  <span className="text-xs font-black text-[#6D28D9]">STEP // {p.step}</span>
+                  <span className="text-xs font-semibold text-[#6D28D9] font-sans">Step {p.step}</span>
                   <h3 className="text-xs font-black text-[#0F172A] uppercase tracking-wider leading-snug">{p.title}</h3>
                   <p className="text-[11px] text-slate-600 leading-relaxed font-sans">{p.desc}</p>
                 </div>
-                <div className="text-[9px] text-slate-400 font-bold tracking-widest pt-2 border-t border-slate-100">
-                  //MILESTONE_{p.step}
+                <div className="text-[10px] text-slate-400 font-medium pt-2 border-t border-slate-100 font-sans">
+                  Milestone {p.step}
                 </div>
               </div>
             ))}

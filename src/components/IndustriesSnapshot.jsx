@@ -124,10 +124,10 @@ export default function IndustriesSnapshot() {
         
         {/* Header Tag */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-              INDUSTRIES WE SERVE SNAPSHOT // 8 VERTICALS
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Industries We Serve Snapshot • 8 Verticals
             </span>
           </div>
           <Link to="/industries" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1">

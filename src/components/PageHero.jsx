@@ -48,9 +48,10 @@ export default function PageHero({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-2 text-xs font-bold text-[#6D28D9] uppercase tracking-wide"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D6D0C2] text-xs font-semibold text-[#6D28D9] shadow-xs font-sans tracking-normal"
           >
-            <span>{tag}</span>
+            <span className="w-2 h-2 rounded-full bg-[#6D28D9] animate-pulse" />
+            <span>{typeof tag === 'string' ? tag.replace(/^\/\/\s*/, '') : tag}</span>
           </motion.div>
         )}
 
@@ -82,12 +83,15 @@ export default function PageHero({
           
           {/* Centered Pillars */}
           {pillars && pillars.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-bold text-[#6D28D9] tracking-wide uppercase pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-3">
               {pillars.map((p, idx) => (
-                <React.Fragment key={idx}>
-                  <span className="hover:text-black transition-colors cursor-default">{p}</span>
-                  {idx < pillars.length - 1 && <span className="text-slate-400 font-normal">•</span>}
-                </React.Fragment>
+                <span
+                  key={idx}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#D6D0C2] text-xs font-medium text-slate-700 font-sans tracking-normal shadow-2xs hover:border-[#6D28D9] hover:text-[#6D28D9] transition-all duration-200 cursor-default"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#6D28D9]" />
+                  <span>{p}</span>
+                </span>
               ))}
             </div>
           )}

@@ -61,10 +61,10 @@ export default function ProcessPage() {
       
       {/* Header Hero */}
       <PageHero
-        tag="// DEPLOYMENT PROTOCOLS • 6-STEP ONBOARDING ROADMAP"
+        tag="Deployment Protocols • 6-Step Onboarding Roadmap"
         title="ENGINEERED"
         titleAccent="DEPLOYMENT."
-        pillars={['DISCOVER', 'ARCHITECT', 'DEPLOY', 'PROTECT']}
+        pillars={['Discover', 'Architect', 'Deploy', 'Protect']}
         description="From initial threat discovery to 24/7 continuous SOC interception in less than 3 weeks. A structured, non-disruptive onboarding framework engineered by Technical Lead Meet Shingore."
       />
 
@@ -79,7 +79,7 @@ export default function ProcessPage() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                    <span className="text-xs font-bold text-[#7C3AED]">STEP // {s.num}</span>
+                    <span className="text-xs font-semibold text-[#7C3AED] font-sans">Step {s.num}</span>
                     <span className="text-[10px] font-bold text-black bg-[#E2F952] px-2 py-0.5 border border-black">
                       {s.duration}
                     </span>

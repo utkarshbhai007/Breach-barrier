@@ -178,10 +178,10 @@ export default function ThreatSimulator() {
         
         {/* Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-              LIVE SOC ATTACK CONTAINMENT TERMINAL
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Live SOC Attack Containment Terminal
             </span>
           </div>
           <span className="text-xs font-medium text-slate-500">

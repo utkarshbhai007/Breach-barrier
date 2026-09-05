@@ -20,10 +20,10 @@ export default function WhyUsPage() {
       
       {/* Header Hero */}
       <PageHero
-        tag="// COMPARATIVE ARCHITECTURE MATRIX"
+        tag="Comparative Architecture Matrix"
         title="WHY CHOOSE"
         titleAccent="BREACHBARRIER?"
-        pillars={['ARMED DEFENSE', 'RAPID RESPONSE', 'TURNKEY EFFICIENCY']}
+        pillars={['Armed Defense', 'Rapid Response', 'Turnkey Efficiency']}
         description="Compare BreachBarrier's proactive engineering model with traditional passive MSSPs and complex in-house operations. Real telemetry, sub-second quarantine speed, and dedicated Tier-3 engineers."
       />
 
@@ -40,15 +40,13 @@ export default function WhyUsPage() {
                   <th className="p-4 uppercase font-bold tracking-wider text-slate-400">PASSIVE MSSP</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#D4D4D8]">
-                {comparisons.map((c, idx) => (
+              <tbody className="divide-y divide-slate-200">
+                {comparisons.map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                    <td className="p-4 font-bold text-black">{c.feature}</td>
-                    <td className="p-4 font-black text-[#7C3AED] bg-[#E2F952]/10 border-l border-r border-[#D4D4D8]">
-                      {c.us}
-                    </td>
-                    <td className="p-4 text-slate-600 font-medium">{c.inHouse}</td>
-                    <td className="p-4 text-slate-500">{c.passiveMSSP}</td>
+                    <td className="p-4 font-bold text-slate-900 border-r border-slate-200">{row.feature}</td>
+                    <td className="p-4 font-bold text-[#7C3AED] bg-purple-50/50 border-r border-slate-200">{row.us}</td>
+                    <td className="p-4 text-slate-600 border-r border-slate-200">{row.inHouse}</td>
+                    <td className="p-4 text-slate-600">{row.passiveMSSP}</td>
                   </tr>
                 ))}
               </tbody>
@@ -61,7 +59,7 @@ export default function WhyUsPage() {
       <section className="border-b border-[#D6D0C2] bg-[#F2EFE9] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8">
           <div className="border border-black p-8 bg-white space-y-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-xs font-bold text-[#7C3AED] uppercase">// THE PASSIVE MSSP FLAW</div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#7C3AED] font-sans">The Passive MSSP Flaw</div>
             <h3 className="font-brutal text-3xl font-black text-black">CCTV OPERATOR VS ARMED GUARDS</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Traditional vendors act like CCTV operators who watch cameras and call to say "Sir, someone is in your shop." 
@@ -70,7 +68,7 @@ export default function WhyUsPage() {
           </div>
 
           <div className="border border-black p-8 bg-[#E2F952] space-y-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-xs font-bold text-black uppercase">// SMART PRIORITIZATION</div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/10 border border-black/20 text-xs font-semibold text-black font-sans">Smart Prioritization</div>
             <h3 className="font-brutal text-3xl font-black text-black">FIXING THE FRONT DOOR FIRST</h3>
             <p className="text-xs text-slate-800 leading-relaxed font-bold">
               We don't waste your engineering bandwidth on 200 minor low-risk vulnerabilities. We prioritize the exact 5 critical weak points that active ransomware gangs are exploiting in the wild right now.

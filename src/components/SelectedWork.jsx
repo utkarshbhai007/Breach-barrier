@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function SelectedWork() {
   const services = [
     {
-      code: 'SOC // 01',
+      code: 'SOC 01',
       title: 'SECURITY OPERATIONS CENTER (SOC)',
       subtitle: '24×7 real-time monitoring & continuous SIEM threat triage',
       path: '/services/soc',
@@ -13,15 +13,15 @@ export default function SelectedWork() {
       icon: Shield,
     },
     {
-      code: 'MDR // 02',
+      code: 'MDR 02',
       title: 'MANAGED DETECTION & RESPONSE (MDR)',
       subtitle: 'Active threat hunting & automated endpoint isolation',
       path: '/services/mdr',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f 61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
       icon: Activity,
     },
     {
-      code: 'PT // 03',
+      code: 'PT 03',
       title: 'PENETRATION TESTING',
       subtitle: 'Offensive ethical hacking & zero-day vulnerability discovery',
       path: '/services/pentesting',
@@ -29,7 +29,7 @@ export default function SelectedWork() {
       icon: Bug,
     },
     {
-      code: 'DFIR // 04',
+      code: 'DFIR 04',
       title: 'INCIDENT RESPONSE & DIGITAL FORENSICS',
       subtitle: 'Sub-second breach containment & deep root-cause investigation',
       path: '/services/incident-response',
@@ -37,7 +37,7 @@ export default function SelectedWork() {
       icon: AlertOctagon,
     },
     {
-      code: 'VM // 05',
+      code: 'VM 05',
       title: 'VULNERABILITY MANAGEMENT',
       subtitle: 'Continuous cloud & infrastructure scanning with smart prioritization',
       path: '/services/vulnerability-management',
@@ -45,7 +45,7 @@ export default function SelectedWork() {
       icon: Scan,
     },
     {
-      code: 'COMP // 06',
+      code: 'COMP 06',
       title: 'COMPLIANCE READINESS',
       subtitle: 'Audit-ready security policies for ISO 27001, SOC 2, HIPAA & PIPEDA',
       path: '/services/compliance',
@@ -55,17 +55,18 @@ export default function SelectedWork() {
   ];
 
   return (
-    <section className="relative border-b border-[#D4D4D8] bg-[#F1F5F9] py-12 sm:py-14 px-4 sm:px-8 overflow-hidden" id="services">
-      <div className="max-w-[1400px] mx-auto space-y-6 relative z-10">
+    <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-8 sm:py-10 px-4 sm:px-8" id="services">
+      <div className="max-w-[1400px] mx-auto space-y-6">
 
         {/* Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-              SERVICES SNAPSHOT // 6 CORE MANAGED CAPABILITIES
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Services Snapshot • 6 Core Managed Capabilities
             </span>
           </div>
-          <Link to="/contact" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1">
+          <Link to="/contact" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1 font-sans">
             <span>GET CUSTOM SOW ↗</span>
           </Link>
         </div>
@@ -97,7 +98,7 @@ export default function SelectedWork() {
                     <div className="w-8 h-8 rounded-lg bg-purple-50 border border-purple-200/80 flex items-center justify-center text-[#6D28D9] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors shadow-xs">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-purple-50 text-[#6D28D9] border border-purple-200/60">
+                    <span className="text-[10px] font-sans font-semibold px-2 py-0.5 rounded-md bg-purple-50 text-[#6D28D9] border border-purple-200/60">
                       {s.code}
                     </span>
                   </div>
@@ -106,7 +107,7 @@ export default function SelectedWork() {
                     <h3 className="font-heading text-xs sm:text-sm font-bold text-[#0F172A] uppercase tracking-tight group-hover:text-[#6D28D9] transition-colors leading-snug">
                       {s.title}
                     </h3>
-                    <p className="text-[11px] text-slate-500 pt-1 line-clamp-1 font-normal">
+                    <p className="text-[11px] text-slate-500 pt-1 line-clamp-1 font-normal font-sans">
                       {s.subtitle}
                     </p>
                   </div>
@@ -114,7 +115,7 @@ export default function SelectedWork() {
 
                 {/* Arrow */}
                 <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-2">
-                  <span className="text-[10px] font-mono font-bold text-slate-400 group-hover:text-[#6D28D9] transition-colors">
+                  <span className="text-[10px] font-sans font-semibold text-slate-500 group-hover:text-[#6D28D9] transition-colors">
                     EXPLORE CAPABILITY
                   </span>
                   <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-[#6D28D9] group-hover:text-white flex items-center justify-center text-slate-500 transition-colors">

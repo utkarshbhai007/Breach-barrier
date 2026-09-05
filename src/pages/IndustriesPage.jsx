@@ -199,10 +199,10 @@ export default function IndustriesPage() {
       
       {/* 1. Header Hero with Unified Background Animation & Text */}
       <PageHero
-        tag="// SECTOR SPECIFICATIONS • 8 SPECIALIZED DOMAINS"
+        tag="Sector Specifications • 8 Specialized Domains"
         title="INDUSTRIES WE"
         titleAccent="SERVE."
-        pillars={['HEALTHCARE', 'FINTECH', 'SAAS', 'MANUFACTURING']}
+        pillars={['Healthcare', 'FinTech', 'Cloud SaaS', 'Manufacturing']}
         description="From healthcare and high-growth SaaS to critical manufacturing and financial services, BreachBarrier engineers custom-tailored cybersecurity defense matrices for each industry's regulatory and threat landscape."
       />
 

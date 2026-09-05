@@ -40,9 +40,10 @@ export default function CorePrinciples() {
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header Tag */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="text-xs font-bold text-black uppercase tracking-widest">
-            CORE PRINCIPLES
+        <div className="flex items-center gap-2.5 mb-8">
+          <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
+          <span className="text-xs font-semibold text-black uppercase tracking-wider font-sans">
+            Core Principles
           </span>
         </div>
 

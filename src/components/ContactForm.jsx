@@ -48,8 +48,8 @@ export default function ContactForm() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
-              DIRECT CONSULTATION // START AN ENGAGEMENT
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Direct Consultation • Start An Engagement
             </span>
           </div>
         </div>

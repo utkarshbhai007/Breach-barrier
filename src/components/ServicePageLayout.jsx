@@ -53,19 +53,22 @@ export default function ServicePageLayout({
 
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
           
-          {/* Top Status & SLA Badges */}
+          {/* Top Status & Badges */}
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-wrap items-center justify-center gap-3"
+            className="flex flex-wrap items-center justify-center gap-2.5"
           >
-            <span className="text-xs font-black text-[#6D28D9]">//{serviceCode}</span>
-            <span className="px-2.5 py-0.5 bg-white/90 border border-slate-300 rounded-full text-[11px] font-bold text-[#0F172A] uppercase flex items-center gap-2 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <span className="px-3 py-1 bg-white border border-purple-200/90 rounded-full text-xs font-semibold text-[#6D28D9] font-sans shadow-2xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6D28D9]" />
+              {serviceCode}
+            </span>
+            <span className="px-3 py-1 bg-white border border-slate-300/80 rounded-full text-[11px] font-semibold text-[#0F172A] uppercase flex items-center gap-2 shadow-2xs font-sans">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
               <span>24×7 ACTIVE SERVICE SPECIFICATION</span>
             </span>
-            <span className="px-2.5 py-0.5 bg-[#E2F952] text-black font-extrabold border border-black rounded-full text-[10px]">
-              ACTIVE THREAT CONTAINMENT
+            <span className="px-3 py-1 bg-[#E2F952] text-black font-bold border border-black rounded-full text-[11px] font-sans">
+              Active Threat Containment
             </span>
           </motion.div>
 
@@ -82,8 +85,11 @@ export default function ServicePageLayout({
             </h1>
 
             {tagline && (
-              <div className="text-xs sm:text-sm font-extrabold text-[#6D28D9] tracking-[0.14em] sm:tracking-[0.2em] uppercase pt-1">
-                {tagline}
+              <div className="pt-1">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#D6D0C2] text-xs sm:text-sm font-medium text-slate-700 font-sans tracking-normal shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#6D28D9]" />
+                  <span>{tagline}</span>
+                </span>
               </div>
             )}
           </div>
@@ -140,15 +146,15 @@ export default function ServicePageLayout({
           <div className="max-w-[1400px] mx-auto">
             <div className="border border-black bg-white p-6 sm:p-7 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
-                <div className="flex items-center gap-2 text-xs font-black text-[#6D28D9] uppercase">
-                  <span>💡 HOW IT WORKS // REAL-WORLD ANALOGY</span>
+                <div className="flex items-center gap-2 text-xs font-bold text-[#6D28D9] uppercase font-sans">
+                  <span>💡 How It Works • Real-World Analogy</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-800 font-sans italic font-medium leading-relaxed">
                   "{analogy}"
                 </p>
               </div>
-              <div className="shrink-0 text-xs font-bold text-slate-500 font-mono-code">
-                // MEET SHINGORE PHILOSOPHY
+              <div className="shrink-0 text-xs font-semibold text-slate-500 font-sans">
+                Meet Shingore Philosophy
               </div>
             </div>
           </div>
@@ -163,11 +169,11 @@ export default function ServicePageLayout({
           <div className="max-w-[1400px] mx-auto space-y-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-                  WHAT'S INCLUDED IN SCOPE // DELIVERABLES
+                <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+                  What's Included In Scope • Deliverables
                 </span>
               </div>
-              <span className="text-xs text-slate-400 font-bold hidden sm:inline">// ENTERPRISE SPEC</span>
+              <span className="text-xs text-slate-500 font-medium hidden sm:inline font-sans">Enterprise Spec</span>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -186,8 +192,8 @@ export default function ServicePageLayout({
                       <div className="w-10 h-10 border border-black flex items-center justify-center bg-[#F2EFE9] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors">
                         {f.icon}
                       </div>
-                      <span className="text-[10px] font-black text-[#6D28D9] font-mono-code">
-                        SCOPE // 0{idx + 1}
+                      <span className="text-[11px] font-bold text-[#6D28D9] font-sans">
+                        Scope 0{idx + 1}
                       </span>
                     </div>
 
@@ -200,9 +206,9 @@ export default function ServicePageLayout({
                     </p>
                   </div>
 
-                  <div className="text-[10px] text-slate-400 font-bold tracking-widest pt-2.5 border-t border-slate-100 flex items-center justify-between font-mono-code">
-                    <span>//24×7_DISPATCH</span>
-                    <span className="text-emerald-600 font-bold">● INCLUDED</span>
+                  <div className="text-[10px] text-slate-500 font-medium pt-2.5 border-t border-slate-100 flex items-center justify-between font-sans">
+                    <span>24×7 Dispatch</span>
+                    <span className="text-emerald-600 font-bold">● Included</span>
                   </div>
                 </motion.div>
               ))}
@@ -217,11 +223,11 @@ export default function ServicePageLayout({
           <div className="max-w-[1400px] mx-auto space-y-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-                  CORE TECHNICAL &amp; BUSINESS IMPACT
+                <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+                  Core Technical &amp; Business Impact
                 </span>
               </div>
-              <span className="text-xs text-slate-400 font-bold hidden sm:inline">// PROVEN VALUE</span>
+              <span className="text-xs text-slate-500 font-medium hidden sm:inline font-sans">Proven Value</span>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -248,11 +254,11 @@ export default function ServicePageLayout({
           <div className="max-w-[1400px] mx-auto space-y-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-                  DEPLOYED TOOLING &amp; SIEM INTEGRATIONS
+                <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+                  Deployed Tooling &amp; SIEM Integrations
                 </span>
               </div>
-              <span className="text-xs text-slate-400 font-bold hidden sm:inline">// ZERO EXTRA LICENSING</span>
+              <span className="text-xs text-slate-500 font-medium hidden sm:inline font-sans">Zero Extra Licensing</span>
             </div>
 
             <div className="flex flex-wrap gap-3">

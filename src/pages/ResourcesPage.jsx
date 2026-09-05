@@ -89,10 +89,10 @@ export default function ResourcesPage() {
 
       {/* Header Hero */}
       <PageHero
-        tag="// KNOWLEDGE HUB • FAQ & CYBERSECURITY GLOSSARY"
+        tag="Knowledge Hub • FAQ & Cybersecurity Glossary"
         title="RESOURCES &"
         titleAccent="EXPLAINERS."
-        pillars={['FAQ', 'GLOSSARY', 'THREAT VECTORS', 'PLAIN ENGLISH']}
+        pillars={['FAQ', 'Cybersecurity Glossary', 'Threat Vectors', 'Plain English']}
         description="Clear, plain-language answers to frequently asked questions and straightforward explanations of core cybersecurity concepts."
       />
 
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
           <div className="flex items-center gap-3">
             <h2 className="font-brutal text-3xl sm:text-4xl font-black uppercase">FREQUENTLY ASKED QUESTIONS</h2>
           </div>
-          <span className="text-xs text-slate-400 font-bold hidden sm:inline">// CLICK TO EXPAND</span>
+          <span className="text-xs text-slate-500 font-medium hidden sm:inline font-sans">Click to expand</span>
         </div>
 
         <div className="border border-black bg-white shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] divide-y divide-[#D4D4D8]">
@@ -126,10 +126,10 @@ export default function ResourcesPage() {
                     <span className={`text-xs font-black px-2 py-0.5 border ${isOpen ? 'bg-[#6D28D9] text-white border-black' : 'bg-white text-[#6D28D9] border-slate-300'}`}>
                       Q0{idx + 1}
                     </span>
-                    <span className="font-mono-code text-xs sm:text-sm font-bold text-[#0F172A]">{f.q}</span>
+                    <span className="font-sans text-xs sm:text-sm font-semibold text-[#0F172A]">{f.q}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] text-slate-400 font-bold hidden md:inline">// {f.tag}</span>
+                    <span className="text-[11px] text-slate-500 font-medium hidden md:inline font-sans">{f.tag}</span>
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.25 }}

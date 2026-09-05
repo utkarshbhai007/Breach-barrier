@@ -49,10 +49,10 @@ export default function FaqPage() {
       
       {/* Header Hero */}
       <PageHero
-        tag="// FREQUENTLY ASKED QUESTIONS • SOC GUIDE"
+        tag="Frequently Asked Questions • SOC Guide"
         title="KNOWLEDGE"
         titleAccent="BASE."
-        pillars={['PLAIN ENGLISH', 'REAL ANALOGIES', 'ZERO JARGON']}
+        pillars={['Plain English', 'Real-World Analogies', 'Zero Jargon']}
         description="Plain-English explanations and real-world analogies on how modern 24/7 SOC, MDR, Forensics, Penetration Testing, and Compliance work."
       />
 

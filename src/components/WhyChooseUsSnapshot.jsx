@@ -45,13 +45,13 @@ export default function WhyChooseUsSnapshot() {
         
         {/* Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-              WHY CHOOSE US // CORE ADVANTAGES
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Why Choose Us • Core Advantages
             </span>
           </div>
-          <Link to="/about" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1">
+          <Link to="/about" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1 font-sans">
             <span>EXPLORE ALL 6 PILLARS ON ABOUT PAGE</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
@@ -80,8 +80,8 @@ export default function WhyChooseUsSnapshot() {
                 {/* Card Content */}
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
-                    <span className="text-xs font-black text-[#6D28D9] font-mono">REASON // {r.num}</span>
-                    <span className="px-2 py-0.5 text-[9px] font-bold text-slate-600 bg-slate-100 rounded-full border border-slate-200 uppercase font-mono">
+                    <span className="text-xs font-semibold text-[#6D28D9] font-sans">Reason {r.num}</span>
+                    <span className="px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 bg-slate-100 rounded-full border border-slate-200 uppercase font-sans">
                       {r.tag}
                     </span>
                   </div>

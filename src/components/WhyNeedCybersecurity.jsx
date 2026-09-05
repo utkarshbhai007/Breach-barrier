@@ -28,9 +28,9 @@ export default function WhyNeedCybersecurity() {
         {/* Header Tag */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#6D28D9] animate-ping" />
-            <span className="text-xs font-bold text-[#0F172A] uppercase tracking-widest">
-              WHY BUSINESSES NEED CYBERSECURITY // THREAT REALITY
+            <span className="w-2 h-2 rounded-full bg-[#6D28D9]" />
+            <span className="text-xs font-semibold text-[#0F172A] uppercase tracking-wider font-sans">
+              Why Businesses Need Cybersecurity • Threat Reality
             </span>
           </div>
         </div>
@@ -63,12 +63,12 @@ export default function WhyNeedCybersecurity() {
 
             <div className="relative z-10 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-black text-[#6D28D9] uppercase tracking-wider font-mono-code flex items-center gap-2">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 border border-purple-200 text-xs font-semibold text-[#6D28D9] font-sans">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  // YOUR TRUSTED CYBERSECURITY PARTNER
+                  Your Trusted Cybersecurity Partner
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-bold text-emerald-700 bg-emerald-100/90 border border-emerald-300 rounded-full font-mono">
-                  24×7 ACTIVE SOC
+                <span className="px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-full font-sans">
+                  24×7 Active SOC
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-sans font-normal">
