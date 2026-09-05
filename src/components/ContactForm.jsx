@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, ShieldCheck, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
+
+const serviceOptions = [
+  '24×7 SOC Monitoring',
+  'Managed Detection & Response (MDR)',
+  'Penetration Testing',
+  'Incident Response & Forensics',
+  'Vulnerability Management',
+  'Compliance (ISO 27001 / SOC 2)'
+];
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -10,9 +19,21 @@ export default function ContactForm() {
     phone: '',
     industry: 'Technology & SaaS',
     employees: '1-50',
-    service: 'Security Operations Center (SOC)',
+    services: ['24×7 SOC Monitoring'],
     message: '',
   });
+
+  const toggleService = (svc) => {
+    setFormData((prev) => {
+      const exists = prev.services.includes(svc);
+      return {
+        ...prev,
+        services: exists
+          ? prev.services.filter((s) => s !== svc)
+          : [...prev.services, svc]
+      };
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -146,10 +167,13 @@ export default function ContactForm() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="font-bold text-slate-700 block text-[11px] uppercase tracking-wider">PHONE NUMBER *</label>
+                    <div className="flex items-center justify-between">
+                      <label className="font-bold text-slate-700 block text-[11px] uppercase tracking-wider">
+                        PHONE NUMBER <span className="text-slate-400 font-normal normal-case">(Optional)</span>
+                      </label>
+                    </div>
                     <input
                       type="tel"
-                      required
                       placeholder="+91 63554 96696"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -158,8 +182,8 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                {/* Row 3: Industry, Employees, Service */}
-                <div className="grid sm:grid-cols-3 gap-3">
+                {/* Row 3: Industry & Employees */}
+                <div className="grid sm:grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <label className="font-bold text-slate-700 block text-[11px] uppercase tracking-wider">INDUSTRY</label>
                     <select
@@ -191,21 +215,43 @@ export default function ContactForm() {
                       <option>1000+</option>
                     </select>
                   </div>
+                </div>
 
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 block text-[11px] uppercase tracking-wider">PRIMARY SERVICE</label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="cursor-target w-full py-2 px-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:border-[#6D28D9] focus:bg-white focus:outline-none transition-all text-xs text-slate-900"
-                    >
-                      <option>Security Operations Center (SOC)</option>
-                      <option>Managed Detection & Response (MDR)</option>
-                      <option>Penetration Testing</option>
-                      <option>Incident Response & Forensics</option>
-                      <option>Vulnerability Management</option>
-                      <option>Compliance Readiness (ISO/SOC2)</option>
-                    </select>
+                {/* Row 4: Services You Need (Multiple Choice) */}
+                <div className="space-y-1.5 pt-0.5">
+                  <div className="flex items-center justify-between">
+                    <label className="font-bold text-slate-700 block text-[11px] uppercase tracking-wider">
+                      SERVICES YOU NEED <span className="text-[#6D28D9] font-semibold text-[10px] normal-case">(Select multiple)</span>
+                    </label>
+                    {formData.services.length > 0 && (
+                      <span className="text-[10px] text-slate-500 font-medium">
+                        {formData.services.length} selected
+                      </span>
+                    )}
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {serviceOptions.map((svc) => {
+                      const isSelected = formData.services.includes(svc);
+                      return (
+                        <button
+                          type="button"
+                          key={svc}
+                          onClick={() => toggleService(svc)}
+                          className={`cursor-target p-2.5 rounded-xl text-left border text-[11px] transition-all flex items-center justify-between gap-1.5 ${
+                            isSelected
+                              ? 'bg-purple-50 text-[#6D28D9] border-2 border-[#6D28D9] font-bold shadow-xs'
+                              : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-purple-300 hover:bg-white font-medium'
+                          }`}
+                        >
+                          <span className="leading-snug">{svc}</span>
+                          <span className={`w-4 h-4 rounded-md flex items-center justify-center shrink-0 text-[10px] font-bold transition-colors ${
+                            isSelected ? 'bg-[#6D28D9] text-white' : 'border border-slate-300 text-transparent'
+                          }`}>
+                            ✓
+                          </span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
