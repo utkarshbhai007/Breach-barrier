@@ -75,7 +75,9 @@ export default function Footer() {
             </div>
             <div className="flex items-start gap-2">
               <Phone className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
-              <span>+1 (800) 550-BREACH / India SOC</span>
+              <a href="tel:+916355496696" className="hover:text-[#6D28D9] transition-colors">
+                +91 63554 96696
+              </a>
             </div>
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />

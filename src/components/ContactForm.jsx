@@ -64,7 +64,9 @@ export default function ContactForm() {
                   <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-800/50 flex items-center justify-center text-[#A855F7] shrink-0">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-slate-200 text-xs font-medium">+1 (800) 550-BREACH / 24×7 SOC Desk</span>
+                  <a href="tel:+916355496696" className="text-slate-200 text-xs font-medium hover:text-[#A855F7] transition-colors">
+                    +91 63554 96696
+                  </a>
                 </div>
 
                 <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
@@ -148,7 +150,7 @@ export default function ContactForm() {
                     <input
                       type="tel"
                       required
-                      placeholder="+1 (555) 019-2834"
+                      placeholder="+91 63554 96696"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="cursor-target w-full py-2 px-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-[#6D28D9] focus:bg-white focus:outline-none transition-all text-xs text-slate-900"
