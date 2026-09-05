@@ -60,15 +60,6 @@ export default function Hero() {
               />
             </span>
           </h1>
-          
-          {/* Centered Three Pillars */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-bold text-[#6D28D9] tracking-wide uppercase pt-2">
-            <span className="hover:text-black transition-colors cursor-default">DETECT</span>
-            <span className="text-slate-400 font-normal">•</span>
-            <span className="hover:text-black transition-colors cursor-default">DEFEND</span>
-            <span className="text-slate-400 font-normal">•</span>
-            <span className="hover:text-black transition-colors cursor-default">STAY AHEAD</span>
-          </div>
         </div>
 
         {/* Centered Subheading / Description with FoldText */}
