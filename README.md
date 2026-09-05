@@ -48,4 +48,4 @@ npm run build
 ## 🌐 Official Channels
 - **Website**: [breachbarrier.in](https://breachbarrier.in)
 - **Contact**: `info@breachbarriersecurity.com`
-- **Global Hub**: India (Global SOC Delivery Hub) • Worldwide Operations
+- **Global Hub**: India (Global Delivery Center)

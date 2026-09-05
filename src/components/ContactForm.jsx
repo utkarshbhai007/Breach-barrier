@@ -71,14 +71,7 @@ export default function ContactForm() {
                   <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-800/50 flex items-center justify-center text-[#A855F7] shrink-0">
                     <MapPin className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-slate-200 text-xs font-medium">India (Global Delivery Center) • Worldwide Operations</span>
-                </div>
-
-                <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-                  <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-800/50 flex items-center justify-center text-[#A855F7] shrink-0">
-                    <Clock className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="text-slate-200 text-xs font-medium">Mon – Fri: 9:00 AM – 6:00 PM (24×7 SOC)</span>
+                  <span className="text-slate-200 text-xs font-medium">India (Global Delivery Center)</span>
                 </div>
               </div>
             </div>

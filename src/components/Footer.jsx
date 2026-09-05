@@ -79,11 +79,10 @@ export default function Footer() {
             </div>
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
-              <span>India (Delivery Center) • Global Operations</span>
+              <span>India (Global Delivery Center)</span>
             </div>
-            <div className="text-[11px] text-slate-500 font-mono-code pt-1">
-              Hours: Mon–Fri, 9:00 AM – 6:00 PM<br />
-              <span className="text-emerald-700 font-bold">● 24×7 SOC Operations On-Duty</span>
+            <div className="text-[11px] text-emerald-700 font-bold pt-1">
+              ● 24×7 SOC Operations On-Duty
             </div>
           </div>
         </div>
