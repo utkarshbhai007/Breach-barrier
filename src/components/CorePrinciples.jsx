@@ -7,7 +7,7 @@ export default function CorePrinciples() {
       num: '01',
       title: 'FUNCTION OVER FORM',
       icon: Box,
-      desc: 'Security operations built to protect. Nothing more. Rapid incident containment SLA.',
+      desc: 'Security operations built to protect. Nothing more. Rapid incident containment.',
     },
     {
       num: '02',

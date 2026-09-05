@@ -364,7 +364,7 @@ export default function IndustriesPage() {
 
                   <div className="flex items-center gap-2">
                     <div className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-right">
-                      <div className="text-[10px] text-slate-500 font-bold uppercase">SLA Target</div>
+                      <div className="text-[10px] text-slate-500 font-bold uppercase">Response Target</div>
                       <div className="text-xs font-black text-emerald-600">{activeInd.metrics.sla}</div>
                     </div>
                     <div className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-right">

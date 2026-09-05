@@ -23,7 +23,7 @@ export default function WhyUsPage() {
         tag="// COMPARATIVE ARCHITECTURE MATRIX"
         title="WHY CHOOSE"
         titleAccent="BREACHBARRIER?"
-        pillars={['ARMED DEFENSE', 'RAPID SLA', 'TURNKEY EFFICIENCY']}
+        pillars={['ARMED DEFENSE', 'RAPID RESPONSE', 'TURNKEY EFFICIENCY']}
         description="Compare BreachBarrier's proactive engineering model with traditional passive MSSPs and complex in-house operations. Real telemetry, sub-second quarantine speed, and dedicated Tier-3 engineers."
       />
 

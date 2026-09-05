@@ -15,7 +15,7 @@ export default function SelectedWork() {
     {
       code: 'MDR // 02',
       title: 'MANAGED DETECTION & RESPONSE (MDR)',
-      subtitle: 'Active threat hunting & sub-15m automated endpoint isolation',
+      subtitle: 'Active threat hunting & automated endpoint isolation',
       path: '/services/mdr',
       image: 'https://images.unsplash.com/photo-1526374965328-7f 61d4dc18c5?auto=format&fit=crop&w=800&q=80',
       icon: Activity,

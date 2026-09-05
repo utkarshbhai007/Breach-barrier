@@ -81,7 +81,7 @@ export default function WhyNeedCybersecurity() {
                 ✓ Proactive Threat Containment
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
-                ✓ Rapid Incident SLA Containment
+                ✓ Rapid Incident Containment
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
                 ✓ Continuous Compliance
