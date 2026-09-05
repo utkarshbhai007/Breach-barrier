@@ -62,11 +62,11 @@ export default function Hero() {
           </h1>
           
           {/* Centered Three Pillars */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 font-mono-code text-[11px] sm:text-sm font-extrabold text-[#6D28D9] tracking-[0.14em] sm:tracking-[0.25em] uppercase pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-bold text-[#6D28D9] tracking-wide uppercase pt-2">
             <span className="hover:text-black transition-colors cursor-default">DETECT</span>
-            <span className="text-slate-400">•</span>
+            <span className="text-slate-400 font-normal">•</span>
             <span className="hover:text-black transition-colors cursor-default">DEFEND</span>
-            <span className="text-slate-400">•</span>
+            <span className="text-slate-400 font-normal">•</span>
             <span className="hover:text-black transition-colors cursor-default">STAY AHEAD</span>
           </div>
         </div>

@@ -48,7 +48,7 @@ export default function PageHero({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-2 text-xs font-bold text-[#6D28D9] uppercase tracking-wider"
+            className="flex items-center justify-center gap-2 text-xs font-bold text-[#6D28D9] uppercase tracking-wide"
           >
             <span>{tag}</span>
           </motion.div>
@@ -82,11 +82,11 @@ export default function PageHero({
           
           {/* Centered Pillars */}
           {pillars && pillars.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 font-mono-code text-[11px] sm:text-sm font-extrabold text-[#6D28D9] tracking-[0.14em] sm:tracking-[0.2em] uppercase pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-bold text-[#6D28D9] tracking-wide uppercase pt-2">
               {pillars.map((p, idx) => (
                 <React.Fragment key={idx}>
                   <span className="hover:text-black transition-colors cursor-default">{p}</span>
-                  {idx < pillars.length - 1 && <span className="text-slate-400">•</span>}
+                  {idx < pillars.length - 1 && <span className="text-slate-400 font-normal">•</span>}
                 </React.Fragment>
               ))}
             </div>
