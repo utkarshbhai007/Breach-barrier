@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import TargetCursor from './components/TargetCursor';
 import AiChatbot from './components/AiChatbot';
 import PageTransition from './components/PageTransition';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Pages
 import Home from './pages/Home';
@@ -58,21 +59,23 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <TargetCursor 
-        spinDuration={2}
-        hideDefaultCursor={true}
-        parallaxOn={true}
-      />
-      <div className="min-h-screen bg-[#F4F4F6] text-[#0A0A0C] relative">
-        <Navbar />
-        <main className="relative z-10">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-        <AiChatbot />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <TargetCursor 
+          spinDuration={2}
+          hideDefaultCursor={true}
+          parallaxOn={true}
+        />
+        <div className="min-h-screen bg-[#F4F4F6] text-[#0A0A0C] dark:bg-[#0A0A0E] dark:text-[#F8FAFC] transition-colors duration-200 relative">
+          <Navbar />
+          <main className="relative z-10">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <AiChatbot />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }

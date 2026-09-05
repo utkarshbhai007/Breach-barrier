@@ -1,5 +1,6 @@
 /* stylelint-disable import-notation */
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --bg-main: #EAE7E0;
@@ -16,6 +17,19 @@
   --text-main: #0F172A;
   --text-muted: #57534E;
   --text-dim: #78716C;
+}
+
+html.dark {
+  --bg-main: #0A0A0E;
+  --bg-panel: #13141C;
+  --border-color: #262736;
+  --border-dark: #3F4259;
+  --accent-purple: #8B5CF6;
+  --accent-light-purple: #C084FC;
+  --accent-soft-purple: #2E1065;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
 }
 
 html {
@@ -41,6 +55,14 @@ body {
     linear-gradient(to bottom, rgb(0 0 0 / 4%) 1px, transparent 1px);
   background-size: 36px 36px;
   background-position: 0 0;
+}
+
+html.dark body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  background-image: 
+    linear-gradient(to right, rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 3%) 1px, transparent 1px);
 }
 
 @media (max-width: 640px) {
@@ -273,3 +295,149 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-purple);
 }
+
+/* ============================================================
+   DARK MODE COMPREHENSIVE CYBER THEME OVERRIDES
+   ============================================================ */
+
+/* 1. Global Page Backgrounds */
+.dark .bg-\[\#EAE7E0\] {
+  background-color: #0A0A0E !important;
+}
+
+.dark .bg-\[\#F2EFE9\] {
+  background-color: #12131C !important;
+}
+
+.dark .bg-\[\#E4E0D7\] {
+  background-color: #0D0E14 !important;
+}
+
+.dark .bg-\[\#F4F4F6\],
+.dark .bg-\[\#F1F5F9\] {
+  background-color: #0A0A0E !important;
+}
+
+.dark .bg-white {
+  background-color: #13141D !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #181924 !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #1E202E !important;
+}
+
+.dark .bg-purple-50 {
+  background-color: rgba(109, 40, 217, 0.15) !important;
+}
+
+/* 2. Global Borders */
+.dark .border-\[\#D6D0C2\],
+.dark .border-\[\#D4D4D8\] {
+  border-color: #262838 !important;
+}
+
+.dark .border-black {
+  border-color: #383B52 !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #27293A !important;
+}
+
+.dark .border-slate-100 {
+  border-color: #1E202E !important;
+}
+
+.dark .divide-\[\#D6D0C2\] > :not([hidden]) ~ :not([hidden]),
+.dark .divide-\[\#D4D4D8\] > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #27293A !important;
+}
+
+/* 3. Typography & Text Colors */
+.dark .text-\[\#0F172A\],
+.dark .text-black {
+  color: #F8FAFC !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #F1F5F9 !important;
+}
+
+.dark .text-slate-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-slate-600 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* 4. Glass / Gradients on Card Masks */
+.dark .bg-gradient-to-r.from-white {
+  background-image: linear-gradient(to right, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.8)) !important;
+}
+
+.dark .bg-gradient-to-t.from-white {
+  background-image: linear-gradient(to top, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.8)) !important;
+}
+
+.dark .bg-gradient-to-br.from-white {
+  background-image: linear-gradient(to bottom right, #13141D, rgba(19, 20, 29, 0.95), rgba(30, 20, 50, 0.85)) !important;
+}
+
+/* 5. Inputs, Forms, Textareas & Selects */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #181926 !important;
+  color: #F8FAFC !important;
+  border-color: #2D3044 !important;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 1px #8B5CF6 !important;
+}
+
+/* 6. Brutalist Shadow Tuning for Dark Theme */
+.dark .shadow-\[4px_4px_0px_0px_rgba\(15\,23\,42\,1\)\],
+.dark .shadow-\[4px_4px_0px_0px_rgba\(0\,0\,0\,1\)\],
+.dark .shadow-\[6px_6px_0px_0px_rgba\(15\,23\,42\,1\)\],
+.dark .shadow-\[6px_6px_0px_0px_rgba\(0\,0\,0\,1\)\] {
+  box-shadow: 4px 4px 0px 0px rgba(109, 40, 217, 0.35) !important;
+}
+
+.dark .shadow-\[2px_2px_0px_0px_\#000\],
+.dark .shadow-\[3px_3px_0px_0px_rgba\(0\,0\,0\,1\)\] {
+  box-shadow: 2px 2px 0px 0px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* 7. Hover states in dark mode */
+.dark .hover\:bg-slate-50:hover {
+  background-color: #1A1C2A !important;
+}
+
+.dark .hover\:bg-\[\#F2EFE9\]\/60:hover {
+  background-color: #1A1C2A !important;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  background-color: #222538 !important;
+}
+
+.dark .group-hover\:bg-\[\#F2EFE9\] {
+  background-color: #1E2030 !important;
+}
+
