@@ -57,7 +57,7 @@ export default function ProcessPage() {
   ];
 
   return (
-    <div className="bg-[#F4F4F6] text-black">
+    <div className="bg-[#EAE7E0] text-black">
       
       {/* Header Hero */}
       <PageHero
@@ -69,13 +69,13 @@ export default function ProcessPage() {
       />
 
       {/* 6 Steps Grid */}
-      <section className="border-b border-[#D4D4D8] bg-[#F4F4F6] py-14 px-4 sm:px-8">
+      <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto space-y-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {steps.map((s, idx) => (
               <div
                 key={idx}
-                className="border border-[#D4D4D8] bg-white p-8 flex flex-col justify-between space-y-6 hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all group"
+                className="border border-[#D6D0C2] bg-white p-8 flex flex-col justify-between space-y-6 hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-200 pb-2">

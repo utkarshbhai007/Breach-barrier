@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero';
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F8FAFC]">
+    <div className="bg-[#EAE7E0]">
       <PageHero
         tag="// 24×7 ACTIVE ENGAGEMENT DESK"
         title="DIRECT"

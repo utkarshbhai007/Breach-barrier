@@ -12,11 +12,11 @@ export default function SystemStatusSection() {
   };
 
   return (
-    <section className="border-b border-[#D4D4D8] bg-[#F4F4F6] py-14 px-4 sm:px-8">
+    <section className="border-b border-[#D6D0C2] bg-[#F2EFE9] py-14 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-8 items-stretch">
         
         {/* /04 JOIN THE SHIELD (Left 4 cols) */}
-        <div className="lg:col-span-4 border border-[#D4D4D8] bg-white p-8 flex flex-col justify-between space-y-6 shadow-sm">
+        <div className="lg:col-span-4 border border-[#D6D0C2] bg-white p-8 flex flex-col justify-between space-y-6 shadow-sm">
           <div className="space-y-4">
             <span className="font-mono-code text-sm font-bold text-[#7C3AED]">/04</span>
             <h2 className="font-brutal text-4xl sm:text-5xl font-black text-black uppercase tracking-tight leading-none">

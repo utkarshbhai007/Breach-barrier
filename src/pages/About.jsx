@@ -77,7 +77,7 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-[#F1F5F9] text-[#0F172A]">
+    <div className="bg-[#EAE7E0] text-[#0F172A]">
       
       {/* 1. Header Hero */}
       <PageHero
@@ -89,7 +89,7 @@ export default function About() {
       />
 
       {/* 2. Why We Exist & Mission / Vision */}
-      <section className="border-b border-[#D4D4D8] py-14 px-4 sm:px-8 bg-[#F1F5F9]">
+      <section className="border-b border-[#D6D0C2] py-14 px-4 sm:px-8 bg-[#EAE7E0]">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-8">
           
           {/* Why We Exist */}
@@ -99,7 +99,7 @@ export default function About() {
             <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
               Cyberattacks are increasing every year, but most small and mid-sized businesses can't afford a full in-house security team — and the industry itself faces a global shortage of experienced professionals. We close that gap: 24×7 managed cybersecurity delivered remotely, so organizations get continuous protection and expert support at a fraction of the cost.
             </p>
-            <div className="p-4 bg-[#F1F5F9] border-l-4 border-[#6D28D9] text-xs font-bold text-[#0F172A]">
+            <div className="p-4 bg-[#F2EFE9] border-l-4 border-[#6D28D9] text-xs font-bold text-[#0F172A]">
               "We believe cybersecurity isn't just about technology — it's about protecting businesses, people, and growth."
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function About() {
 
 
       {/* 4. Core Values (6 Values) */}
-      <section className="border-b border-[#D4D4D8] py-14 px-4 sm:px-8 bg-[#F1F5F9]">
+      <section className="border-b border-[#D6D0C2] py-14 px-4 sm:px-8 bg-[#F2EFE9]">
         <div className="max-w-[1400px] mx-auto space-y-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -145,9 +145,9 @@ export default function About() {
               return (
                 <div
                   key={idx}
-                  className="border border-[#D4D4D8] bg-white p-6 space-y-3 hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] transition-all"
+                  className="border border-[#D6D0C2] bg-white p-6 space-y-3 hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] transition-all"
                 >
-                  <div className="w-9 h-9 border border-black flex items-center justify-center bg-[#F1F5F9] text-[#6D28D9]">
+                  <div className="w-9 h-9 border border-black flex items-center justify-center bg-[#EAE7E0] text-[#6D28D9]">
                     <Icon className="w-4 h-4" />
                   </div>
                   <h3 className="text-xs font-black text-[#0F172A] uppercase tracking-wider">{v.name}</h3>
@@ -167,9 +167,9 @@ export default function About() {
             <h2 className="font-brutal text-4xl sm:text-5xl font-black uppercase">THE 6 STRATEGIC ADVANTAGES</h2>
           </div>
 
-          <div className="border border-black divide-y divide-black bg-[#F1F5F9] shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
+          <div className="border border-black divide-y divide-black bg-[#F2EFE9] shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
             {whyChooseUsFull.map((item, idx) => (
-              <div key={idx} className="p-6 bg-white hover:bg-[#F1F5F9] transition-colors grid md:grid-cols-12 gap-4 items-center">
+              <div key={idx} className="p-6 bg-white hover:bg-[#F2EFE9] transition-colors grid md:grid-cols-12 gap-4 items-center">
                 <div className="md:col-span-1 text-xs font-black text-[#6D28D9]">
                   {item.num}
                 </div>
@@ -186,7 +186,7 @@ export default function About() {
       </section>
 
       {/* 6. Our 5-Step Process */}
-      <section className="border-b border-[#D4D4D8] py-14 px-4 sm:px-8 bg-[#F1F5F9]">
+      <section className="border-b border-[#D6D0C2] py-14 px-4 sm:px-8 bg-[#EAE7E0]">
         <div className="max-w-[1400px] mx-auto space-y-8">
           <div className="space-y-2">
             <div className="text-sm font-bold text-[#6D28D9]">OUR DELIVERY ROADMAP</div>

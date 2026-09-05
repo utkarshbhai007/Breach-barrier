@@ -81,7 +81,7 @@ export default function Navbar() {
   const isServicesActive = location.pathname.startsWith('/services');
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8FAFC]/95 backdrop-blur-md border-b border-slate-200">
+    <header className="sticky top-0 z-50 bg-[#EAE7E0]/95 backdrop-blur-md border-b border-[#D6D0C2]">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2.5">
         
         {/* Brand Logo */}

@@ -109,12 +109,12 @@ export default function IndustriesSnapshot() {
   ];
 
   return (
-    <section className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] py-8 sm:py-10 px-4 sm:px-8 overflow-hidden" id="industries">
+    <section className="relative border-b border-[#D6D0C2] bg-[#F2EFE9] py-8 sm:py-10 px-4 sm:px-8 overflow-hidden" id="industries">
       {/* Subtle background tech grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
-          backgroundImage: `radial-gradient(#6D28D9 1px, transparent 1px), radial-gradient(#0F172A 1px, #F8FAFC 1px)`,
+          backgroundImage: `radial-gradient(#6D28D9 1px, transparent 1px), radial-gradient(#0F172A 1px, #F2EFE9 1px)`,
           backgroundSize: '28px 28px',
           backgroundPosition: '0 0, 14px 14px'
         }}

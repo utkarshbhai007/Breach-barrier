@@ -41,7 +41,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="border-b border-slate-200 bg-[#F8FAFC] py-8 sm:py-10 px-4 sm:px-8" id="contact">
+    <section className="border-b border-[#D6D0C2] bg-[#F2EFE9] py-8 sm:py-10 px-4 sm:px-8" id="contact">
       <div className="max-w-[1300px] mx-auto space-y-5">
         
         {/* Header Tag */}

@@ -12,7 +12,7 @@ export default function TrustedBuilders() {
   ];
 
   return (
-    <section className="border-b border-[#D4D4D8] bg-white py-12 px-4 sm:px-8">
+    <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-12 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto space-y-6">
         
         {/* Header Tag */}
@@ -23,7 +23,7 @@ export default function TrustedBuilders() {
         </div>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-[#D4D4D8] divide-y sm:divide-y-0 sm:divide-x divide-[#D4D4D8] bg-[#F4F4F6]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-[#D6D0C2] divide-y sm:divide-y-0 sm:divide-x divide-[#D6D0C2] bg-[#F2EFE9]">
           {logos.map((logo, idx) => (
             <div
               key={idx}

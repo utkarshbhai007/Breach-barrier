@@ -45,7 +45,7 @@ export default function FaqPage() {
   const [openIdx, setOpenIdx] = useState(0);
 
   return (
-    <div className="bg-[#F4F4F6] text-black">
+    <div className="bg-[#EAE7E0] text-black">
       
       {/* Header Hero */}
       <PageHero
@@ -57,7 +57,7 @@ export default function FaqPage() {
       />
 
       {/* FAQ Accordion List */}
-      <section className="border-b border-[#D4D4D8] bg-[#F4F4F6] py-14 px-4 sm:px-8">
+      <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
@@ -73,13 +73,13 @@ export default function FaqPage() {
                   <span className="font-mono-code text-xs sm:text-sm font-black text-black uppercase tracking-wide">
                     {faq.q}
                   </span>
-                  <div className={`w-7 h-7 border border-black flex items-center justify-center bg-[#F4F4F6] shrink-0 transition-transform ${isOpen ? 'rotate-180 bg-[#E2F952]' : ''}`}>
+                  <div className={`w-7 h-7 border border-black flex items-center justify-center bg-[#F2EFE9] shrink-0 transition-transform ${isOpen ? 'rotate-180 bg-[#E2F952]' : ''}`}>
                     <ChevronDown className="w-4 h-4 text-black" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-200 text-xs text-slate-700 space-y-3 font-mono leading-relaxed bg-[#F4F4F6]">
+                  <div className="px-6 pb-6 pt-2 border-t border-slate-200 text-xs text-slate-700 space-y-3 font-mono leading-relaxed bg-[#F2EFE9]">
                     <p>{faq.a}</p>
                     <div className="p-3 bg-white border border-[#7C3AED] text-[11px] text-black">
                       <strong className="text-[#7C3AED] font-bold">REAL-LIFE ANALOGY: </strong>

@@ -83,7 +83,7 @@ export default function ResourcesPage() {
   );
 
   return (
-    <div className="bg-[#F1F5F9] text-[#0F172A]">
+    <div className="bg-[#EAE7E0] text-[#0F172A]">
       
       {/* Top Animated Cyber Ticker Tape */}
 
@@ -119,7 +119,7 @@ export default function ResourcesPage() {
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
                   className={`w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer transition-all ${
-                    isOpen ? 'bg-[#F1F5F9] border-l-4 border-l-[#6D28D9]' : 'hover:bg-slate-50'
+                    isOpen ? 'bg-[#F2EFE9] border-l-4 border-l-[#6D28D9]' : 'hover:bg-[#F2EFE9]/60'
                   }`}
                 >
                   <div className="flex items-center gap-4">
@@ -148,7 +148,7 @@ export default function ResourcesPage() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-2 bg-[#F1F5F9] border-t border-slate-200">
+                      <div className="px-6 pb-6 pt-2 bg-[#F2EFE9] border-t border-slate-200">
                         <div className="p-5 bg-white border border-slate-300 text-xs sm:text-sm text-slate-800 leading-relaxed font-sans font-medium shadow-xs">
                           {f.a}
                         </div>
@@ -195,7 +195,7 @@ export default function ResourcesPage() {
             >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
-                  <span className="text-[10px] font-black text-[#6D28D9] px-2 py-0.5 bg-[#F1F5F9] border border-slate-300">
+                  <span className="text-[10px] font-black text-[#6D28D9] px-2 py-0.5 bg-[#F2EFE9] border border-slate-300">
                     {item.code}
                   </span>
                   <BookOpen className="w-4 h-4 text-slate-400 group-hover:text-[#6D28D9] transition-colors" />
@@ -209,7 +209,7 @@ export default function ResourcesPage() {
                   {item.meaning}
                 </p>
 
-                <div className="p-3.5 bg-[#F1F5F9] border-l-2 border-[#6D28D9] text-[11px] text-[#0F172A] font-sans">
+                <div className="p-3.5 bg-[#F2EFE9] border-l-2 border-[#6D28D9] text-[11px] text-[#0F172A] font-sans">
                   💡 <span className="font-bold text-[#6D28D9]">Real-World Analogy:</span> {item.analogy}
                 </div>
               </div>

@@ -16,19 +16,19 @@ export default function WhyUsPage() {
   ];
 
   return (
-    <div className="bg-[#F4F4F6] text-black">
+    <div className="bg-[#EAE7E0] text-black">
       
       {/* Header Hero */}
       <PageHero
         tag="// COMPARATIVE ARCHITECTURE MATRIX"
         title="WHY CHOOSE"
         titleAccent="BREACHBARRIER?"
-        pillars={['ARMED DEFENSE', 'SUB-15M SLA', 'TURNKEY EFFICIENCY']}
+        pillars={['ARMED DEFENSE', 'RAPID SLA', 'TURNKEY EFFICIENCY']}
         description="Compare BreachBarrier's proactive engineering model with traditional passive MSSPs and complex in-house operations. Real telemetry, sub-second quarantine speed, and dedicated Tier-3 engineers."
       />
 
       {/* Comparison Matrix Table */}
-      <section className="border-b border-[#D4D4D8] bg-[#F4F4F6] py-14 px-4 sm:px-8">
+      <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="border border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse min-w-[700px]">
@@ -58,9 +58,9 @@ export default function WhyUsPage() {
       </section>
 
       {/* Philosophy Callout */}
-      <section className="border-b border-[#D4D4D8] bg-white py-14 px-4 sm:px-8">
+      <section className="border-b border-[#D6D0C2] bg-[#F2EFE9] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8">
-          <div className="border border-black p-8 bg-[#F4F4F6] space-y-3">
+          <div className="border border-black p-8 bg-white space-y-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="text-xs font-bold text-[#7C3AED] uppercase">// THE PASSIVE MSSP FLAW</div>
             <h3 className="font-brutal text-3xl font-black text-black">CCTV OPERATOR VS ARMED GUARDS</h3>
             <p className="text-xs text-slate-600 leading-relaxed">

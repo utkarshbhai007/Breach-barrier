@@ -36,7 +36,7 @@ export default function CorePrinciples() {
   ];
 
   return (
-    <section className="border-b border-[#D4D4D8] bg-[#F4F4F6] py-12 px-4 sm:px-8">
+    <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-12 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header Tag */}
@@ -47,7 +47,7 @@ export default function CorePrinciples() {
         </div>
 
         {/* 5-Column Modular Grid with Crosshairs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border border-[#D4D4D8] bg-white divide-y md:divide-y-0 md:divide-x divide-[#D4D4D8]">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border border-[#D6D0C2] bg-white divide-y md:divide-y-0 md:divide-x divide-[#D6D0C2]">
           {principles.map((p, idx) => {
             const Icon = p.icon;
             return (

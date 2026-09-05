@@ -195,7 +195,7 @@ export default function IndustriesPage() {
   const ActiveIcon = activeInd.icon;
 
   return (
-    <div className="bg-[#F8FAFC] text-[#0F172A] min-h-screen">
+    <div className="bg-[#EAE7E0] text-[#0F172A] min-h-screen">
       
       {/* 1. Header Hero with Unified Background Animation & Text */}
       <PageHero

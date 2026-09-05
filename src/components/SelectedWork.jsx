@@ -17,7 +17,7 @@ export default function SelectedWork() {
       title: 'MANAGED DETECTION & RESPONSE (MDR)',
       subtitle: 'Active threat hunting & sub-15m automated endpoint isolation',
       path: '/services/mdr',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f 61d4dc18c5?auto=format&fit=crop&w=800&q=80',
       icon: Activity,
     },
     {
@@ -57,7 +57,7 @@ export default function SelectedWork() {
   return (
     <section className="relative border-b border-[#D4D4D8] bg-[#F1F5F9] py-12 sm:py-14 px-4 sm:px-8 overflow-hidden" id="services">
       <div className="max-w-[1400px] mx-auto space-y-6 relative z-10">
-        
+
         {/* Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-3">

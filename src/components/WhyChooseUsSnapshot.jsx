@@ -31,12 +31,12 @@ export default function WhyChooseUsSnapshot() {
   ];
 
   return (
-    <section className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] py-14 px-4 sm:px-8 overflow-hidden">
+    <section className="relative border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8 overflow-hidden">
       {/* Subtle tech background grid pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, #F8FAFC 1px)`,
+          backgroundImage: `linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, #EAE7E0 1px)`,
           backgroundSize: '32px 32px'
         }}
       />

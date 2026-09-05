@@ -21,10 +21,10 @@ export default function ServicePageLayout({
   const location = useLocation();
 
   return (
-    <div className="bg-[#F1F5F9] text-[#0F172A]">
+    <div className="bg-[#EAE7E0] text-[#0F172A]">
       
       {/* Centered Service Hero Section with GradientWaves HUD */}
-      <section className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] overflow-hidden py-16 sm:py-20 px-4 sm:px-8">
+      <section className="relative border-b border-[#D6D0C2] bg-[#EAE7E0] overflow-hidden py-16 sm:py-20 px-4 sm:px-8">
         {/* Interactive GradientWaves Canvas Background */}
         <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45">
           <GradientWaves
@@ -136,7 +136,7 @@ export default function ServicePageLayout({
 
       {/* 3. Real-Life Analogy Explainer Card (if provided) */}
       {analogy && (
-        <section className="border-b border-[#D4D4D8] bg-[#F1F5F9] py-8 px-4 sm:px-8">
+        <section className="border-b border-[#D6D0C2] bg-[#F2EFE9] py-8 px-4 sm:px-8">
           <div className="max-w-[1400px] mx-auto">
             <div className="border border-black bg-white p-6 sm:p-7 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
@@ -159,7 +159,7 @@ export default function ServicePageLayout({
 
       {/* 4. Features Grid (Scope of Deliverables) with Hover Lifts */}
       {features && (
-        <section className="border-b border-[#D4D4D8] bg-[#F1F5F9] py-14 px-4 sm:px-8">
+        <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8">
           <div className="max-w-[1400px] mx-auto space-y-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -183,7 +183,7 @@ export default function ServicePageLayout({
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
-                      <div className="w-10 h-10 border border-black flex items-center justify-center bg-[#F1F5F9] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors">
+                      <div className="w-10 h-10 border border-black flex items-center justify-center bg-[#F2EFE9] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors">
                         {f.icon}
                       </div>
                       <span className="text-[10px] font-black text-[#6D28D9] font-mono-code">
@@ -229,7 +229,7 @@ export default function ServicePageLayout({
                 <motion.div
                   key={idx}
                   whileHover={{ x: 3 }}
-                  className="flex items-start gap-3.5 p-5 border border-black bg-[#F1F5F9] shadow-xs"
+                  className="flex items-start gap-3.5 p-5 border border-black bg-[#F2EFE9] shadow-xs"
                 >
                   <span className="w-5 h-5 bg-[#E2F952] border border-black flex items-center justify-center text-black font-black text-xs shrink-0 mt-0.5">
                     ✓
@@ -244,7 +244,7 @@ export default function ServicePageLayout({
 
       {/* 6. Integrated Tooling Matrix with Hover Glow Badges */}
       {tools && (
-        <section className="border-b border-[#D4D4D8] bg-[#F1F5F9] py-14 px-4 sm:px-8">
+        <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] py-14 px-4 sm:px-8">
           <div className="max-w-[1400px] mx-auto space-y-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">

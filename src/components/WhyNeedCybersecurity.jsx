@@ -12,12 +12,12 @@ export default function WhyNeedCybersecurity() {
   ];
 
   return (
-    <section className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] py-14 px-4 sm:px-8 overflow-hidden">
+    <section className="relative border-b border-[#D6D0C2] bg-[#F2EFE9] py-14 px-4 sm:px-8 overflow-hidden">
       {/* Subtle high-tech cyber pattern watermark */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.035]"
         style={{
-          backgroundImage: `radial-gradient(#6D28D9 1px, transparent 1px), radial-gradient(#0F172A 1px, #F8FAFC 1px)`,
+          backgroundImage: `radial-gradient(#6D28D9 1px, transparent 1px), radial-gradient(#0F172A 1px, #F2EFE9 1px)`,
           backgroundSize: '24px 24px',
           backgroundPosition: '0 0, 12px 12px'
         }}
@@ -92,7 +92,7 @@ export default function WhyNeedCybersecurity() {
         </div>
 
         {/* 5 Outcomes Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border border-[#D4D4D8] divide-y sm:divide-y-0 sm:divide-x divide-[#D4D4D8] bg-white rounded-xl overflow-hidden shadow-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border border-[#D6D0C2] divide-y sm:divide-y-0 sm:divide-x divide-[#D6D0C2] bg-white rounded-xl overflow-hidden shadow-xs">
           {outcomes.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -101,7 +101,7 @@ export default function WhyNeedCybersecurity() {
                 className="p-6 bg-white hover:bg-purple-50/40 transition-colors space-y-4 flex flex-col justify-between group"
               >
                 <div className="space-y-3">
-                  <div className="w-10 h-10 border border-black flex items-center justify-center bg-[#F1F5F9] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors text-[#0F172A]">
+                  <div className="w-10 h-10 border border-black flex items-center justify-center bg-[#EAE7E0] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors text-[#0F172A]">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-heading text-xs sm:text-sm font-bold text-[#0F172A] uppercase tracking-tight group-hover:text-[#6D28D9] transition-colors leading-snug">

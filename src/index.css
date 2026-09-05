@@ -2,20 +2,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg-main: #F1F5F9;
+  --bg-main: #EAE7E0;
   --bg-panel: #FFF;
-  --border-color: #D4D4D8;
+  --border-color: #D6D0C2;
   --border-dark: #0F172A;
   --accent-purple: #6D28D9;
   --accent-light-purple: #A855F7;
-  --accent-soft-purple: #E9D5FF;
+  --accent-soft-purple: #EDE9FE;
   --accent-violet: #8B5CF6;
   --accent-lime: #D4F82C;
   --accent-yellow: #E2F952;
   --accent-red: #EF4444;
   --text-main: #0F172A;
-  --text-muted: #64748B;
-  --text-dim: #71717A;
+  --text-muted: #57534E;
+  --text-dim: #78716C;
 }
 
 html {

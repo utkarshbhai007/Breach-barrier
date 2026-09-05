@@ -8,7 +8,7 @@ import FoldText from './FoldText';
 
 export default function Hero() {
   return (
-    <section className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] overflow-hidden py-16 sm:py-24 px-4 sm:px-8">
+    <section className="relative border-b border-[#D6D0C2] bg-[#EAE7E0] overflow-hidden py-16 sm:py-24 px-4 sm:px-8">
       {/* Interactive GradientWaves WebGL Canvas Background for Light Theme */}
       <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45">
         <GradientWaves

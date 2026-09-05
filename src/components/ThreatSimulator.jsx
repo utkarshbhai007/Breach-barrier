@@ -164,12 +164,12 @@ export default function ThreatSimulator() {
   };
 
   return (
-    <section id="simulator" className="relative border-b border-[#D4D4D8] bg-[#F8FAFC] py-10 sm:py-14 px-4 sm:px-8 overflow-hidden">
+    <section id="simulator" className="relative border-b border-[#D6D0C2] bg-[#EAE7E0] py-10 sm:py-14 px-4 sm:px-8 overflow-hidden">
       {/* Subtle high-tech cyber pattern watermark */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.035]"
         style={{
-          backgroundImage: `linear-gradient(#6D28D9 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, #F8FAFC 1px)`,
+          backgroundImage: `linear-gradient(#6D28D9 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, #EAE7E0 1px)`,
           backgroundSize: '28px 28px'
         }}
       />
