@@ -9,7 +9,6 @@ import {
   ArrowRight, 
   RefreshCw, 
   Zap, 
-  Clock, 
   Shield, 
   FileCode, 
   KeyRound, 
@@ -186,7 +185,7 @@ export default function ThreatSimulator() {
             </span>
           </div>
           <span className="text-xs font-medium text-slate-500">
-            Interactive demonstration of sub-15 minute threat neutralization
+            Interactive demonstration of rapid automated threat neutralization
           </span>
         </div>
 

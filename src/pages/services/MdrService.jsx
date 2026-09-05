@@ -19,7 +19,7 @@ export default function MdrService() {
         { icon: <ShieldCheck className="w-5 h-5" />, title: 'Continuous Telemetry Analysis', desc: 'Deep endpoint telemetry correlation across process trees, network sockets, and registry keys.' },
       ]}
       benefits={[
-        'Sub-15 minute mean time to contain active ransomware and intrusions',
+        'Rapid mean time to contain active ransomware and intrusions',
         'Zero burden on internal IT teams during midnight security incidents',
         'Comprehensive root-cause post-containment forensic debriefs',
         'Direct coordination with company leadership during active events',

@@ -18,7 +18,7 @@ export default function ResourcesPage() {
     },
     {
       q: "Do you provide 24×7 monitoring?",
-      a: "Yes. Our Security Operations Center (SOC) provides continuous 24×7×365 monitoring, real-time threat detection, and sub-15 minute active containment through our dedicated global delivery hub.",
+      a: "Yes. Our Security Operations Center (SOC) provides continuous 24×7×365 monitoring, real-time threat detection, and rapid active containment through our dedicated global delivery hub.",
       tag: "SOC_247",
     },
     {

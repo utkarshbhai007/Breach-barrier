@@ -44,7 +44,7 @@ export default function Navbar() {
     {
       title: 'Incident Response & Forensics',
       path: '/services/incident-response',
-      desc: 'Sub-15 min emergency containment & RCA',
+      desc: 'Rapid emergency containment & RCA',
       icon: AlertOctagon
     },
     {

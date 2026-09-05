@@ -38,7 +38,7 @@ export default function FaqPage() {
     {
       q: "7. HOW DOES THE INDIA DELIVERY CENTER + CANADIAN OPERATIONS WORK?",
       a: "BreachBarrier combines top-tier cybersecurity engineers at our 24/7 Pune SOC facility with Canadian client management in Toronto and Vancouver led by Meet Shingore. This model gives Canadian SMBs enterprise-grade Tier-3 SOC talent at 80% lower cost than building in-house teams.",
-      analogy: "Global Advantage: Real-time night and day rotation across time zones ensuring sub-15 minute response guaranteed by SLA."
+      analogy: "Global Advantage: Real-time night and day rotation across time zones ensuring rapid response guaranteed by SLA."
     }
   ];
 

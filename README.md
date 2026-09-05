@@ -7,7 +7,7 @@
 
 ## 🛡️ Core Services
 
-1. **24×7 Security Operations Center (SOC)** — Continuous real-time threat detection, SIEM log correlation, and sub-15 minute alert triage.
+1. **24×7 Security Operations Center (SOC)** — Continuous real-time threat detection, SIEM log correlation, and rapid alert triage.
 2. **Managed Detection & Response (MDR)** — Active attack mitigation, automated EDR host isolation, and intelligence-led threat hunting.
 3. **Penetration Testing** — Certified ethical hacking across Web Applications, Mobile Apps, APIs, and Internal/External Networks.
 4. **Incident Response & Digital Forensics (DFIR)** — Emergency breach containment, court-admissible chain-of-custody evidence, and root-cause analysis.

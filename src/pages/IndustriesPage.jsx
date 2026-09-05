@@ -15,7 +15,6 @@ import {
   Search, 
   CheckCircle2, 
   Zap, 
-  Clock, 
   Layers,
   Sparkles,
   ChevronRight
@@ -514,14 +513,10 @@ export default function IndustriesPage() {
                   </div>
 
                   {/* Card Bottom CTA */}
-                  <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-3">
-                    <span className="text-[10.5px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
-                      <ShieldCheck className="w-3 h-3" />
-                      <span>{ind.metrics.coverage}</span>
-                    </span>
+                  <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-end mt-3">
                     <Link
                       to="/contact"
-                      className="cursor-target px-3 py-1 bg-[#6D28D9] hover:bg-[#5B21B6] text-white text-[11px] font-bold rounded-lg flex items-center gap-1 transition-colors shadow-xs"
+                      className="cursor-target px-3 py-1.5 bg-[#6D28D9] hover:bg-[#5B21B6] text-white text-[11px] font-bold rounded-lg flex items-center gap-1 transition-colors shadow-xs"
                     >
                       <span>Secure {ind.code}</span>
                       <ArrowUpRight className="w-3 h-3" />

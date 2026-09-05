@@ -59,7 +59,7 @@
     <!-- Value Bullet Points -->
     <g transform="translate(0, 220)">
       <rect x="0" y="0" width="16" height="16" fill="#E2F952" />
-      <text x="30" y="13" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">Sub-15 Min Threat Containment</text>
+      <text x="30" y="13" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">Rapid 24×7 Threat Containment</text>
 
       <rect x="360" y="0" width="16" height="16" fill="#E2F952" />
       <text x="390" y="13" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="18" font-weight="600">ISO 27001 &amp; SOC 2 Audit Ready</text>

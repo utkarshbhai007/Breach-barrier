@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Lock, FileCheck, Clock, Award, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, Lock, FileCheck, Zap, Award, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function WhyNeedCybersecurity() {
@@ -7,7 +7,7 @@ export default function WhyNeedCybersecurity() {
     { title: "PROTECT SENSITIVE DATA", desc: "Shield intellectual property, financial records, and confidential customer databases from exfiltration.", icon: Lock },
     { title: "PREVENT DAMAGE EARLY", desc: "Catch warning signs and stop zero-day ransomware before it encrypts enterprise assets.", icon: ShieldCheck },
     { title: "MEET COMPLIANCE", desc: "Maintain continuous audit readiness for ISO 27001, SOC 2, HIPAA, and Canadian privacy laws.", icon: FileCheck },
-    { title: "MINIMIZE DOWNTIME", desc: "Sub-15 minute threat containment ensures continuous business operational continuity.", icon: Clock },
+    { title: "MINIMIZE DOWNTIME", desc: "Rapid automated threat containment ensures continuous business operational continuity.", icon: Zap },
     { title: "IMPROVE CUSTOMER TRUST", desc: "Demonstrate enterprise-grade security posture to enterprise buyers and board members.", icon: Award },
   ];
 
@@ -81,7 +81,7 @@ export default function WhyNeedCybersecurity() {
                 ✓ Proactive Threat Containment
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
-                ✓ Sub-15 Min Incident SLA
+                ✓ Rapid Incident SLA Containment
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
                 ✓ Continuous Compliance

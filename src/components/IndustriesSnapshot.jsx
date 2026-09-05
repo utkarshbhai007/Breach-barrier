@@ -101,7 +101,7 @@ export default function IndustriesSnapshot() {
       title: 'Small & Medium Business',
       category: 'AFFORDABLE ENTERPRISE DEFENSE',
       desc: 'Enterprise 24×7 SOC & MDR defense tailored for growing companies.',
-      chips: ['24×7 SOC', 'SUB-15M SLA', 'vCISO'],
+      chips: ['24×7 SOC', 'RAPID SLA', 'vCISO'],
       icon: Store,
       path: '/industries',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80',

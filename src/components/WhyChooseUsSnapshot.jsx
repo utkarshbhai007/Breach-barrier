@@ -15,10 +15,10 @@ export default function WhyChooseUsSnapshot() {
     {
       num: '02',
       title: 'PROACTIVE SOC DEFENSE',
-      desc: 'We work around the clock to detect and contain threats in under 15 minutes before they impact infrastructure or users.',
+      desc: 'We work around the clock to detect and contain threats rapidly before they impact infrastructure or users.',
       icon: ShieldCheck,
       image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-      tag: 'SUB-15M SLA',
+      tag: 'RAPID CONTAINMENT',
     },
     {
       num: '03',
