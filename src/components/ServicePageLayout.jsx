@@ -65,7 +65,7 @@ export default function ServicePageLayout({
               <span>24×7 ACTIVE SERVICE SPECIFICATION</span>
             </span>
             <span className="px-2.5 py-0.5 bg-[#E2F952] text-black font-extrabold border border-black rounded-full text-[10px]">
-              SLA: &lt;15 MIN CONTAINMENT
+              ACTIVE THREAT CONTAINMENT
             </span>
           </motion.div>
 

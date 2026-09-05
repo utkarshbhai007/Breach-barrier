@@ -45,9 +45,9 @@ export default function IndustriesPage() {
         'Compromised IoMT medical equipment & monitors'
       ],
       defense: '24×7 SOC telemetry ingestion, rapid host quarantine, and continuous healthcare compliance audit readiness.',
-      highlight: 'Zero clinical operational interruption with sub-15m threat containment.',
+      highlight: 'Zero clinical operational interruption with rapid automated containment.',
       icon: Hospital,
-      metrics: { sla: '< 15 min', audits: '100% HIPAA Ready', coverage: '24×7×365' }
+      metrics: { sla: 'Rapid Response', audits: '100% HIPAA Ready', coverage: '24×7×365' }
     },
     {
       id: '02',
@@ -65,7 +65,7 @@ export default function IndustriesPage() {
       defense: 'MDR instant containment, regular penetration testing of trading/payment gateways, and continuous ISO 27001 readiness.',
       highlight: 'Automated network isolation stops unauthorized funds transfer attempts instantly.',
       icon: Landmark,
-      metrics: { sla: '< 10 min', audits: 'PCI-DSS Validated', coverage: 'Real-time API Watch' }
+      metrics: { sla: 'Instant Isolation', audits: 'PCI-DSS Validated', coverage: 'Real-time API Watch' }
     },
     {
       id: '03',
@@ -83,7 +83,7 @@ export default function IndustriesPage() {
       defense: 'Continuous vulnerability management, cloud posture audits (CSPM), and automated Vanta/Drata SOC 2 readiness.',
       highlight: 'Continuous CI/CD secret scanning and posture hardening for multi-tenant architectures.',
       icon: Cloud,
-      metrics: { sla: '< 15 min', audits: 'Drata / Vanta Sync', coverage: 'Multi-Cloud Native' }
+      metrics: { sla: 'Continuous Watch', audits: 'Drata / Vanta Sync', coverage: 'Multi-Cloud Native' }
     },
     {
       id: '04',
@@ -98,10 +98,10 @@ export default function IndustriesPage() {
         'Operational extortion ransomware halting assembly lines',
         'Theft of proprietary CAD files & manufacturing IP'
       ],
-      defense: 'Air-gapped network penetration testing, micro-segmentation monitoring, and sub-15 minute threat response.',
+      defense: 'Air-gapped network penetration testing, micro-segmentation monitoring, and rapid threat response.',
       highlight: 'Air-gapped telemetry inspection preventing factory floor disruptions.',
       icon: Factory,
-      metrics: { sla: '< 15 min', audits: 'OT Hardened', coverage: 'SCADA / ICS Safe' }
+      metrics: { sla: 'Active Guard', audits: 'OT Hardened', coverage: 'SCADA / ICS Safe' }
     },
     {
       id: '05',
@@ -119,7 +119,7 @@ export default function IndustriesPage() {
       defense: 'Automated phishing detection, multi-factor authentication enforcement, and central SIEM identity monitoring.',
       highlight: 'Proactive credential leak detection across decentralized campus networks.',
       icon: GraduationCap,
-      metrics: { sla: '< 15 min', audits: 'FERPA Ready', coverage: 'Campus-wide SIEM' }
+      metrics: { sla: 'Rapid Triage', audits: 'FERPA Ready', coverage: 'Campus-wide SIEM' }
     },
     {
       id: '06',
@@ -137,7 +137,7 @@ export default function IndustriesPage() {
       defense: 'Web application firewall (WAF) tuning, payment endpoint vulnerability assessments, and 24×7 SOC surveillance.',
       highlight: 'Zero transaction disruptions during high-traffic Black Friday / Cyber Monday surges.',
       icon: ShoppingCart,
-      metrics: { sla: '< 12 min', audits: 'PCI-DSS L1', coverage: 'Checkout Guard' }
+      metrics: { sla: 'Zero Latency', audits: 'PCI-DSS L1', coverage: 'Checkout Guard' }
     },
     {
       id: '07',
@@ -155,7 +155,7 @@ export default function IndustriesPage() {
       defense: 'Zero-trust architecture implementation, deep forensics & root-cause investigation, and emergency containment.',
       highlight: 'State-level threat actor detection rules and encrypted audit telemetry.',
       icon: Building2,
-      metrics: { sla: '< 10 min', audits: 'Zero-Trust Audited', coverage: '24×7 SOC Patrol' }
+      metrics: { sla: 'Priority Defense', audits: 'Zero-Trust Audited', coverage: '24×7 SOC Patrol' }
     },
     {
       id: '08',
@@ -173,7 +173,7 @@ export default function IndustriesPage() {
       defense: 'Remote managed SOC + MDR starting at flat affordable tiers, monthly executive reports, and virtual CISO advisory.',
       highlight: '80% cost savings compared to hiring 5 in-house cybersecurity specialists.',
       icon: Store,
-      metrics: { sla: '< 15 min', audits: 'Insurance Qualified', coverage: 'Tier-3 Engineering' }
+      metrics: { sla: 'Turnkey SOC', audits: 'Insurance Qualified', coverage: 'Tier-3 Engineering' }
     },
   ], []);
 
@@ -209,16 +209,12 @@ export default function IndustriesPage() {
 
       {/* 2. Key Industry Matrix Metrics Strip */}
       <div className="border-b border-slate-200 bg-white">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="border-r last:border-r-0 border-slate-200 pr-2">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+          <div className="sm:border-r border-slate-200 pr-2">
             <div className="text-xl sm:text-2xl font-black text-[#6D28D9]">8 DOMAINS</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Tailored Threat Models</div>
           </div>
-          <div className="border-r last:border-r-0 border-slate-200 pr-2">
-            <div className="text-xl sm:text-2xl font-black text-[#0F172A]">&lt; 15 MIN</div>
-            <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Mean Containment SLA</div>
-          </div>
-          <div className="border-r last:border-r-0 border-slate-200 pr-2">
+          <div className="sm:border-r border-slate-200 pr-2">
             <div className="text-xl sm:text-2xl font-black text-emerald-600">100% READY</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Audit & Compliance Pass</div>
           </div>
@@ -520,8 +516,8 @@ export default function IndustriesPage() {
                   {/* Card Bottom CTA */}
                   <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-3">
                     <span className="text-[10.5px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
-                      <Clock className="w-3 h-3" />
-                      <span>{ind.metrics.sla}</span>
+                      <ShieldCheck className="w-3 h-3" />
+                      <span>{ind.metrics.coverage}</span>
                     </span>
                     <Link
                       to="/contact"
