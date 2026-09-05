@@ -10,7 +10,7 @@ import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-[#EAE7E0] text-[#0F172A]">
+    <div className="flex flex-col bg-[#EAE7E0] text-[#0F172A] home-red-theme">
       <Hero />
       <WhyNeedCybersecurity />
       <SelectedWork />

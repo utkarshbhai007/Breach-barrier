@@ -12,8 +12,8 @@ export default function Hero() {
       {/* Interactive GradientWaves WebGL Canvas Background for Light Theme */}
       <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45">
         <GradientWaves
-          horizonColor="#5227FF"
-          waveColor="#A855F7"
+          horizonColor="#DC2626"
+          waveColor="#EF4444"
           crestColor="#FFFFFF"
           speed={0.4}
           amplitude={2.5}
@@ -49,14 +49,14 @@ export default function Hero() {
               direction="top"
               className="text-[#0F172A]"
             />
-            <span className="text-[#6D28D9] relative inline-block mt-1">
+            <span className="text-[#DC2626] relative inline-block mt-1">
               <BlurText
                 text="EMPOWER YOUR GROWTH."
                 delay={120}
                 initialDelay={0.36}
                 animateBy="words"
                 direction="top"
-                className="text-[#6D28D9]"
+                className="text-[#DC2626]"
               />
             </span>
           </h1>
@@ -92,7 +92,7 @@ export default function Hero() {
             className="brutal-btn-outline w-full sm:w-auto px-7 py-4 text-xs font-black tracking-wider flex items-center justify-center gap-2 cursor-pointer group"
           >
             <span>EXPLORE SERVICES</span>
-            <Maximize2 className="w-3.5 h-3.5 text-[#6D28D9] group-hover:rotate-90 transition-transform" />
+            <Maximize2 className="w-3.5 h-3.5 text-[#DC2626] group-hover:rotate-90 transition-transform" />
           </Link>
         </motion.div>
 

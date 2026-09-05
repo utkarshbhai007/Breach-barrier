@@ -441,3 +441,101 @@ p {
   background-color: #1E2030 !important;
 }
 
+/* ============================================================
+   HOME PAGE - CYBER RED ACCENT THEME (DEMO)
+   ============================================================ */
+.home-red-theme {
+  --accent-purple: #DC2626;
+  --accent-light-purple: #EF4444;
+  --accent-soft-purple: #FEE2E2;
+}
+
+/* Red Text Highlights, Headings & Status Indicators */
+.home-red-theme .text-\[\#6D28D9\],
+.home-red-theme .text-\[\#7C3AED\],
+.home-red-theme .text-purple-600 {
+  color: #DC2626 !important;
+}
+
+.home-red-theme.dark .text-\[\#6D28D9\],
+.home-red-theme.dark .text-\[\#7C3AED\],
+.home-red-theme .dark .text-\[\#6D28D9\],
+.home-red-theme .dark .text-\[\#7C3AED\],
+.home-red-theme .dark .text-\[\#A78BFA\] {
+  color: #EF4444 !important;
+}
+
+/* Red Background Accents, Pills & Buttons */
+.home-red-theme .bg-\[\#6D28D9\],
+.home-red-theme .bg-\[\#7C3AED\] {
+  background-color: #DC2626 !important;
+}
+
+.home-red-theme .hover\:bg-\[\#5B21B6\]:hover,
+.home-red-theme .hover\:bg-\[\#6D28D9\]:hover {
+  background-color: #B91C1C !important;
+}
+
+/* Red Borders */
+.home-red-theme .border-\[\#6D28D9\],
+.home-red-theme .border-\[\#7C3AED\],
+.home-red-theme .hover\:border-\[\#6D28D9\]:hover,
+.home-red-theme .border-l-\[\#6D28D9\] {
+  border-color: #DC2626 !important;
+}
+
+/* Red Soft Pill / Badge backgrounds & borders */
+.home-red-theme .bg-purple-50 {
+  background-color: #FEF2F2 !important;
+}
+
+.home-red-theme .border-purple-200,
+.home-red-theme .border-purple-200\/60,
+.home-red-theme .border-purple-200\/80,
+.home-red-theme .border-purple-200\/90 {
+  border-color: #FECACA !important;
+}
+
+.home-red-theme.dark .bg-purple-50,
+.home-red-theme .dark .bg-purple-50 {
+  background-color: rgba(220, 38, 38, 0.18) !important;
+}
+
+.home-red-theme.dark .border-purple-200,
+.home-red-theme .dark .border-purple-200 {
+  border-color: rgba(220, 38, 38, 0.4) !important;
+}
+
+/* Hover & Group Hover States */
+.home-red-theme .hover\:text-\[\#6D28D9\]:hover,
+.home-red-theme .group-hover\:text-\[\#6D28D9\],
+.home-red-theme .group:hover .group-hover\:text-\[\#6D28D9\] {
+  color: #DC2626 !important;
+}
+
+.home-red-theme .group-hover\:bg-\[\#6D28D9\],
+.home-red-theme .group:hover .group-hover\:bg-\[\#6D28D9\] {
+  background-color: #DC2626 !important;
+  color: #FFFFFF !important;
+}
+
+.home-red-theme .group-hover\:border-\[\#6D28D9\] {
+  border-color: #DC2626 !important;
+}
+
+/* Shadow Glows */
+.home-red-theme .shadow-\[3px_3px_0px_0px_rgba\(124\,58\,237\,1\)\] {
+  box-shadow: 3px 3px 0px 0px rgba(220, 38, 38, 1) !important;
+}
+
+.home-red-theme .shadow-\[2px_2px_0px_0px_\#6D28D9\],
+.home-red-theme .shadow-\[4px_4px_0px_0px_\#6D28D9\] {
+  box-shadow: 3px 3px 0px 0px #DC2626 !important;
+}
+
+.home-red-theme ::selection {
+  background: #DC2626 !important;
+  color: #FFFFFF !important;
+}
+
+
