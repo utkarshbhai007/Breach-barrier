@@ -75,7 +75,7 @@ export default function AiChatbot() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A0A0C] text-white border border-black shadow-[3px_3px_0px_0px_rgba(124,58,237,1)] cursor-pointer text-[11px] sm:text-xs font-bold uppercase tracking-wider"
+          className="flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A0A0C] text-white border border-black shadow-[3px_3px_0px_0px_rgba(220,38,38,1)] cursor-pointer text-[11px] sm:text-xs font-bold uppercase tracking-wider"
         >
           <span className="w-2 h-2 rounded-full bg-[#E2F952] animate-pulse" />
           <span>&gt; ASK BREACHBARRIER AI_</span>
@@ -125,7 +125,7 @@ export default function AiChatbot() {
                   <div
                     className={`p-3 max-w-[88%] text-xs leading-relaxed border ${
                       msg.sender === 'user'
-                        ? 'bg-[#7C3AED] text-white border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
+                        ? 'bg-[#DC2626] text-white border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
                         : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
                     }`}
                   >

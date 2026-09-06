@@ -7,13 +7,13 @@
   --bg-panel: #FFF;
   --border-color: #D6D0C2;
   --border-dark: #0F172A;
-  --accent-purple: #6D28D9;
-  --accent-light-purple: #A855F7;
-  --accent-soft-purple: #EDE9FE;
-  --accent-violet: #8B5CF6;
+  --accent-purple: #DC2626;
+  --accent-light-purple: #EF4444;
+  --accent-soft-purple: #FEE2E2;
+  --accent-violet: #B91C1C;
   --accent-lime: #D4F82C;
   --accent-yellow: #E2F952;
-  --accent-red: #EF4444;
+  --accent-red: #DC2626;
   --text-main: #0F172A;
   --text-muted: #57534E;
   --text-dim: #78716C;
@@ -24,9 +24,10 @@ html.dark {
   --bg-panel: #13141C;
   --border-color: #262736;
   --border-dark: #3F4259;
-  --accent-purple: #8B5CF6;
-  --accent-light-purple: #C084FC;
-  --accent-soft-purple: #2E1065;
+  --accent-purple: #EF4444;
+  --accent-light-purple: #F87171;
+  --accent-soft-purple: rgba(220, 38, 38, 0.2);
+  --accent-violet: #DC2626;
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
   --text-dim: #64748B;
@@ -175,7 +176,8 @@ p {
 }
 
 .brutal-btn-purple:hover {
-  background: #6D28D9;
+  background: #B91C1C;
+  border-color: #B91C1C;
   box-shadow: 3px 3px 0 0 #000;
   transform: translate(-2px, -2px);
 }
@@ -407,8 +409,8 @@ p {
 .dark input:focus,
 .dark textarea:focus,
 .dark select:focus {
-  border-color: #8B5CF6 !important;
-  box-shadow: 0 0 0 1px #8B5CF6 !important;
+  border-color: #EF4444 !important;
+  box-shadow: 0 0 0 1px #EF4444 !important;
 }
 
 /* 6. Brutalist Shadow Tuning for Dark Theme */
@@ -416,12 +418,12 @@ p {
 .dark .shadow-\[4px_4px_0px_0px_rgba\(0\,0\,0\,1\)\],
 .dark .shadow-\[6px_6px_0px_0px_rgba\(15\,23\,42\,1\)\],
 .dark .shadow-\[6px_6px_0px_0px_rgba\(0\,0\,0\,1\)\] {
-  box-shadow: 4px 4px 0px 0px rgba(109, 40, 217, 0.35) !important;
+  box-shadow: 4px 4px 0px 0px rgba(220, 38, 38, 0.35) !important;
 }
 
 .dark .shadow-\[2px_2px_0px_0px_\#000\],
 .dark .shadow-\[3px_3px_0px_0px_rgba\(0\,0\,0\,1\)\] {
-  box-shadow: 2px 2px 0px 0px rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 2px 2px 0px 0px rgba(239, 68, 68, 0.4) !important;
 }
 
 /* 7. Hover states in dark mode */
@@ -442,98 +444,153 @@ p {
 }
 
 /* ============================================================
-   HOME PAGE - CYBER RED ACCENT THEME (DEMO)
+   GLOBAL CYBER RED ACCENT THEME (SITE-WIDE)
    ============================================================ */
-.home-red-theme {
-  --accent-purple: #DC2626;
-  --accent-light-purple: #EF4444;
-  --accent-soft-purple: #FEE2E2;
-}
 
 /* Red Text Highlights, Headings & Status Indicators */
-.home-red-theme .text-\[\#6D28D9\],
-.home-red-theme .text-\[\#7C3AED\],
-.home-red-theme .text-purple-600 {
+.text-\[\#6D28D9\],
+.text-\[\#7C3AED\],
+.text-purple-600,
+.text-purple-500,
+.text-purple-700 {
   color: #DC2626 !important;
 }
 
-.home-red-theme.dark .text-\[\#6D28D9\],
-.home-red-theme.dark .text-\[\#7C3AED\],
-.home-red-theme .dark .text-\[\#6D28D9\],
-.home-red-theme .dark .text-\[\#7C3AED\],
-.home-red-theme .dark .text-\[\#A78BFA\] {
+.text-\[\#A855F7\],
+.text-\[\#8B5CF6\] {
+  color: #DC2626 !important;
+}
+
+.dark .text-\[\#6D28D9\],
+.dark .text-\[\#7C3AED\],
+.dark .text-\[\#A78BFA\],
+.dark .text-\[\#8B5CF6\],
+.dark .text-\[\#A855F7\],
+.dark .text-purple-400,
+.dark .text-purple-300 {
   color: #EF4444 !important;
 }
 
 /* Red Background Accents, Pills & Buttons */
-.home-red-theme .bg-\[\#6D28D9\],
-.home-red-theme .bg-\[\#7C3AED\] {
+.bg-\[\#6D28D9\],
+.bg-\[\#7C3AED\],
+.bg-purple-600 {
   background-color: #DC2626 !important;
 }
 
-.home-red-theme .hover\:bg-\[\#5B21B6\]:hover,
-.home-red-theme .hover\:bg-\[\#6D28D9\]:hover {
+.hover\:bg-\[\#5B21B6\]:hover,
+.hover\:bg-\[\#6D28D9\]:hover,
+.hover\:bg-purple-700:hover {
   background-color: #B91C1C !important;
 }
 
 /* Red Borders */
-.home-red-theme .border-\[\#6D28D9\],
-.home-red-theme .border-\[\#7C3AED\],
-.home-red-theme .hover\:border-\[\#6D28D9\]:hover,
-.home-red-theme .border-l-\[\#6D28D9\] {
+.border-\[\#6D28D9\],
+.border-\[\#7C3AED\],
+.hover\:border-\[\#6D28D9\]:hover,
+.hover\:border-\[\#8B5CF6\]:hover,
+.border-l-\[\#6D28D9\] {
   border-color: #DC2626 !important;
 }
 
+.dark .border-\[\#6D28D9\],
+.dark .border-\[\#7C3AED\],
+.dark .hover\:border-\[\#8B5CF6\]:hover {
+  border-color: #EF4444 !important;
+}
+
 /* Red Soft Pill / Badge backgrounds & borders */
-.home-red-theme .bg-purple-50 {
+.bg-purple-50 {
   background-color: #FEF2F2 !important;
 }
 
-.home-red-theme .border-purple-200,
-.home-red-theme .border-purple-200\/60,
-.home-red-theme .border-purple-200\/80,
-.home-red-theme .border-purple-200\/90 {
+.bg-purple-100 {
+  background-color: #FEE2E2 !important;
+}
+
+.bg-purple-950\/40,
+.bg-purple-950\/60 {
+  background-color: rgba(153, 27, 27, 0.3) !important;
+}
+
+.border-purple-800\/50 {
+  border-color: rgba(220, 38, 38, 0.4) !important;
+}
+
+.border-purple-200,
+.border-purple-200\/60,
+.border-purple-200\/80,
+.border-purple-200\/90 {
   border-color: #FECACA !important;
 }
 
-.home-red-theme.dark .bg-purple-50,
-.home-red-theme .dark .bg-purple-50 {
+.border-purple-300 {
+  border-color: #FCA5A5 !important;
+}
+
+.hover\:border-purple-300:hover {
+  border-color: #F87171 !important;
+}
+
+.dark .bg-purple-50 {
   background-color: rgba(220, 38, 38, 0.18) !important;
 }
 
-.home-red-theme.dark .border-purple-200,
-.home-red-theme .dark .border-purple-200 {
+.dark .bg-purple-100 {
+  background-color: rgba(220, 38, 38, 0.28) !important;
+}
+
+.dark .bg-purple-950\/40,
+.dark .bg-purple-950\/60 {
+  background-color: rgba(127, 29, 29, 0.35) !important;
+}
+
+.dark .border-purple-200,
+.dark .border-purple-300 {
   border-color: rgba(220, 38, 38, 0.4) !important;
 }
 
 /* Hover & Group Hover States */
-.home-red-theme .hover\:text-\[\#6D28D9\]:hover,
-.home-red-theme .group-hover\:text-\[\#6D28D9\],
-.home-red-theme .group:hover .group-hover\:text-\[\#6D28D9\] {
+.hover\:text-\[\#6D28D9\]:hover,
+.group-hover\:text-\[\#6D28D9\],
+.group:hover .group-hover\:text-\[\#6D28D9\] {
   color: #DC2626 !important;
 }
 
-.home-red-theme .group-hover\:bg-\[\#6D28D9\],
-.home-red-theme .group:hover .group-hover\:bg-\[\#6D28D9\] {
+.dark .hover\:text-\[\#6D28D9\]:hover,
+.dark .hover\:text-\[\#A78BFA\]:hover,
+.dark .group-hover\:text-\[\#A78BFA\],
+.dark .group:hover .group-hover\:text-\[\#A78BFA\] {
+  color: #EF4444 !important;
+}
+
+.group-hover\:bg-\[\#6D28D9\],
+.group:hover .group-hover\:bg-\[\#6D28D9\] {
   background-color: #DC2626 !important;
   color: #FFFFFF !important;
 }
 
-.home-red-theme .group-hover\:border-\[\#6D28D9\] {
+.dark .group-hover\:bg-\[\#6D28D9\],
+.dark .group:hover .group-hover\:bg-\[\#6D28D9\] {
+  background-color: #EF4444 !important;
+  color: #FFFFFF !important;
+}
+
+.group-hover\:border-\[\#6D28D9\] {
   border-color: #DC2626 !important;
 }
 
 /* Shadow Glows */
-.home-red-theme .shadow-\[3px_3px_0px_0px_rgba\(124\,58\,237\,1\)\] {
+.shadow-\[3px_3px_0px_0px_rgba\(124\,58\,237\,1\)\] {
   box-shadow: 3px 3px 0px 0px rgba(220, 38, 38, 1) !important;
 }
 
-.home-red-theme .shadow-\[2px_2px_0px_0px_\#6D28D9\],
-.home-red-theme .shadow-\[4px_4px_0px_0px_\#6D28D9\] {
+.shadow-\[2px_2px_0px_0px_\#6D28D9\],
+.shadow-\[4px_4px_0px_0px_\#6D28D9\] {
   box-shadow: 3px 3px 0px 0px #DC2626 !important;
 }
 
-.home-red-theme ::selection {
+::selection {
   background: #DC2626 !important;
   color: #FFFFFF !important;
 }

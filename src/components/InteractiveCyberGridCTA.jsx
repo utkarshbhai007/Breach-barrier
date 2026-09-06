@@ -117,12 +117,12 @@ export default function InteractiveCyberGridCTA({
               key={idx}
               className={`border-[0.5px] border-slate-800/60 transition-colors duration-500 relative ${
                 isActive 
-                  ? 'bg-[#6D28D9] border-[#A855F7] shadow-[0_0_15px_rgba(109,40,217,0.8)] z-10' 
-                  : 'bg-transparent hover:bg-[#6D28D9]'
+                  ? 'bg-[#DC2626] border-[#EF4444] shadow-[0_0_15px_rgba(220,38,38,0.8)] z-10' 
+                  : 'bg-transparent hover:bg-[#DC2626]'
               }`}
             >
               {isActive && (
-                <span className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] opacity-90" />
+                <span className="absolute inset-0 bg-gradient-to-br from-[#EF4444] to-[#B91C1C] opacity-90" />
               )}
             </div>
           );
@@ -132,7 +132,7 @@ export default function InteractiveCyberGridCTA({
       {/* 2. Top-Right Corner HUD Stamp */}
       <div className="absolute top-4 right-6 text-[10px] text-slate-500 font-mono hidden sm:flex items-center gap-2 pointer-events-none z-20">
         <span className="w-1.5 h-1.5 bg-[#E2F952] rounded-full animate-ping" />
-        <span>INTERACTIVE_MATRIX // 0x6D28D9</span>
+        <span>INTERACTIVE_MATRIX // 0xDC2626</span>
       </div>
 
       {/* 3. Section Content Layer (Above the interactive grid) */}
@@ -140,7 +140,7 @@ export default function InteractiveCyberGridCTA({
         
         <h2 className="font-brutal text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none drop-shadow-md">
           {title}<br />
-          <span className="text-[#A855F7]">{highlightText}</span>
+          <span className="text-[#EF4444]">{highlightText}</span>
         </h2>
 
         <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed max-w-xl mx-auto font-normal">

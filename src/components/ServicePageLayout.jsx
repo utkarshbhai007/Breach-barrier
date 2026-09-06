@@ -28,8 +28,8 @@ export default function ServicePageLayout({
         {/* Interactive GradientWaves Canvas Background */}
         <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45">
           <GradientWaves
-            horizonColor="#5227FF"
-            waveColor="#A855F7"
+            horizonColor="#DC2626"
+            waveColor="#EF4444"
             crestColor="#FFFFFF"
             speed={0.4}
             amplitude={2.5}

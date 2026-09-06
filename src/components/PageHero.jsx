@@ -17,8 +17,8 @@ export default function PageHero({
       {/* Interactive GradientWaves WebGL Canvas Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none opacity-45">
         <GradientWaves
-          horizonColor="#5227FF"
-          waveColor="#A855F7"
+          horizonColor="#DC2626"
+          waveColor="#EF4444"
           crestColor="#FFFFFF"
           speed={0.4}
           amplitude={2.5}
@@ -48,9 +48,9 @@ export default function PageHero({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D6D0C2] text-xs font-semibold text-[#6D28D9] shadow-xs font-sans tracking-normal"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D6D0C2] text-xs font-semibold text-[#DC2626] shadow-xs font-sans tracking-normal"
           >
-            <span className="w-2 h-2 rounded-full bg-[#6D28D9] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse" />
             <span>{typeof tag === 'string' ? tag.replace(/^\/\/\s*/, '') : tag}</span>
           </motion.div>
         )}
@@ -68,14 +68,14 @@ export default function PageHero({
               />
             )}
             {titleAccent && (
-              <span className="text-[#6D28D9] relative inline-block mt-1">
+              <span className="text-[#DC2626] relative inline-block mt-1">
                 <BlurText
                   text={titleAccent}
                   delay={120}
                   initialDelay={0.36}
                   animateBy="words"
                   direction="top"
-                  className="text-[#6D28D9]"
+                  className="text-[#DC2626]"
                 />
               </span>
             )}
@@ -87,9 +87,9 @@ export default function PageHero({
               {pillars.map((p, idx) => (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#D6D0C2] text-xs font-medium text-slate-700 font-sans tracking-normal shadow-2xs hover:border-[#6D28D9] hover:text-[#6D28D9] transition-all duration-200 cursor-default"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#D6D0C2] text-xs font-medium text-slate-700 font-sans tracking-normal shadow-2xs hover:border-[#DC2626] hover:text-[#DC2626] transition-all duration-200 cursor-default"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6D28D9]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                   <span>{p}</span>
                 </span>
               ))}

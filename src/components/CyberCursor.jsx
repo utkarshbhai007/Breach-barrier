@@ -115,7 +115,7 @@ export default function CyberCursor() {
     <>
       {/* === 1. Digital Ghost Trail (Velocity reactive) === */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9997] w-1.5 h-1.5 bg-[#A855F7]/50"
+        className="fixed top-0 left-0 pointer-events-none z-[9997] w-1.5 h-1.5 bg-[#EF4444]/50"
         animate={{
           x: mousePos.x - 3,
           y: mousePos.y - 3,
@@ -123,7 +123,7 @@ export default function CyberCursor() {
         transition={{ type: "spring", stiffness: 400, damping: 25, mass: 0.2 }}
       />
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9996] w-1 h-1 bg-[#6D28D9]/30"
+        className="fixed top-0 left-0 pointer-events-none z-[9996] w-1 h-1 bg-[#DC2626]/30"
         animate={{
           x: mousePos.x - 2,
           y: mousePos.y - 2,
@@ -145,7 +145,7 @@ export default function CyberCursor() {
           className={`w-2 h-2 transition-colors duration-150 ${
             isHovered
               ? 'bg-[#E2F952] rotate-45 border border-black shadow-[0_0_8px_#E2F952]'
-              : 'bg-[#6D28D9] rounded-none shadow-[0_0_6px_#6D28D9]'
+              : 'bg-[#DC2626] rounded-none shadow-[0_0_6px_#DC2626]'
           }`}
         />
       </motion.div>
@@ -165,7 +165,7 @@ export default function CyberCursor() {
         <div
           className={`w-full h-full border relative transition-all duration-200 ${
             isHovered
-              ? 'border-dashed border-[#6D28D9] bg-[#6D28D9]/10'
+              ? 'border-dashed border-[#DC2626] bg-[#DC2626]/10'
               : 'border-[#0F172A]/40 bg-transparent'
           }`}
         >
@@ -184,7 +184,7 @@ export default function CyberCursor() {
             initial={{ opacity: 0, scale: 0.8, x: 14, y: 14 }}
             animate={{ opacity: 1, scale: 1, x: 20, y: 20 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed top-0 left-0 pointer-events-none z-[10000] px-2 py-0.5 bg-black text-[#E2F952] border border-[#6D28D9] font-mono-code text-[9px] font-black tracking-widest uppercase shadow-[2px_2px_0px_0px_#6D28D9] whitespace-nowrap"
+            className="fixed top-0 left-0 pointer-events-none z-[10000] px-2 py-0.5 bg-black text-[#E2F952] border border-[#DC2626] font-mono-code text-[9px] font-black tracking-widest uppercase shadow-[2px_2px_0px_0px_#DC2626] whitespace-nowrap"
             style={{
               left: mousePos.x,
               top: mousePos.y,
@@ -210,12 +210,12 @@ export default function CyberCursor() {
             }}
           />
 
-          {/* Sonar Ring 2 (Purple) */}
+          {/* Sonar Ring 2 (Cyber Red) */}
           <motion.div
             initial={{ scale: 0.1, opacity: 1 }}
             animate={{ scale: 4.2, opacity: 0 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="fixed pointer-events-none z-[9994] w-12 h-12 border border-[#6D28D9]"
+            className="fixed pointer-events-none z-[9994] w-12 h-12 border border-[#DC2626]"
             style={{
               left: burst.x - 24,
               top: burst.y - 24,
@@ -227,7 +227,7 @@ export default function CyberCursor() {
             initial={{ opacity: 1, y: 0, scale: 0.9 }}
             animate={{ opacity: 0, y: -30, scale: 1.1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed pointer-events-none z-[10001] px-1.5 py-0.5 bg-[#6D28D9] text-white border border-black font-mono-code text-[8px] font-bold shadow-[2px_2px_0px_0px_#000]"
+            className="fixed pointer-events-none z-[10001] px-1.5 py-0.5 bg-[#DC2626] text-white border border-black font-mono-code text-[8px] font-bold shadow-[2px_2px_0px_0px_#000]"
             style={{
               left: burst.x + 12,
               top: burst.y - 18,
