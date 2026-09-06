@@ -98,7 +98,7 @@ export default function SystemStatusSection() {
             </div>
 
             <p className="font-mono-code text-xs text-slate-600 leading-relaxed">
-              Updates on threat intelligence, zero-day CVE advisories, and experiments from the BreachBarrier SOC Lab.
+              Updates on threat intelligence, zero-day CVE advisories, and experiments from the BreachBarrier Security SOC Lab.
             </p>
 
             {/* Subscribe Form */}

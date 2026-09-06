@@ -22,9 +22,9 @@ export default function WhyUsPage() {
       <PageHero
         tag="Comparative Architecture Matrix"
         title="WHY CHOOSE"
-        titleAccent="BREACHBARRIER?"
+        titleAccent="BREACHBARRIER SECURITY?"
         pillars={['Armed Defense', 'Rapid Response', 'Turnkey Efficiency']}
-        description="Compare BreachBarrier's proactive engineering model with traditional passive MSSPs and complex in-house operations. Real telemetry, sub-second quarantine speed, and dedicated Tier-3 engineers."
+        description="Compare BreachBarrier Security's proactive engineering model with traditional passive MSSPs and complex in-house operations. Real telemetry, sub-second quarantine speed, and dedicated Tier-3 engineers."
       />
 
       {/* Comparison Matrix Table */}
@@ -35,7 +35,7 @@ export default function WhyUsPage() {
               <thead>
                 <tr className="border-b border-black dark:border-slate-800 bg-[#0A0A0C] text-white">
                   <th className="p-4 uppercase font-bold tracking-wider">DEFENSE CAPABILITY</th>
-                  <th className="p-4 uppercase font-extrabold tracking-wider text-white bg-[#DC2626] border-x border-[#B91C1C]">BREACHBARRIER</th>
+                  <th className="p-4 uppercase font-extrabold tracking-wider text-white bg-[#DC2626] border-x border-[#B91C1C]">BREACHBARRIER SECURITY</th>
                   <th className="p-4 uppercase font-bold tracking-wider text-slate-400">IN-HOUSE SOC</th>
                   <th className="p-4 uppercase font-bold tracking-wider text-slate-400">PASSIVE MSSP</th>
                 </tr>
@@ -63,7 +63,7 @@ export default function WhyUsPage() {
             <h3 className="font-brutal text-3xl font-black text-black dark:text-white">CCTV OPERATOR VS ARMED GUARDS</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Traditional vendors act like CCTV operators who watch cameras and call to say "Sir, someone is in your shop." 
-              BreachBarrier is the armed response team that detects, rushes in, locks down the infected host, and neutralizes the attacker before you even wake up.
+              BreachBarrier Security is the armed response team that detects, rushes in, locks down the infected host, and neutralizes the attacker before you even wake up.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function WhyUsPage() {
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/10 border border-black/20 text-xs font-semibold text-black font-sans">Smart Prioritization</div>
             <h3 className="font-brutal text-3xl font-black !text-[#0A0A0C]">FIXING THE FRONT DOOR FIRST</h3>
             <p className="text-xs !text-[#0A0A0C] leading-relaxed font-bold">
-              We don't waste your engineering bandwidth on 200 minor low-risk vulnerabilities. We prioritize the exact 5 critical weak points that active ransomware gangs are exploiting in the wild right now.
+              We don't waste your engineering bandwidth on 200 minor low-risk vulnerabilities. We prioritize the exact critical weak points that active ransomware gangs are exploiting in the wild right now.
             </p>
           </div>
         </div>
@@ -81,10 +81,10 @@ export default function WhyUsPage() {
       <section className="bg-white py-16 px-4 sm:px-8 text-center space-y-6">
         <div className="max-w-2xl mx-auto space-y-4">
           <h2 className="font-brutal text-4xl sm:text-5xl font-black text-black uppercase">
-            SEE THE BREACHBARRIER ADVANTAGE LIVE
+            SEE THE BREACHBARRIER SECURITY ADVANTAGE LIVE
           </h2>
           <p className="text-xs text-slate-600">
-            Book an architecture review with Meet Shingore to explore your custom enterprise security blueprint.
+            Book an architecture review with Founder Ravi Makwana to explore your custom enterprise security blueprint.
           </p>
           <div>
             <Link

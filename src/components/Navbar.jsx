@@ -6,11 +6,10 @@ import {
   X, 
   ChevronDown, 
   Shield, 
-  Activity, 
   Bug, 
   AlertOctagon, 
   Scan, 
-  FileCheck,
+  Globe,
   Sun,
   Moon 
 } from 'lucide-react';
@@ -26,44 +25,56 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
   const location = useLocation();
 
-  const servicesList = [
+  const serviceCategories = [
     {
-      title: 'SOC Monitoring (24×7)',
-      path: '/services/soc',
-      desc: '24/7/365 active telemetry & threat triage',
-      icon: Shield
+      categoryName: 'Category 1: Managed Defense (Protect & Respond)',
+      items: [
+        {
+          title: 'SOC & MDR (24×7)',
+          fullTitle: 'Security Operations Center (SOC) & MDR',
+          path: '/services/soc-mdr',
+          desc: 'True 24/7 Threat Hunting & Neutralization',
+          icon: Shield
+        },
+        {
+          title: 'Incident Response & Forensics',
+          fullTitle: 'Incident Response (IR) & Digital Forensics',
+          path: '/services/incident-response',
+          desc: 'Your Digital Fire Department',
+          icon: AlertOctagon
+        },
+      ]
     },
     {
-      title: 'Managed Detection & Response (MDR)',
-      path: '/services/mdr',
-      desc: 'Real-time hunting & automated endpoint isolation',
-      icon: Activity
-    },
-    {
-      title: 'Penetration Testing',
-      path: '/services/pentesting',
-      desc: 'Ethical hacking & offensive red team labs',
-      icon: Bug
-    },
-    {
-      title: 'Incident Response & Forensics',
-      path: '/services/incident-response',
-      desc: 'Rapid emergency containment & RCA',
-      icon: AlertOctagon
-    },
-    {
-      title: 'Vulnerability Management',
-      path: '/services/vulnerability-management',
-      desc: 'Continuous scanning & risk prioritization',
-      icon: Scan
-    },
-    {
-      title: 'Compliance Readiness (ISO/SOC2)',
-      path: '/services/compliance',
-      desc: 'ISO 27001, SOC 2, HIPAA & PIPEDA audit prep',
-      icon: FileCheck
-    },
+      categoryName: 'Category 2: Offensive Security (Test & Prevent)',
+      items: [
+        {
+          title: 'Penetration Testing (VAPT)',
+          fullTitle: 'Penetration Testing (VAPT)',
+          path: '/services/pentesting',
+          desc: 'Find Your Weak Spots Before Hackers Do',
+          icon: Bug
+        },
+        {
+          title: 'Attack Surface Management (ASM)',
+          fullTitle: 'Attack Surface Management (ASM)',
+          path: '/services/asm',
+          desc: 'See Your Business Through an Attacker’s Eyes',
+          icon: Globe
+        },
+        {
+          title: 'Vulnerability Management',
+          fullTitle: 'Vulnerability Management',
+          path: '/services/vulnerability-management',
+          desc: 'Proactive Patching & Risk Prioritization',
+          icon: Scan
+        },
+      ]
+    }
   ];
+
+  // Flat list for mobile menu iteration
+  const allServices = serviceCategories.flatMap(c => c.items);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -93,7 +104,8 @@ export default function Navbar() {
 
   const isServicesActive = location.pathname.startsWith('/services');
 
-  return (    <header className="sticky top-0 z-50 bg-[#EAE7E0]/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md border-b border-[#D6D0C2] dark:border-[#262736] transition-colors duration-200">
+  return (
+    <header className="sticky top-0 z-50 bg-[#EAE7E0]/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md border-b border-[#D6D0C2] dark:border-[#262736] transition-colors duration-200">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2.5">
         
         {/* Brand Logo */}
@@ -103,17 +115,17 @@ export default function Navbar() {
 
         {/* Center Nav */}
         <nav className="hidden md:flex items-center gap-6 text-xs uppercase font-bold tracking-wider text-[#0F172A] dark:text-[#E2E8F0]">
-          <Link to="/" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             HOME
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          <Link to="/about" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/about' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/about" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/about' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             ABOUT
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          <Link to="/why-choose-us" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/why-choose-us' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/why-choose-us" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/why-choose-us' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             WHY US
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
@@ -127,12 +139,12 @@ export default function Navbar() {
           >
             <button
               onClick={() => setServicesDropdown(!servicesDropdown)}
-              className={`cursor-target flex items-center gap-1 transition-colors uppercase font-bold text-xs hover:text-[#6D28D9] dark:hover:text-[#A78BFA] py-1 ${
-                isServicesActive ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''
+              className={`cursor-target flex items-center gap-1 transition-colors uppercase font-bold text-xs hover:text-[#DC2626] dark:hover:text-[#EF4444] py-1 ${
+                isServicesActive ? 'text-[#DC2626] dark:text-[#EF4444]' : ''
               }`}
             >
               <span>SERVICES</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-[#6D28D9] dark:text-[#A78BFA]' : ''}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-[#DC2626] dark:text-[#EF4444]' : ''}`} />
             </button>
 
             {/* Mega Dropdown Panel */}
@@ -143,40 +155,49 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-[#13141D] border border-[#D6D0C2] dark:border-[#27293A] shadow-xl p-3 z-50 rounded-2xl"
+                  className="absolute top-full left-0 mt-2 w-[480px] bg-white dark:bg-[#13141D] border border-[#D6D0C2] dark:border-[#27293A] shadow-2xl p-4 z-50 rounded-2xl"
                 >
-                  <div className="space-y-1">
-                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 py-1.5 border-b border-slate-100 dark:border-slate-800 mb-1 flex items-center justify-between">
+                  <div className="space-y-4">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1 pb-2 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                       <span>CORE CAPABILITIES</span>
-                      <span className="text-[#6D28D9] dark:text-[#A78BFA] font-mono">6 VERTICALS</span>
+                      <span className="text-[#DC2626] dark:text-[#EF4444] font-mono font-bold">5 SERVICES</span>
                     </div>
 
-                    {servicesList.map((s, idx) => {
-                      const Icon = s.icon;
-                      return (
-                        <Link
-                          key={idx}
-                          to={s.path}
-                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50 dark:hover:bg-purple-950/40 transition-colors group cursor-target"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-[#6D28D9] dark:text-[#A78BFA] group-hover:bg-[#6D28D9] group-hover:text-white transition-colors shrink-0">
-                            <Icon className="w-4 h-4" />
-                          </div>
-                          <div className="space-y-0.5">
-                            <div className="text-xs font-bold text-[#0F172A] dark:text-[#F8FAFC] group-hover:text-[#6D28D9] dark:group-hover:text-[#A78BFA] transition-colors leading-tight">
-                              {s.title}
-                            </div>
-                            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-normal leading-snug">
-                              {s.desc}
-                            </div>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                    {serviceCategories.map((cat, cIdx) => (
+                      <div key={cIdx} className="space-y-1.5">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-[#DC2626] dark:text-[#EF4444] px-2.5">
+                          {cat.categoryName}
+                        </div>
+                        <div className="space-y-1">
+                          {cat.items.map((s, idx) => {
+                            const Icon = s.icon;
+                            return (
+                              <Link
+                                key={idx}
+                                to={s.path}
+                                className="flex items-start gap-3 p-2 rounded-xl hover:bg-red-50/70 dark:hover:bg-red-950/30 transition-colors group cursor-target"
+                              >
+                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] group-hover:bg-[#DC2626] group-hover:text-white dark:group-hover:bg-[#EF4444] dark:group-hover:text-black transition-colors shrink-0">
+                                  <Icon className="w-4 h-4" />
+                                </div>
+                                <div className="space-y-0.5">
+                                  <div className="text-xs font-bold text-[#0F172A] dark:text-[#F8FAFC] group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
+                                    {s.fullTitle}
+                                  </div>
+                                  <div className="text-[11px] text-slate-500 dark:text-slate-400 font-normal leading-snug">
+                                    {s.desc}
+                                  </div>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
 
-                    <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800 px-3 py-1.5 flex items-center justify-between text-[11px] bg-slate-50 dark:bg-slate-900/60 rounded-xl">
-                      <span className="text-slate-500 dark:text-slate-400 font-medium">Need custom architecture?</span>
-                      <Link to="/contact" className="text-[#6D28D9] dark:text-[#A78BFA] font-bold hover:underline flex items-center gap-1">
+                    <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800 px-3 py-2 flex items-center justify-between text-[11px] bg-slate-50 dark:bg-slate-900/60 rounded-xl">
+                      <span className="text-slate-500 dark:text-slate-400 font-medium">Need customized security architecture?</span>
+                      <Link to="/contact" className="text-[#DC2626] dark:text-[#EF4444] font-bold hover:underline flex items-center gap-1">
                         <span>Talk to Architect</span>
                         <ArrowUpRight className="w-3 h-3" />
                       </Link>
@@ -188,17 +209,17 @@ export default function Navbar() {
           </div>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          <Link to="/industries" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/industries' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/industries" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/industries' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             INDUSTRIES
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          <Link to="/resources" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/resources' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/resources" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/resources' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             RESOURCES
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          <Link to="/contact" className={`transition-colors hover:text-[#6D28D9] dark:hover:text-[#A78BFA] ${location.pathname === '/contact' ? 'text-[#6D28D9] dark:text-[#A78BFA]' : ''}`}>
+          <Link to="/contact" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/contact' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             CONTACT
           </Link>
         </nav>
@@ -210,18 +231,18 @@ export default function Navbar() {
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="cursor-target w-9 h-9 rounded-xl border border-[#D6D0C2] dark:border-[#2E3145] bg-white/90 dark:bg-[#151722] text-[#0F172A] dark:text-[#E2E8F0] hover:border-[#6D28D9] dark:hover:border-[#8B5CF6] hover:text-[#6D28D9] dark:hover:text-[#A78BFA] flex items-center justify-center transition-all duration-200 shadow-xs group"
+            className="cursor-target w-9 h-9 rounded-xl border border-[#D6D0C2] dark:border-[#2E3145] bg-white/90 dark:bg-[#151722] text-[#0F172A] dark:text-[#E2E8F0] hover:border-[#DC2626] dark:hover:border-[#EF4444] hover:text-[#DC2626] dark:hover:text-[#EF4444] flex items-center justify-center transition-all duration-200 shadow-xs group"
           >
             {theme === 'dark' ? (
               <Sun className="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform duration-300" />
             ) : (
-              <Moon className="w-4 h-4 text-[#6D28D9] group-hover:-rotate-12 transition-transform duration-300" />
+              <Moon className="w-4 h-4 text-[#DC2626] group-hover:-rotate-12 transition-transform duration-300" />
             )}
           </button>
 
           <Link
             to="/contact"
-            className="cursor-target px-4 py-2 bg-[#6D28D9] hover:bg-[#5B21B6] text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
+            className="cursor-target px-4 py-2 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
           >
             <span>BOOK CONSULTATION</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -238,7 +259,7 @@ export default function Navbar() {
             {theme === 'dark' ? (
               <Sun className="w-4 h-4 text-amber-400" />
             ) : (
-              <Moon className="w-4 h-4 text-[#6D28D9]" />
+              <Moon className="w-4 h-4 text-[#DC2626]" />
             )}
           </button>
 
@@ -265,22 +286,22 @@ export default function Navbar() {
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               className="w-full py-2 flex items-center justify-between font-bold text-left"
             >
-              <span>SERVICES</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180 text-[#6D28D9]' : ''}`} />
+              <span>SERVICES (5 CORE SERVICES)</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180 text-[#DC2626]' : ''}`} />
             </button>
 
             {mobileServicesOpen && (
               <div className="pl-3 py-1 space-y-2 bg-slate-50 dark:bg-slate-900/60 rounded-xl p-3 mt-1 border border-slate-100 dark:border-slate-800">
-                {servicesList.map((s, idx) => {
+                {allServices.map((s, idx) => {
                   const Icon = s.icon;
                   return (
                     <Link
                       key={idx}
                       to={s.path}
-                      className="flex items-center gap-2.5 py-1 text-slate-700 dark:text-slate-300 hover:text-[#6D28D9] dark:hover:text-[#A78BFA] font-medium"
+                      className="flex items-center gap-2.5 py-1.5 text-slate-700 dark:text-slate-300 hover:text-[#DC2626] dark:hover:text-[#EF4444] font-medium"
                     >
-                      <Icon className="w-3.5 h-3.5 text-[#6D28D9]" />
-                      <span>{s.title}</span>
+                      <Icon className="w-3.5 h-3.5 text-[#DC2626] dark:text-[#EF4444] shrink-0" />
+                      <span>{s.fullTitle}</span>
                     </Link>
                   );
                 })}
@@ -305,7 +326,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <Moon className="w-3.5 h-3.5 text-[#6D28D9]" />
+                  <Moon className="w-3.5 h-3.5 text-[#DC2626]" />
                   <span>Dark Mode</span>
                 </>
               )}
@@ -313,7 +334,7 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2">
-            <Link to="/contact" className="block w-full py-2.5 bg-[#6D28D9] text-white font-bold text-center rounded-xl">
+            <Link to="/contact" className="block w-full py-2.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-center rounded-xl transition-colors">
               BOOK A FREE CONSULTATION ↗
             </Link>
           </div>

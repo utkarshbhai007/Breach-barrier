@@ -65,7 +65,7 @@ export default function Hero() {
         {/* Centered Subheading / Description with FoldText */}
         <div className="max-w-2xl mx-auto text-center px-2 sm:px-0">
           <FoldText
-            text="Breach Barrier delivers enterprise-grade, 24×7 managed cybersecurity services that help organizations detect, prevent, and respond to cyber threats — while reducing security costs through our expert remote delivery model."
+            text="BreachBarrier Security delivers enterprise-grade, 24×7 managed cybersecurity services that help organizations detect, prevent, and respond to cyber threats — while reducing security costs through our expert remote delivery model."
             splitBy="word"
             hinge="top"
             trigger="mount"

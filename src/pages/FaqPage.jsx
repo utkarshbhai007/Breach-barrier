@@ -37,7 +37,7 @@ export default function FaqPage() {
     },
     {
       q: "7. HOW DOES THE INDIA DELIVERY CENTER + CANADIAN OPERATIONS WORK?",
-      a: "BreachBarrier combines top-tier cybersecurity engineers at our 24/7 Pune SOC facility with Canadian client management in Toronto and Vancouver led by Meet Shingore. This model gives Canadian SMBs enterprise-grade Tier-3 SOC talent at 80% lower cost than building in-house teams.",
+      a: "BreachBarrier Security combines top-tier cybersecurity engineers at our 24/7 delivery hub with international client management led by Founder Ravi Makwana. This model gives enterprises Tier-3 SOC and offensive security talent at up to 80% lower cost than building in-house teams.",
       analogy: "Global Advantage: Real-time night and day rotation across time zones ensuring rapid guaranteed response."
     }
   ];
@@ -53,7 +53,7 @@ export default function FaqPage() {
         title="KNOWLEDGE"
         titleAccent="BASE."
         pillars={['Plain English', 'Real-World Analogies', 'Zero Jargon']}
-        description="Plain-English explanations and real-world analogies on how modern 24/7 SOC, MDR, Forensics, Penetration Testing, and Compliance work."
+        description="Plain-English explanations and real-world analogies on how modern 24/7 SOC, MDR, Forensics, Penetration Testing, and Vulnerability Management work."
       />
 
       {/* FAQ Accordion List */}
@@ -81,8 +81,8 @@ export default function FaqPage() {
                 {isOpen && (
                   <div className="px-6 pb-6 pt-2 border-t border-slate-200 text-xs text-slate-700 space-y-3 font-mono leading-relaxed bg-[#F2EFE9]">
                     <p>{faq.a}</p>
-                    <div className="p-3 bg-white border border-[#7C3AED] text-[11px] text-black">
-                      <strong className="text-[#7C3AED] font-bold">REAL-LIFE ANALOGY: </strong>
+                    <div className="p-3 bg-white border border-[#DC2626] text-[11px] text-black">
+                      <strong className="text-[#DC2626] font-bold">REAL-LIFE ANALOGY: </strong>
                       {faq.analogy}
                     </div>
                   </div>
@@ -100,14 +100,14 @@ export default function FaqPage() {
             HAVE SPECIFIC INFRASTRUCTURE QUESTIONS?
           </h2>
           <p className="text-xs text-slate-600">
-            Talk directly to Technical Lead Meet Shingore and get an exact technical assessment for your environment.
+            Talk directly to Founder Ravi Makwana and get an exact technical assessment for your environment.
           </p>
           <div>
             <Link
               to="/contact"
               className="brutal-btn-black px-8 py-4 text-xs inline-flex items-center gap-2 cursor-pointer"
             >
-              <span>ASK MEET SHINGORE DIRECTLY</span>
+              <span>ASK RAVI MAKWANA DIRECTLY</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>

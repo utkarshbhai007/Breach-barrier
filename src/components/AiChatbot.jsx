@@ -9,7 +9,7 @@ export default function AiChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: "👋 Hello! I am BreachBarrier Cyber Assistant. Ask me anything about 24/7 SOC monitoring, CrowdStrike MDR, penetration testing, compliance, or Meet Shingore's security model!",
+      text: "👋 Hello! I am BreachBarrier Security Cyber Assistant. Ask me anything about our 5 core services: 24/7 SOC & MDR, Incident Response, Penetration Testing, Attack Surface Management, Vulnerability Management, or Founder Ravi Makwana's vision!",
       time: 'LIVE'
     }
   ]);
@@ -23,10 +23,10 @@ export default function AiChatbot() {
   }, [messages, isOpen, isTyping]);
 
   const quickPrompts = [
+    "What are BreachBarrier's 5 core services?",
     "Difference between SOC and MDR?",
-    "How does the ER + Forensics model work?",
-    "Why fix the front door before squeaky hinge?",
-    "How does BreachBarrier compare to in-house teams?"
+    "How does ASM discover external assets?",
+    "Who is Founder Ravi Makwana?"
   ];
 
   const handleSend = (textToSend) => {
@@ -41,21 +41,21 @@ export default function AiChatbot() {
 
     // Generate Automated Bot Response
     setTimeout(() => {
-      let responseText = "BreachBarrier delivers 24/7 Security Operations Center (SOC) monitoring, MDR, penetration testing, and continuous compliance readiness under Technical Lead Meet Shingore.";
+      let responseText = "BreachBarrier Security delivers enterprise-grade cybersecurity across 2 categories and 5 core services: SOC & MDR, Incident Response & Forensics, Penetration Testing (VAPT), Attack Surface Management (ASM), and Vulnerability Management.";
 
       const q = query.toLowerCase();
-      if (q.includes('soc') && q.includes('mdr')) {
-        responseText = "As Meet Shingore explains: A SOC is the 24/7 control room watching cameras so your mall isn't unwatched. MDR is the hired armed security force that catches the thief and locks the doors in sub-seconds without waiting for you to react.";
-      } else if (q.includes('er') || q.includes('forensic') || q.includes('hospital')) {
-        responseText = "Incident Response & Forensics works like an ER + Detective team: First, our ER stops the bleeding by isolating the infected computer. Then our forensic detectives investigate how the thief got in so the back door is sealed permanently.";
-      } else if (q.includes('front door') || q.includes('hinge') || q.includes('vulnerability')) {
-        responseText = "If you have a broken front door and a squeaky gate hinge, you fix the broken front door first because real thieves actively exploit it. We prioritize the exact 5 active CVEs hackers are targeting rather than wasting months on 200 low-risk items.";
+      if (q.includes('5 core') || q.includes('service') || q.includes('category') || q.includes('offer')) {
+        responseText = "BreachBarrier Security delivers 5 core services across 2 categories:\n\n• Category 1: Managed Defense (Protect & Respond):\n  1. Security Operations Center (SOC) & MDR\n  2. Incident Response (IR) & Digital Forensics\n\n• Category 2: Offensive Security (Test & Prevent):\n  3. Penetration Testing (VAPT)\n  4. Attack Surface Management (ASM)\n  5. Vulnerability Management";
+      } else if (q.includes('soc') && q.includes('mdr')) {
+        responseText = "As Founder Ravi Makwana explains: SOC is the 24/7 control room constantly watching the monitors across your enterprise. MDR is the specialized armed response force that catches intruders and quarantines threats in sub-seconds automatically.";
+      } else if (q.includes('asm') || q.includes('attack surface') || q.includes('external asset')) {
+        responseText = "Attack Surface Management (ASM) provides continuous external asset discovery, dark web credential leak surveillance, shadow IT detection, and real-time exposure alerts — showing your business through an attacker's eyes.";
+      } else if (q.includes('ravi') || q.includes('founder') || q.includes('makwana') || q.includes('who is')) {
+        responseText = "Ravi Makwana is the Founder & Principal Security Architect of BreachBarrier Security. He is a Certified Penetration Tester (CPTE), Network Administrator, ranked in the top 3% on TryHackMe, active HackTheBox CTF Player, and holds Ethical Hacking Essentials (EHE) certification.";
       } else if (q.includes('save') || q.includes('cost') || q.includes('price') || q.includes('pricing') || q.includes('in-house')) {
-        responseText = "Building an in-house SOC requires hiring, training, and retaining 5+ dedicated security engineers around the clock plus licensing overhead. BreachBarrier delivers turnkey, enterprise-grade 24×7 protection with customized Statements of Work (SOW) tailored to your organization's exact infrastructure size.";
-      } else if (q.includes('meet') || q.includes('team') || q.includes('shingore')) {
-        responseText = "Technical Lead Meet Shingore leads BreachBarrier's engineering and operations from our Pune SOC hub, delivering enterprise-grade protection directly to Canadian & international clients.";
-      } else if (q.includes('compliance') || q.includes('iso') || q.includes('soc 2')) {
-        responseText = "Like keeping car papers organized in the glovebox for a surprise police checkpoint, our automated Vanta evidence collection keeps your company 100% audit-ready 365 days a year.";
+        responseText = "Building an in-house SOC requires hiring, training, and retaining 5+ dedicated security engineers around the clock plus licensing overhead. BreachBarrier Security delivers turnkey, enterprise-grade 24×7 protection with customized Statements of Work (SOW) tailored to your organization's exact infrastructure size at up to 80% lower cost.";
+      } else if (q.includes('ir') || q.includes('incident') || q.includes('forensic')) {
+        responseText = "Our Incident Response (IR) & Digital Forensics acts as your digital fire department: rapid zero-day retainer contracts, sub-minute ransomware containment, and court-admissible root-cause forensics.";
       }
 
       const botMsg = { sender: 'bot', text: responseText, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
@@ -78,7 +78,7 @@ export default function AiChatbot() {
           className="flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A0A0C] text-white border border-black shadow-[3px_3px_0px_0px_rgba(220,38,38,1)] cursor-pointer text-[11px] sm:text-xs font-bold uppercase tracking-wider"
         >
           <span className="w-2 h-2 rounded-full bg-[#E2F952] animate-pulse" />
-          <span>&gt; ASK BREACHBARRIER AI_</span>
+          <span>&gt; ASK BREACHBARRIER SECURITY AI_</span>
         </motion.button>
       )}
 
@@ -98,7 +98,7 @@ export default function AiChatbot() {
                 <span className="text-[#E2F952] font-black">&gt;</span>
                 <div>
                   <h4 className="text-xs font-black tracking-wider uppercase flex items-center gap-1.5">
-                    <span>BREACHBARRIER_AI</span>
+                    <span>BREACHBARRIER_SECURITY_AI</span>
                     <span className="text-[10px] text-[#E2F952] font-normal">//V2</span>
                   </h4>
                   <div className="text-[9px] text-emerald-400 font-bold">
@@ -170,7 +170,7 @@ export default function AiChatbot() {
               />
               <button
                 onClick={() => handleSend()}
-                className="brutal-btn-purple p-2 text-xs cursor-pointer"
+                className="p-2 text-xs bg-[#DC2626] hover:bg-[#B91C1C] text-white border border-black cursor-pointer transition-colors shadow-xs"
               >
                 <Send className="w-4 h-4" />
               </button>

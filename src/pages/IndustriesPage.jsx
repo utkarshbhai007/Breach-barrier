@@ -203,7 +203,7 @@ export default function IndustriesPage() {
         title="INDUSTRIES WE"
         titleAccent="SERVE."
         pillars={['Healthcare', 'FinTech', 'Cloud SaaS', 'Manufacturing']}
-        description="From healthcare and high-growth SaaS to critical manufacturing and financial services, BreachBarrier engineers custom-tailored cybersecurity defense matrices for each industry's regulatory and threat landscape."
+        description="From healthcare and high-growth SaaS to critical manufacturing and financial services, BreachBarrier Security engineers custom-tailored cybersecurity defense matrices for each industry's regulatory and threat landscape."
       />
 
       {/* 2. Key Industry Matrix Metrics Strip */}
@@ -417,7 +417,7 @@ export default function IndustriesPage() {
                 <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
                     <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                    <span><strong className="text-[#0F172A] dark:text-white">BreachBarrier Defense:</strong> {activeInd.defense}</span>
+                    <span><strong className="text-[#0F172A] dark:text-white">BreachBarrier Security Defense:</strong> {activeInd.defense}</span>
                   </div>
 
                   <Link

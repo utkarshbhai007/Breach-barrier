@@ -19,12 +19,11 @@ import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
 
 // Service Pages
-import SocService from './pages/services/SocService';
-import MdrService from './pages/services/MdrService';
+import SocMdrService from './pages/services/SocMdrService';
 import PentestService from './pages/services/PentestService';
 import ForensicsService from './pages/services/ForensicsService';
+import AsmService from './pages/services/AsmService';
 import VulnService from './pages/services/VulnService';
-import ComplianceService from './pages/services/ComplianceService';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,12 +44,18 @@ function AnimatedRoutes() {
         <Route path="/why-choose-us" element={<PageTransition><WhyUsPage /></PageTransition>} />
         <Route path="/faq" element={<PageTransition><FaqPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
-        <Route path="/services/soc" element={<PageTransition><SocService /></PageTransition>} />
-        <Route path="/services/mdr" element={<PageTransition><MdrService /></PageTransition>} />
-        <Route path="/services/pentesting" element={<PageTransition><PentestService /></PageTransition>} />
+        
+        {/* Core 5 Services */}
+        <Route path="/services/soc-mdr" element={<PageTransition><SocMdrService /></PageTransition>} />
+        <Route path="/services/soc" element={<Navigate to="/services/soc-mdr" replace />} />
+        <Route path="/services/mdr" element={<Navigate to="/services/soc-mdr" replace />} />
+        
         <Route path="/services/incident-response" element={<PageTransition><ForensicsService /></PageTransition>} />
+        <Route path="/services/pentesting" element={<PageTransition><PentestService /></PageTransition>} />
+        <Route path="/services/asm" element={<PageTransition><AsmService /></PageTransition>} />
+        <Route path="/services/compliance" element={<Navigate to="/services/asm" replace />} />
         <Route path="/services/vulnerability-management" element={<PageTransition><VulnService /></PageTransition>} />
-        <Route path="/services/compliance" element={<PageTransition><ComplianceService /></PageTransition>} />
+        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>

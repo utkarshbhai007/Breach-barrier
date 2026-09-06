@@ -65,7 +65,7 @@ export default function ProcessPage() {
         title="ENGINEERED"
         titleAccent="DEPLOYMENT."
         pillars={['Discover', 'Architect', 'Deploy', 'Protect']}
-        description="From initial threat discovery to 24/7 continuous SOC interception in less than 3 weeks. A structured, non-disruptive onboarding framework engineered by Technical Lead Meet Shingore."
+        description="From initial threat discovery to 24/7 continuous SOC interception in less than 3 weeks. A structured, non-disruptive onboarding framework engineered by Founder Ravi Makwana."
       />
 
       {/* 6 Steps Grid */}

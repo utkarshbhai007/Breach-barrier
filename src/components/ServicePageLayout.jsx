@@ -146,15 +146,15 @@ export default function ServicePageLayout({
           <div className="max-w-[1400px] mx-auto">
             <div className="border border-black bg-white p-6 sm:p-7 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#6D28D9] uppercase font-sans">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#DC2626] dark:text-[#EF4444] uppercase font-sans">
                   <span>💡 How It Works • Real-World Analogy</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-800 font-sans italic font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-sans italic font-medium leading-relaxed">
                   "{analogy}"
                 </p>
               </div>
-              <div className="shrink-0 text-xs font-semibold text-slate-500 font-sans">
-                Meet Shingore Philosophy
+              <div className="shrink-0 text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans">
+                Ravi Makwana Philosophy
               </div>
             </div>
           </div>
@@ -282,8 +282,8 @@ export default function ServicePageLayout({
       {/* 7. Closing Interactive Cyber Grid CTA (Photo 2 Reference) */}
       <InteractiveCyberGridCTA
         title={cta ? cta : "READY TO DEPLOY"}
-        highlightText={title ? title.toUpperCase() : "BREACHBARRIER?"}
-        subtitle="Talk directly to Technical Lead Meet Shingore and our certified SOC engineers. Free initial architecture scope consultation."
+        highlightText={title ? title.toUpperCase() : "BREACHBARRIER SECURITY"}
+        subtitle="Talk directly to Founder Ravi Makwana and our certified security engineers. Free initial architecture scope consultation."
         buttonText="BOOK A FREE CONSULTATION"
         buttonLink="/contact"
       />

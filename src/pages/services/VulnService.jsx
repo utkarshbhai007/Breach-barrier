@@ -1,30 +1,55 @@
 import React from 'react';
 import ServicePageLayout from '../../components/ServicePageLayout';
-import { Scan, ShieldCheck, Filter, FileText, AlertTriangle, Layers } from 'lucide-react';
+import { Scan, ShieldAlert, FileCheck, Layers, Filter, CheckCircle2 } from 'lucide-react';
 
 export default function VulnService() {
   return (
     <ServicePageLayout
       title="Vulnerability Management"
-      tagline="CONTINUOUS SCANNING, PRIORITIZED FIXES"
-      subtitle="Continuous scanning finds new weak points as they appear, and we fix the ones real attackers are actually exploiting first — not just the longest list."
-      analogy="Fixing the broken front door lock that real thieves are currently breaking into, before spending time polishing squeaky gate hinges."
+      tagline="PROACTIVE PATCHING & RISK PRIORITIZATION"
+      subtitle="Continuous automated internal and cloud scanning paired with threat intelligence to prioritize and patch the exact vulnerabilities that adversaries are actively exploiting."
+      analogy="Continuously inspecting every lock and window in your high-rise, and immediately fixing the compromised front door lock that burglars are actively targeting before worrying about scuffed paint."
       serviceCode="VULN_05"
       features={[
-        { icon: <Scan className="w-5 h-5" />, title: 'Regular Vulnerability Scanning', desc: 'Automated weekly and monthly deep scans across all cloud infrastructure, IP ranges, and internal servers.' },
-        { icon: <Filter className="w-5 h-5" />, title: 'Threat-Informed Risk Prioritization', desc: 'Filtering out theoretical noise to prioritize vulnerabilities with active exploits in the wild (CISA KEV).' },
-        { icon: <Layers className="w-5 h-5" />, title: 'Patch Management Recommendations', desc: 'Actionable patch prioritization matrices and deployment roadmaps provided directly to your DevOps team.' },
-        { icon: <AlertTriangle className="w-5 h-5" />, title: 'External Attack Surface Mapping', desc: 'Continuous discovery of rogue domains, exposed databases, orphaned subdomains, and shadow IT.' },
-        { icon: <FileText className="w-5 h-5" />, title: 'Executive Security Reporting', desc: 'Clear trend analysis charts showing vulnerability dwell time reduction for executive leadership and board.' },
-        { icon: <ShieldCheck className="w-5 h-5" />, title: 'Cloud Configuration Audits (CSPM)', desc: 'Automated detection of misconfigured AWS S3 buckets, permissive security groups, and IAM overprivilege.' },
+        { 
+          icon: <Scan className="w-5 h-5" />, 
+          title: 'Automated Internal & Cloud Scanning', 
+          desc: 'Scheduled automated vulnerability scans across on-premise servers, cloud workloads (AWS/Azure/GCP), containers, and corporate workstations.' 
+        },
+        { 
+          icon: <Filter className="w-5 h-5" />, 
+          title: 'Risk-Based Patch Prioritization', 
+          desc: 'Filtering out theoretical noise to prioritize vulnerabilities with active weaponized exploits in the wild (CISA KEV), reducing developer patching fatigue.' 
+        },
+        { 
+          icon: <FileCheck className="w-5 h-5" />, 
+          title: 'Compliance-Driven Vulnerability Tracking', 
+          desc: 'Continuous SLA monitoring and historical trend tracking to satisfy strict vulnerability remediation windows required by ISO 27001, SOC 2, HIPAA, and PCI-DSS.' 
+        },
+        { 
+          icon: <Layers className="w-5 h-5" />, 
+          title: 'DevOps & CI/CD Pipeline Integration', 
+          desc: 'Automated software composition analysis (SCA) and container image scanning integrated directly into GitHub, GitLab, and CI/CD deployment pipelines.' 
+        },
+        { 
+          icon: <ShieldAlert className="w-5 h-5" />, 
+          title: 'Zero-Day Vulnerability Advisory', 
+          desc: 'Emergency notifications and temporary mitigation workarounds issued within hours when high-impact zero-day CVEs threaten your tech stack.' 
+        },
+        { 
+          icon: <CheckCircle2 className="w-5 h-5" />, 
+          title: 'Patch Verification Auditing', 
+          desc: 'Automatic post-patch rescan verification to confirm that updates were deployed properly and vulnerable libraries were completely expunged.' 
+        },
       ]}
       benefits={[
-        'Reduce mean time to remediate (MTTR) critical flaws from months to days',
-        'Stop wasting developer hours on zero-impact low-risk vulnerabilities',
-        'Continuous compliance proof for SOC 2, ISO 27001, and cyber insurance renewal',
-        'Continuous visibility over newly discovered zero-day CVEs impacting your tech stack',
+        'Automated Internal & Cloud Scanning across all environments',
+        'Risk-Based Patch Prioritization targeting weaponized CVEs first',
+        'Compliance-driven Vulnerability Tracking for audit readiness',
+        'Dramatic reduction in Mean Time to Remediate (MTTR) critical flaws',
+        'Clear developer-ready patch guidance without scanner noise',
       ]}
-      tools={['Nessus Professional', 'FortiGuard Threat Intel', 'Trend Micro', 'Qualys VMDR', 'OpenVAS', 'Tenable.io']}
+      tools={['Nessus Professional', 'Qualys VMDR', 'Tenable.io', 'OpenVAS', 'Trivy Container Scanner', 'FortiGuard Threat Intel', 'CISA KEV Feeds']}
       cta="STREAMLINE VULNERABILITY MANAGEMENT"
     />
   );
