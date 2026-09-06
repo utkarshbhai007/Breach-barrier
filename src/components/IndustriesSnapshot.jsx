@@ -130,7 +130,7 @@ export default function IndustriesSnapshot() {
               Industries We Serve Snapshot • 8 Verticals
             </span>
           </div>
-          <Link to="/industries" className="text-xs text-[#6D28D9] font-bold hover:underline flex items-center gap-1">
+          <Link to="/industries" className="text-xs text-[#DC2626] font-bold hover:underline flex items-center gap-1">
             <span>VIEW ALL INDUSTRIES</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
@@ -144,7 +144,7 @@ export default function IndustriesSnapshot() {
               <Link
                 key={idx}
                 to={ind.path}
-                className={`cursor-target group relative bg-white border border-slate-200/90 rounded-[22px] p-4.5 sm:p-5 flex flex-col justify-between space-y-3.5 hover:shadow-xl hover:border-[#6D28D9] hover:-translate-y-1 transition-all duration-300 overflow-hidden ${ind.colSpan}`}
+                className={`cursor-target group relative bg-white dark:bg-[#13141F] border border-slate-200/90 dark:border-[#27293D] rounded-[22px] p-4.5 sm:p-5 flex flex-col justify-between space-y-3.5 hover:shadow-xl hover:border-[#DC2626] dark:hover:border-[#DC2626] hover:-translate-y-1 transition-all duration-300 overflow-hidden ${ind.colSpan}`}
               >
                 {/* Background Image Layer */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
@@ -153,42 +153,42 @@ export default function IndustriesSnapshot() {
                     alt={ind.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/75 backdrop-blur-[1px]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/75 dark:from-[#13141F] dark:via-[#13141F]/94 dark:to-[#13141F]/75 backdrop-blur-[1px]" />
                 </div>
 
                 <div className="relative z-10 space-y-2.5">
                   {/* Top Bar: Domain Icon in Rounded Box + Circular Arrow */}
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-purple-50/80 border border-purple-100 flex items-center justify-center text-[#6D28D9] group-hover:bg-[#6D28D9] group-hover:text-white group-hover:border-[#6D28D9] transition-all duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-red-50/80 dark:bg-red-950/40 border border-red-100 dark:border-red-900/40 flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] group-hover:bg-[#DC2626] group-hover:text-white group-hover:border-[#DC2626] transition-all duration-300">
                       <Icon className="w-5 h-5 stroke-[1.8]" />
                     </div>
 
-                    <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:bg-[#6D28D9] group-hover:text-white group-hover:border-[#6D28D9] transition-all duration-300">
+                    <div className="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-300 group-hover:bg-[#DC2626] group-hover:text-white group-hover:border-[#DC2626] transition-all duration-300">
                       <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
 
                   {/* Title, Category & Description */}
                   <div className="space-y-1">
-                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A] tracking-tight group-hover:text-[#6D28D9] transition-colors leading-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
                       {ind.title}
                     </h3>
-                    <div className="text-[10px] font-bold text-[#6D28D9] uppercase tracking-wider">
+                    <div className="text-[10px] font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider">
                       {ind.category}
                     </div>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal pt-0.5 line-clamp-2">
+                    <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-0.5 line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Divider & Tag Badges */}
-                <div className="relative z-10 pt-2.5 border-t border-slate-200/70 flex items-center justify-between">
+                <div className="relative z-10 pt-2.5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
                   <div className="flex flex-wrap gap-1">
                     {ind.chips.map((chip, cIdx) => (
                       <span
                         key={cIdx}
-                        className="px-2 py-0.5 text-[9px] font-bold tracking-wider text-slate-600 bg-white/80 rounded-full border border-slate-200/80 uppercase group-hover:border-slate-300 transition-colors"
+                        className="px-2 py-0.5 text-[9px] font-bold tracking-wider text-slate-600 dark:text-slate-300 bg-white/80 dark:bg-slate-800/80 rounded-full border border-slate-200/80 dark:border-slate-700/80 uppercase group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors"
                       >
                         {chip}
                       </span>
@@ -211,7 +211,7 @@ export default function IndustriesSnapshot() {
               <Link
                 key={idx}
                 to={ind.path}
-                className={`cursor-target group relative bg-white border border-slate-200/90 rounded-[22px] p-4 sm:p-4.5 flex flex-col justify-between space-y-3 hover:shadow-xl hover:border-[#6D28D9] hover:-translate-y-1 transition-all duration-300 overflow-hidden ${ind.colSpan}`}
+                className={`cursor-target group relative bg-white dark:bg-[#13141F] border border-slate-200/90 dark:border-[#27293D] rounded-[22px] p-4 sm:p-4.5 flex flex-col justify-between space-y-3 hover:shadow-xl hover:border-[#DC2626] dark:hover:border-[#DC2626] hover:-translate-y-1 transition-all duration-300 overflow-hidden ${ind.colSpan}`}
               >
                 {/* Background Image Layer */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
@@ -220,42 +220,42 @@ export default function IndustriesSnapshot() {
                     alt={ind.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/75 backdrop-blur-[1px]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/75 dark:from-[#13141F] dark:via-[#13141F]/94 dark:to-[#13141F]/75 backdrop-blur-[1px]" />
                 </div>
 
                 <div className="relative z-10 space-y-2">
                   {/* Top Bar: Domain Icon in Rounded Box + Circular Arrow */}
                   <div className="flex items-center justify-between">
-                    <div className="w-9 h-9 rounded-xl bg-purple-50/80 border border-purple-100 flex items-center justify-center text-[#6D28D9] group-hover:bg-[#6D28D9] group-hover:text-white group-hover:border-[#6D28D9] transition-all duration-300">
+                    <div className="w-9 h-9 rounded-xl bg-red-50/80 dark:bg-red-950/40 border border-red-100 dark:border-red-900/40 flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] group-hover:bg-[#DC2626] group-hover:text-white group-hover:border-[#DC2626] transition-all duration-300">
                       <Icon className="w-4.5 h-4.5 stroke-[1.8]" />
                     </div>
 
-                    <div className="w-6 h-6 rounded-full bg-slate-100 border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:bg-[#6D28D9] group-hover:text-white group-hover:border-[#6D28D9] transition-all duration-300">
+                    <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-300 group-hover:bg-[#DC2626] group-hover:text-white group-hover:border-[#DC2626] transition-all duration-300">
                       <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
 
                   {/* Title, Category & Description */}
                   <div className="space-y-0.5">
-                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] tracking-tight group-hover:text-[#6D28D9] transition-colors leading-tight">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
                       {ind.title}
                     </h3>
-                    <div className="text-[9.5px] font-bold text-[#6D28D9] uppercase tracking-wider truncate">
+                    <div className="text-[9.5px] font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider truncate">
                       {ind.category}
                     </div>
-                    <p className="text-[10.5px] text-slate-600 leading-snug font-normal line-clamp-2">
+                    <p className="text-[10.5px] text-slate-600 dark:text-slate-300 leading-snug font-normal line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Divider & Tag Badges */}
-                <div className="relative z-10 pt-2 border-t border-slate-200/70">
+                <div className="relative z-10 pt-2 border-t border-slate-200/70 dark:border-slate-800">
                   <div className="flex flex-wrap gap-1">
                     {ind.chips.map((chip, cIdx) => (
                       <span
                         key={cIdx}
-                        className="px-1.5 py-0.5 text-[8.5px] font-bold tracking-wider text-slate-600 bg-white/80 rounded-full border border-slate-200/80 uppercase group-hover:border-slate-300 transition-colors"
+                        className="px-1.5 py-0.5 text-[8.5px] font-bold tracking-wider text-slate-600 dark:text-slate-300 bg-white/80 dark:bg-slate-800/80 rounded-full border border-slate-200/80 dark:border-slate-700/80 uppercase group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors"
                       >
                         {chip}
                       </span>

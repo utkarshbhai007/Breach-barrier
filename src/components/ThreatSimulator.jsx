@@ -202,8 +202,8 @@ export default function ThreatSimulator() {
                 onClick={() => runSimulation(key)}
                 className={`cursor-target group relative text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 flex flex-col justify-between space-y-3 overflow-hidden ${
                   isSelected
-                    ? 'bg-white border-[#6D28D9] shadow-md ring-2 ring-[#6D28D9]/20'
-                    : 'bg-white/90 border-slate-200 hover:border-slate-300 hover:bg-white'
+                    ? 'bg-white dark:bg-[#151624] border-[#DC2626] shadow-md ring-2 ring-[#DC2626]/20'
+                    : 'bg-white/90 dark:bg-[#13141D] border-slate-200 dark:border-[#27293D] hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-[#181926]'
                 }`}
               >
                 {/* Background Image Layer */}
@@ -213,36 +213,36 @@ export default function ThreatSimulator() {
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/70 dark:from-[#13141D] dark:via-[#13141D]/90 dark:to-[#13141D]/70" />
                 </div>
 
                 <div className="relative z-10 space-y-2">
                   <div className="flex items-center justify-between">
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                      isSelected ? 'bg-[#6D28D9] text-white' : 'bg-purple-50 text-[#6D28D9] border border-purple-200/80'
+                      isSelected ? 'bg-[#DC2626] text-white' : 'bg-red-50 dark:bg-red-950/40 text-[#DC2626] dark:text-[#EF4444] border border-red-200/80 dark:border-red-900/40'
                     }`}>
                       <Icon className="w-4 h-4" />
                     </div>
                     {isSelected && (
-                      <span className="px-2 py-0.5 text-[10px] font-bold text-[#6D28D9] bg-purple-50 rounded-full border border-purple-200">
+                      <span className="px-2 py-0.5 text-[10px] font-bold text-[#DC2626] dark:text-[#EF4444] bg-red-50 dark:bg-red-950/50 rounded-full border border-red-200 dark:border-red-900/50">
                         {isRunning ? 'SIMULATING...' : 'ACTIVE SCENARIO'}
                       </span>
                     )}
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-bold text-[#0F172A] leading-tight">
+                    <h3 className="text-sm font-bold text-[#0F172A] dark:text-white leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] text-slate-500 pt-0.5 line-clamp-1">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 pt-0.5 line-clamp-1">
                       {item.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <div className="relative z-10 pt-2 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-[#6D28D9]">
+                <div className="relative z-10 pt-2 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-[#DC2626] dark:text-[#EF4444]">
                   <span className="flex items-center gap-1.5 text-[11px]">
-                    <Play className={`w-3 h-3 ${isSelected && isRunning ? 'animate-spin' : 'fill-[#6D28D9]'}`} />
+                    <Play className={`w-3 h-3 ${isSelected && isRunning ? 'animate-spin' : 'fill-[#DC2626] dark:fill-[#EF4444]'}`} />
                     <span>{isSelected && isRunning ? 'Containing Threat...' : 'Simulate Attack'}</span>
                   </span>
                   <span className="text-[10px] text-slate-400 font-mono">avg {item.timeToContain}</span>
@@ -253,19 +253,19 @@ export default function ThreatSimulator() {
         </div>
 
         {/* Clean Live Containment Flow Container */}
-        <div className="bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+        <div className="bg-white dark:bg-[#13141D] border border-slate-200/90 dark:border-[#27293D] rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
           
           {/* Top Control Strip */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
             <div className="space-y-0.5">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[#6D28D9]" />
-                <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
+                <Shield className="w-4 h-4 text-[#DC2626] dark:text-[#EF4444]" />
+                <span className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider">
                   Automated Defense Pipeline
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">({current.target})</span>
               </div>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 Watching telemetry signals, isolating host, and securing credentials in real time.
               </p>
             </div>
@@ -273,7 +273,7 @@ export default function ThreatSimulator() {
             <button
               onClick={() => runSimulation(selectedAttack)}
               disabled={isRunning}
-              className="cursor-target shrink-0 px-4 py-2 bg-[#6D28D9] hover:bg-[#5B21B6] disabled:opacity-50 text-white text-xs font-bold rounded-xl flex items-center gap-2 transition-all shadow-xs"
+              className="cursor-target shrink-0 px-4 py-2 bg-[#DC2626] hover:bg-[#B91C1C] disabled:opacity-50 text-white text-xs font-bold rounded-xl flex items-center gap-2 transition-all shadow-xs"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isRunning ? 'animate-spin' : ''}`} />
               <span>{isRunning ? 'Running Defense...' : 'Re-Run Simulation'}</span>
@@ -291,10 +291,10 @@ export default function ThreatSimulator() {
                   key={idx}
                   className={`p-4 rounded-xl border transition-all duration-300 flex flex-col justify-between space-y-3 ${
                     isCurrent && isRunning
-                      ? 'bg-purple-50/80 border-[#6D28D9] shadow-sm'
+                      ? 'bg-red-50/80 dark:bg-red-950/40 border-[#DC2626] shadow-sm'
                       : isPassed
-                      ? 'bg-[#F8FAFC] border-slate-200'
-                      : 'bg-slate-50/50 border-slate-100 opacity-40'
+                      ? 'bg-[#F8FAFC] dark:bg-[#181926] border-slate-200 dark:border-slate-800'
+                      : 'bg-slate-50/50 dark:bg-[#141520]/60 border-slate-100 dark:border-slate-800/60 opacity-40'
                   }`}
                 >
                   <div className="space-y-2">
@@ -303,31 +303,31 @@ export default function ThreatSimulator() {
                       <span className="text-[10px] font-bold text-slate-400">
                         STEP 0{idx + 1}
                       </span>
-                      <span className="text-[10px] font-mono font-bold text-[#6D28D9]">
+                      <span className="text-[10px] font-mono font-bold text-[#DC2626] dark:text-[#EF4444]">
                         +{step.time}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-xs font-bold text-[#0F172A] leading-tight">
+                    <h4 className="text-xs font-bold text-[#0F172A] dark:text-white leading-tight">
                       {step.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-[11px] text-slate-600 leading-snug font-normal">
+                    <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug font-normal">
                       {step.desc}
                     </p>
                   </div>
 
                   {/* Status Footer */}
-                  <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between">
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500">
+                  <div className="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       {step.status}
                     </span>
                     {isPassed ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                     ) : (
-                      <div className="w-3 h-3 rounded-full border border-slate-300" />
+                      <div className="w-3 h-3 rounded-full border border-slate-300 dark:border-slate-700" />
                     )}
                   </div>
                 </div>
@@ -336,23 +336,23 @@ export default function ThreatSimulator() {
           </div>
 
           {/* Reassuring Containment Summary Banner */}
-          <div className="p-4 bg-emerald-50/70 border border-emerald-200/80 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="p-4 bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800/40 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0">
+              <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/50 border border-emerald-300 dark:border-emerald-700 flex items-center justify-center text-emerald-700 dark:text-emerald-300 shrink-0">
                 <CheckCircle2 className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-xs font-bold text-emerald-950">
+                <div className="text-xs font-bold text-emerald-950 dark:text-emerald-200">
                   Threat Fully Neutralized in {current.timeToContain} — Zero Enterprise Impact
                 </div>
-                <div className="text-[11px] text-emerald-800 font-medium">
+                <div className="text-[11px] text-emerald-800 dark:text-emerald-300/90 font-medium">
                   Malicious processes purged, session keys rotated, and audit logs prepared for ISO 27001/SOC 2 compliance.
                 </div>
               </div>
             </div>
 
             <div className="shrink-0 flex items-center gap-2">
-              <span className="px-2.5 py-1 text-[10px] font-bold text-emerald-800 bg-white rounded-lg border border-emerald-200">
+              <span className="px-2.5 py-1 text-[10px] font-bold text-emerald-800 dark:text-emerald-300 bg-white dark:bg-emerald-900/40 rounded-lg border border-emerald-200 dark:border-emerald-700/50">
                 0 BYTES EXFILTRATED
               </span>
             </div>

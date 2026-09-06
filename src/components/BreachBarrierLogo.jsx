@@ -5,11 +5,19 @@ export default function BreachBarrierLogo({
   alt = "BreachBarrier - 24/7 Managed SOC & Cybersecurity Operations"
 }) {
   return (
-    <img 
-      src="/breach-barrier-logo-removebg-preview.png" 
-      alt={alt}
-      className={`w-auto object-contain select-none shrink-0 drop-shadow-xs ${className}`}
-      draggable={false}
-    />
+    <div className="inline-flex items-center">
+      <img 
+        src="/breach-barrier-logo-removebg-preview.png" 
+        alt={alt}
+        className={`dark:hidden w-auto object-contain select-none shrink-0 drop-shadow-xs ${className}`}
+        draggable={false}
+      />
+      <img 
+        src="/breach-barrier-logo-red-dark.png" 
+        alt={alt}
+        className={`hidden dark:block w-auto object-contain select-none shrink-0 drop-shadow-sm ${className}`}
+        draggable={false}
+      />
+    </div>
   );
 }

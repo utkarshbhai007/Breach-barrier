@@ -303,30 +303,30 @@ export default function IndustriesPage() {
                     onClick={() => setSelectedIndustry(idx)}
                     className={`cursor-target p-3 rounded-2xl text-left border transition-all duration-200 flex flex-col justify-between space-y-2 group ${
                       isSelected
-                        ? 'bg-purple-50 text-[#6D28D9] border-2 border-[#6D28D9] shadow-sm scale-[1.02]'
-                        : 'bg-slate-50/70 text-slate-700 border-slate-200 hover:border-purple-300 hover:bg-white'
+                        ? 'bg-red-50 dark:bg-red-950/40 text-[#DC2626] dark:text-[#EF4444] border-2 border-[#DC2626] shadow-sm scale-[1.02]'
+                        : 'bg-slate-50/70 dark:bg-[#151624] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-[#27293D] hover:border-red-300 dark:hover:border-red-900/60 hover:bg-white dark:hover:bg-[#1A1C2C]'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
                         isSelected 
-                          ? 'bg-[#6D28D9] text-white' 
-                          : 'bg-white text-[#6D28D9] border border-slate-200 group-hover:border-purple-300'
+                          ? 'bg-[#DC2626] text-white' 
+                          : 'bg-white dark:bg-[#1B1D2E] text-[#DC2626] dark:text-[#EF4444] border border-slate-200 dark:border-slate-700 group-hover:border-red-300'
                       }`}>
                         <Icon className="w-4 h-4" />
                       </div>
                       <span className={`text-[10px] font-mono font-bold ${
-                        isSelected ? 'text-[#6D28D9]' : 'text-slate-400'
+                        isSelected ? 'text-[#DC2626] dark:text-[#EF4444]' : 'text-slate-400'
                       }`}>
                         {ind.code}
                       </span>
                     </div>
 
                     <div>
-                      <div className={`text-xs font-bold leading-tight truncate ${isSelected ? 'text-[#0F172A]' : 'text-slate-800'}`}>
+                      <div className={`text-xs font-bold leading-tight truncate ${isSelected ? 'text-[#0F172A] dark:text-white' : 'text-slate-800 dark:text-slate-200'}`}>
                         {ind.title.split(' ')[0]}
                       </div>
-                      <div className={`text-[10px] truncate ${isSelected ? 'text-[#6D28D9] font-medium' : 'text-slate-500'}`}>
+                      <div className={`text-[10px] truncate ${isSelected ? 'text-[#DC2626] dark:text-[#EF4444] font-medium' : 'text-slate-500 dark:text-slate-400'}`}>
                         {ind.category}
                       </div>
                     </div>
@@ -343,33 +343,33 @@ export default function IndustriesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="bg-gradient-to-br from-purple-50/40 via-white to-slate-50/80 text-[#0F172A] rounded-2xl p-6 sm:p-8 border border-purple-200 shadow-sm space-y-6"
+                className="bg-gradient-to-br from-red-50/40 via-white to-slate-50/80 dark:from-[#18131B] dark:via-[#13141F] dark:to-[#0F101A] text-[#0F172A] dark:text-white rounded-2xl p-6 sm:p-8 border border-red-200 dark:border-[#27293D] shadow-sm space-y-6"
               >
                 {/* Header Row */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-2xl bg-[#6D28D9] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-[#DC2626] text-white flex items-center justify-center shrink-0 shadow-sm">
                       <ActiveIcon className="w-6 h-6" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-mono font-bold text-[#6D28D9]">//{activeInd.code}_SPECIFICATION</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 border border-purple-200 text-[#6D28D9] font-semibold">
+                        <span className="text-xs font-mono font-bold text-[#DC2626] dark:text-[#EF4444]">//{activeInd.code}_SPECIFICATION</span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-950/50 border border-red-200 dark:border-red-900/50 text-[#DC2626] dark:text-[#EF4444] font-semibold">
                           {activeInd.category}
                         </span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0F172A]">{activeInd.title}</h3>
+                      <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0F172A] dark:text-white">{activeInd.title}</h3>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <div className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-right">
-                      <div className="text-[10px] text-slate-500 font-bold uppercase">Response Target</div>
-                      <div className="text-xs font-black text-emerald-600">{activeInd.metrics.sla}</div>
+                    <div className="px-3 py-1.5 rounded-xl bg-white dark:bg-[#181926] border border-slate-200 dark:border-slate-800 shadow-xs text-right">
+                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">Response Target</div>
+                      <div className="text-xs font-black text-emerald-600 dark:text-emerald-400">{activeInd.metrics.sla}</div>
                     </div>
-                    <div className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-right">
-                      <div className="text-[10px] text-slate-500 font-bold uppercase">Compliance</div>
-                      <div className="text-xs font-black text-[#6D28D9]">{activeInd.metrics.audits}</div>
+                    <div className="px-3 py-1.5 rounded-xl bg-white dark:bg-[#181926] border border-slate-200 dark:border-slate-800 shadow-xs text-right">
+                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">Compliance</div>
+                      <div className="text-xs font-black text-[#DC2626] dark:text-[#EF4444]">{activeInd.metrics.audits}</div>
                     </div>
                   </div>
                 </div>
@@ -377,18 +377,18 @@ export default function IndustriesPage() {
                 {/* Description & Highlight */}
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-7 space-y-4">
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                       {activeInd.desc}
                     </p>
 
                     {/* Compliance Badges */}
                     <div className="space-y-1.5">
-                      <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">MANDATORY COMPLIANCE & STANDARDS:</div>
+                      <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">MANDATORY COMPLIANCE & STANDARDS:</div>
                       <div className="flex flex-wrap gap-1.5">
                         {activeInd.compliance.map((comp, idx) => (
                           <span 
                             key={idx} 
-                            className="px-2.5 py-1 rounded-lg bg-purple-50 border border-purple-200 text-[#6D28D9] text-xs font-semibold"
+                            className="px-2.5 py-1 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/40 text-[#DC2626] dark:text-[#EF4444] text-xs font-semibold"
                           >
                             {comp}
                           </span>
@@ -397,12 +397,12 @@ export default function IndustriesPage() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-5 bg-red-50/70 rounded-xl p-4 border border-red-200 space-y-2.5">
-                    <div className="flex items-center gap-2 text-xs font-bold text-red-700">
-                      <AlertTriangle className="w-4 h-4 text-red-600" />
+                  <div className="md:col-span-5 bg-red-50/70 dark:bg-red-950/25 rounded-xl p-4 border border-red-200 dark:border-red-900/40 space-y-2.5">
+                    <div className="flex items-center gap-2 text-xs font-bold text-red-700 dark:text-red-400">
+                      <AlertTriangle className="w-4 h-4 text-red-600 dark:text-red-400" />
                       <span>PRIMARY CYBER ATTACK THREATS</span>
                     </div>
-                    <ul className="space-y-2 text-xs text-red-950">
+                    <ul className="space-y-2 text-xs text-red-950 dark:text-red-200">
                       {activeInd.threats.map((t, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <span className="text-red-500 font-bold">×</span>
@@ -414,15 +414,15 @@ export default function IndustriesPage() {
                 </div>
 
                 {/* Defense Protocol Banner & CTA */}
-                <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-2 text-xs text-slate-700">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span><strong className="text-[#0F172A]">BreachBarrier Defense:</strong> {activeInd.defense}</span>
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span><strong className="text-[#0F172A] dark:text-white">BreachBarrier Defense:</strong> {activeInd.defense}</span>
                   </div>
 
                   <Link
                     to="/contact"
-                    className="cursor-target px-5 py-2.5 bg-[#6D28D9] hover:bg-[#5B21B6] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-colors shrink-0 shadow-sm"
+                    className="cursor-target px-5 py-2.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-colors shrink-0 shadow-sm"
                   >
                     <span>SCHEDULE {activeInd.code} AUDIT</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -438,10 +438,10 @@ export default function IndustriesPage() {
         {/* 5. Complete 8-Industry Grid View */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-[#0F172A] uppercase tracking-wider">
+            <h3 className="text-base font-bold text-[#0F172A] dark:text-white uppercase tracking-wider">
               {activeTab === 'all' && !searchQuery ? 'ALL 8 INDUSTRY DEFENSE BLUEPRINTS' : `FILTERED INDUSTRIES (${filteredIndustries.length})`}
             </h3>
-            <span className="text-xs text-slate-500 font-medium">Enterprise SOC & MDR Tailored Profiles</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Enterprise SOC & MDR Tailored Profiles</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -450,17 +450,16 @@ export default function IndustriesPage() {
               return (
                 <div
                   key={ind.code}
-                  className="group relative bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:border-purple-300 transition-all duration-300 flex flex-col justify-between p-5 min-h-[290px]"
+                  className="group relative bg-white dark:bg-[#13141F] border border-slate-200/90 dark:border-[#27293D] rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:border-red-300 dark:hover:border-red-900/60 transition-all duration-300 flex flex-col justify-between p-5 min-h-[290px]"
                 >
-                  {/* Background Industry Image with Light Glassmorphic Overlay */}
+                  {/* Background Industry Image with Dark/Light Glassmorphic Overlay */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
                     <img
                       src={ind.image}
                       alt={ind.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    {/* Light theme gradient mask for crisp readability without dark colors */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/94 via-white/92 to-white/98 backdrop-blur-[1px]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/94 via-white/92 to-white/98 dark:from-[#13141F]/96 dark:via-[#13141F]/92 dark:to-[#13141F]/98 backdrop-blur-[1px]" />
                   </div>
 
                   {/* Foreground Content */}
@@ -468,11 +467,11 @@ export default function IndustriesPage() {
                     
                     {/* Top Row: Sector Icon & Code */}
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-white/90 border border-purple-200/80 flex items-center justify-center text-[#6D28D9] shadow-xs group-hover:bg-[#6D28D9] group-hover:text-white transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-white/90 dark:bg-white/10 border border-red-200/80 dark:border-white/15 flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] shadow-xs group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-purple-50 text-[#6D28D9] border border-purple-200">
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-red-50 dark:bg-red-950/50 text-[#DC2626] dark:text-[#EF4444] border border-red-200 dark:border-red-900/50">
                           {ind.code}
                         </span>
                       </div>
@@ -480,16 +479,16 @@ export default function IndustriesPage() {
 
                     {/* Title & Category */}
                     <div>
-                      <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                         {ind.category}
                       </div>
-                      <h4 className="text-base font-bold text-[#0F172A] leading-snug group-hover:text-[#6D28D9] transition-colors line-clamp-1">
+                      <h4 className="text-base font-bold text-[#0F172A] dark:text-white leading-snug group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors line-clamp-1">
                         {ind.title}
                       </h4>
                     </div>
 
                     {/* Short Description */}
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed font-normal">
                       {ind.desc}
                     </p>
 
@@ -498,13 +497,13 @@ export default function IndustriesPage() {
                       {ind.compliance.slice(0, 3).map((c, cIdx) => (
                         <span 
                           key={cIdx} 
-                          className="px-1.5 py-0.5 rounded bg-white/90 text-slate-700 border border-slate-200 text-[9.5px] font-semibold"
+                          className="px-1.5 py-0.5 rounded bg-white/90 dark:bg-white/10 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/15 text-[9.5px] font-semibold"
                         >
                           {c}
                         </span>
                       ))}
                       {ind.compliance.length > 3 && (
-                        <span className="text-[9px] text-slate-500 font-semibold">
+                        <span className="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">
                           +{ind.compliance.length - 3} more
                         </span>
                       )}
@@ -513,10 +512,10 @@ export default function IndustriesPage() {
                   </div>
 
                   {/* Card Bottom CTA */}
-                  <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-end mt-3">
+                  <div className="relative z-10 pt-3 border-t border-slate-100/90 dark:border-slate-800 flex items-center justify-end mt-3">
                     <Link
                       to="/contact"
-                      className="cursor-target px-3 py-1.5 bg-[#6D28D9] hover:bg-[#5B21B6] text-white text-[11px] font-bold rounded-lg flex items-center gap-1 transition-colors shadow-xs"
+                      className="cursor-target px-3 py-1.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-[11px] font-bold rounded-lg flex items-center gap-1 transition-colors shadow-xs"
                     >
                       <span>Secure {ind.code}</span>
                       <ArrowUpRight className="w-3 h-3" />

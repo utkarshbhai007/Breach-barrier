@@ -320,8 +320,18 @@ p {
   background-color: #0A0A0E !important;
 }
 
-.dark .bg-white {
+.dark .bg-white,
+.dark .bg-white\/90,
+.dark .bg-white\/95 {
   background-color: #13141D !important;
+}
+
+.dark .bg-white\/80,
+.dark .bg-white\/70,
+.dark .bg-white\/60 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #CBD5E1 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
 
 .dark .bg-slate-50 {
@@ -332,8 +342,17 @@ p {
   background-color: #1E202E !important;
 }
 
-.dark .bg-purple-50 {
-  background-color: rgba(109, 40, 217, 0.15) !important;
+.dark .bg-\[\#F8FAFC\] {
+  background-color: #151624 !important;
+}
+
+.dark .bg-\[\#F2EFE9\] {
+  background-color: #0D0E16 !important;
+}
+
+.dark .bg-\[\#EAE7E0\],
+.dark .bg-\[\#E4E0D7\] {
+  background-color: #0A0A0E !important;
 }
 
 /* 2. Global Borders */
@@ -384,17 +403,38 @@ p {
   color: #64748B !important;
 }
 
-/* 4. Glass / Gradients on Card Masks */
-.dark .bg-gradient-to-r.from-white {
-  background-image: linear-gradient(to right, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.8)) !important;
+/* Neon lime/yellow containers MUST retain dark text in dark mode for accessibility */
+.dark .bg-\[\#E2F952\],
+.dark .bg-\[\#E2F952\] *,
+.dark .bg-\[\#D4F82C\],
+.dark .bg-\[\#D4F82C\] * {
+  color: #0A0A0C !important;
 }
 
-.dark .bg-gradient-to-t.from-white {
-  background-image: linear-gradient(to top, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.8)) !important;
+/* 4. Glass / Gradients on Card Masks */
+.dark .bg-gradient-to-r.from-white,
+.dark .bg-gradient-to-r.from-white\/94 {
+  background-image: linear-gradient(to right, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.75)) !important;
+}
+
+.dark .bg-gradient-to-t.from-white,
+.dark .bg-gradient-to-t.from-white\/90,
+.dark .bg-gradient-to-t.from-white\/94 {
+  background-image: linear-gradient(to top, #13141D, rgba(19, 20, 29, 0.94), rgba(19, 20, 29, 0.7)) !important;
+}
+
+.dark .bg-gradient-to-b.from-white,
+.dark .bg-gradient-to-b.from-white\/92,
+.dark .bg-gradient-to-b.from-white\/94 {
+  background-image: linear-gradient(to bottom, #13141D, rgba(19, 20, 29, 0.94), rgba(19, 20, 29, 0.8)) !important;
 }
 
 .dark .bg-gradient-to-br.from-white {
-  background-image: linear-gradient(to bottom right, #13141D, rgba(19, 20, 29, 0.95), rgba(30, 20, 50, 0.85)) !important;
+  background-image: linear-gradient(to bottom right, #13141D, rgba(19, 20, 29, 0.95), rgba(19, 20, 29, 0.8)) !important;
+}
+
+.dark .bg-gradient-to-br.from-purple-50\/40 {
+  background-image: linear-gradient(to bottom right, rgba(220, 38, 38, 0.12), #13141D, #161725) !important;
 }
 
 /* 5. Inputs, Forms, Textareas & Selects */

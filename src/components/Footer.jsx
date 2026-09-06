@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#E4E0D7] text-[#0F172A] border-t border-[#D6D0C2]">
+    <footer className="bg-[#E4E0D7] dark:bg-[#08080C] text-[#0F172A] dark:text-[#F8FAFC] border-t border-[#D6D0C2] dark:border-[#262838] transition-colors duration-200">
       
       {/* Main Footer Grid */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
@@ -16,8 +16,8 @@ export default function Footer() {
             <BreachBarrierLogo className="h-12 sm:h-14 md:h-16 max-h-[64px]" />
           </Link>
 
-          <p className="text-xs text-slate-700 font-sans leading-relaxed max-w-sm">
-            <strong className="text-[#0F172A]">BreachBarrier</strong> — Protecting Businesses. Securing Digital Futures. Enterprise-grade 24×7 managed cybersecurity delivery from India to Canada & global enterprises.
+          <p className="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed max-w-sm">
+            <strong className="text-[#0F172A] dark:text-white">BreachBarrier</strong> — Protecting Businesses. Securing Digital Futures. Enterprise-grade 24×7 managed cybersecurity delivery from India to Canada & global enterprises.
           </p>
 
           <div className="pt-2 flex items-center gap-3 text-xs text-[#6D28D9] font-bold">
@@ -30,10 +30,10 @@ export default function Footer() {
 
         {/* Col 2: Quick Links (2 cols) */}
         <div className="lg:col-span-2 space-y-3">
-          <div className="text-xs font-black uppercase text-[#0F172A] tracking-wider border-b border-slate-200 pb-2">
+          <div className="text-xs font-black uppercase text-[#0F172A] dark:text-white tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2">
             QUICK LINKS
           </div>
-          <ul className="space-y-2 text-xs text-slate-700 font-sans font-medium">
+          <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300 font-sans font-medium">
             <li><Link to="/" className="hover:text-[#6D28D9] transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-[#6D28D9] transition-colors">About Us</Link></li>
             <li><Link to="/why-choose-us" className="hover:text-[#6D28D9] transition-colors">Why Choose Us</Link></li>
@@ -48,10 +48,10 @@ export default function Footer() {
 
         {/* Col 3: 6 Services (3 cols) */}
         <div className="lg:col-span-3 space-y-3">
-          <div className="text-xs font-black uppercase text-[#0F172A] tracking-wider border-b border-slate-200 pb-2">
+          <div className="text-xs font-black uppercase text-[#0F172A] dark:text-white tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2">
             6 CORE SERVICES
           </div>
-          <ul className="space-y-1.5 text-xs text-slate-700 font-sans font-medium">
+          <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 font-sans font-medium">
             <li><Link to="/services/soc" className="hover:text-[#6D28D9] transition-colors">24×7 SOC Monitoring</Link></li>
             <li><Link to="/services/mdr" className="hover:text-[#6D28D9] transition-colors">Managed Detection & Response (MDR)</Link></li>
             <li><Link to="/services/pentesting" className="hover:text-[#6D28D9] transition-colors">Penetration Testing</Link></li>
@@ -63,10 +63,10 @@ export default function Footer() {
 
         {/* Col 4: Contact & Global Center (3 cols) */}
         <div className="lg:col-span-3 space-y-3">
-          <div className="text-xs font-black uppercase text-[#0F172A] tracking-wider border-b border-slate-200 pb-2">
+          <div className="text-xs font-black uppercase text-[#0F172A] dark:text-white tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2">
             GLOBAL OPERATIONS
           </div>
-          <div className="space-y-2.5 text-xs text-slate-700 font-sans">
+          <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 font-sans">
             <div className="flex items-start gap-2">
               <Mail className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
               <a href="mailto:info@breachbarriersecurity.com" className="hover:text-[#6D28D9] transition-colors">
@@ -83,7 +83,7 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
               <span>India (Global Delivery Center)</span>
             </div>
-            <div className="text-[11px] text-emerald-700 font-bold pt-1">
+            <div className="text-[11px] text-emerald-500 dark:text-emerald-400 font-bold pt-1">
               ● 24×7 SOC Operations On-Duty
             </div>
           </div>
