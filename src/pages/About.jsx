@@ -1,28 +1,14 @@
-import React from 'react';
 import { 
   Shield, 
   Target, 
   Award, 
-  CheckCircle2, 
   Zap, 
   Lock, 
   RefreshCw, 
-  Terminal, 
-  Flame, 
-  Check, 
-  ExternalLink,
-  ShieldAlert
+  Terminal
 } from 'lucide-react';
 import InteractiveCyberGridCTA from '../components/InteractiveCyberGridCTA';
 import PageHero from '../components/PageHero';
-
-function LinkedInIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 1 0-1.45 1.45m1.37 9.74V9.93H5.09v8.57h2.74Z" />
-    </svg>
-  );
-}
 
 export default function About() {
   const values = [
@@ -95,14 +81,6 @@ export default function About() {
     },
   ];
 
-  const credentials = [
-    'Certified Penetration Tester (CPTE)',
-    'Network Administrator',
-    'Top 3% TryHackMe Player',
-    'HackTheBox CTF Player',
-    'Ethical Hacking Essentials (EHE)',
-  ];
-
   return (
     <div className="bg-[#EAE7E0] dark:bg-[#0A0A0E] text-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-200">
       
@@ -129,7 +107,7 @@ export default function About() {
           <div className="bg-[#F2EFE9] dark:bg-[#151722] border-2 border-black dark:border-[#2E3145] p-6 sm:p-10 rounded-2xl shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] dark:shadow-[6px_6px_0px_0px_rgba(239,68,68,0.8)] grid lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Col: Founder Profile Card */}
-            <div className="lg:col-span-4 space-y-4 bg-white dark:bg-[#1A1C2A] p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+            <div className="lg:col-span-4 space-y-4 bg-white dark:bg-[#1A1C2A] p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-red-100 dark:bg-red-950/60 border-2 border-[#DC2626] dark:border-[#EF4444] flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] shrink-0 shadow-sm">
                   <Terminal className="w-8 h-8" />
@@ -139,49 +117,26 @@ export default function About() {
                     Ravi Makwana
                   </h3>
                   <div className="text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans">
-                    Founder & Principal Security Architect
+                    Founder & Principal Security Advisor
                   </div>
                   <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
-                    BreachBarrier Security
+                    BreachBarrier Architect
                   </div>
                 </div>
               </div>
 
-              {/* Verified Credentials Pills */}
-              <div className="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-sans">
-                  PROVEN CREDENTIALS & RANKINGS:
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider font-sans">
+                  SECURITY ARCHITECTURE
                 </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {credentials.map((cred, cIdx) => (
-                    <span 
-                      key={cIdx} 
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-red-50 dark:bg-red-950/50 text-slate-800 dark:text-slate-200 border border-red-200/80 dark:border-red-900/50 font-sans"
-                    >
-                      <Check className="w-3 h-3 text-[#DC2626] dark:text-[#EF4444]" />
-                      {cred}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* LinkedIn Connect Button */}
-              <div className="pt-3">
-                <a
-                  href="https://www.linkedin.com/in/ravi-makwana89?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-target w-full py-2.5 px-4 bg-[#0077B5] hover:bg-[#005f93] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm font-sans"
-                >
-                  <LinkedInIcon className="w-4 h-4 fill-current" />
-                  <span>CONNECT ON LINKEDIN</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+                  Proactive adversary simulation, defensive perimeter engineering, and 24/7 active threat containment operations.
+                </p>
               </div>
             </div>
 
             {/* Right Col: Personal Message */}
-            <div className="lg:col-span-8 space-y-4">
+            <div className="lg:col-span-8 space-y-5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 dark:bg-red-950/60 border border-red-200 dark:border-red-900/50 text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans uppercase tracking-wider">
                 A Note From The Founder
               </span>
@@ -190,23 +145,25 @@ export default function About() {
                 "CYBERSECURITY IS NOT A CHECKBOX. IT IS AN ONGOING BATTLE OF WITS."
               </h3>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              <div className="space-y-3.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
                 <p>
-                  "In the modern cyber landscape, adversaries don't wait for your office hours, and they don't give second chances. Having spent years hunting exploits, competing in elite CTFs, and ranking in the top 3% globally on TryHackMe, I have seen firsthand how easily standard passive defenses fall apart under real offensive pressure."
+                  Modern adversaries do not operate within regular business hours, and they do not exploit theoretical risks—they exploit operational blind spots. Having spent years conducting hands-on offensive research, analyzing weaponized exploits, and breaking through real-world perimeters, I have seen how fragile traditional, passive defenses become under focused pressure.
                 </p>
                 <p>
-                  "I founded <strong className="text-[#0F172A] dark:text-white font-bold">BreachBarrier Security</strong> with one core objective: to arm organizations with true offensive and defensive resilience. We don't just hand you automated scanner reports or generic compliance templates. We look at your infrastructure through an attacker's eyes, expose vulnerabilities before criminals find them, and back it with 24/7 active SOC & MDR containment."
+                  I founded BreachBarrier Security with a direct mandate to close the gap between how security is promised and how attacks actually occur. We do not bury our clients in automated vulnerability reports or superficial checklist audits. We examine your architecture through the eyes of an advanced adversary, neutralize exploitable vectors before they can be leveraged, and back your business with continuous, 24/7 active containment.
                 </p>
-                <p className="font-medium text-[#0F172A] dark:text-white">
+                <div className="p-4 bg-white/80 dark:bg-slate-900/80 border-l-4 border-[#DC2626] dark:border-[#EF4444] rounded-r-xl font-medium text-[#0F172A] dark:text-white italic">
                   "Our commitment to every partner is simple: enterprise-grade security architecture, transparent communication, and 100% accountability in defending what you've built."
-                </p>
+                </div>
               </div>
 
-              <div className="pt-2 flex items-center gap-3">
-                <div className="w-8 h-0.5 bg-[#DC2626] dark:bg-[#EF4444]" />
-                <span className="text-xs font-bold text-[#0F172A] dark:text-white uppercase font-sans tracking-wide">
-                  Ravi Makwana — Founder, BreachBarrier Security
-                </span>
+              <div className="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 space-y-1">
+                <div className="font-heading text-base font-bold text-[#0F172A] dark:text-white uppercase tracking-tight">
+                  Ravi Makwana
+                </div>
+                <div className="text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans">
+                  Founder & Principal Security Advisor, BreachBarrier Architect
+                </div>
               </div>
             </div>
 
