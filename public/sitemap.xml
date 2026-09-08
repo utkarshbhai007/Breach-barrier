@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://breachbarrier.in/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/about</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/about</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/services/soc</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/services/soc-mdr</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/services/mdr</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/services/pentesting</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/services/pentesting</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/services/incident-response</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/services/incident-response</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://breachbarrier.in/services/vulnerability-management</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://breachbarrier.in/services/compliance</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://breachbarrier.in/services/training</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://breachbarrier.in/industries</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/services/asm</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/resources</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/services/vulnerability-management</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://breachbarrier.in/contact</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://breachbarriersecurity.com/industries</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://breachbarriersecurity.com/resources</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://breachbarriersecurity.com/process</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://breachbarriersecurity.com/why-choose-us</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://breachbarriersecurity.com/faq</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://breachbarriersecurity.com/contact</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /private
 
-Sitemap: https://breachbarrier.in/sitemap.xml
+Sitemap: https://breachbarriersecurity.com/sitemap.xml

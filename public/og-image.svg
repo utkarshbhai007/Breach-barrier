@@ -34,7 +34,7 @@
   <text x="45" y="60" fill="#E2F952" font-family="monospace" font-size="14" font-weight="bold">+ 0xBB_HQ</text>
   <text x="1060" y="60" fill="#A855F7" font-family="monospace" font-size="14" font-weight="bold">// SOC_LIVE</text>
   <text x="45" y="580" fill="#64748B" font-family="monospace" font-size="14">LAT: 43.6532° N // LON: 79.3832° W</text>
-  <text x="1020" y="580" fill="#E2F952" font-family="monospace" font-size="14" font-weight="bold">breachbarrier.in</text>
+  <text x="1150" y="580" text-anchor="end" fill="#E2F952" font-family="monospace" font-size="14" font-weight="bold">breachbarriersecurity.com</text>
 
   <!-- Left Shield Icon (High-Res Vector) -->
   <g transform="translate(100, 195)">
