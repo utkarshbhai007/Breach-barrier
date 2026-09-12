@@ -90,8 +90,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom Copyright */}
-      <div className="border-t border-[#D6D0C2] dark:border-[#262838] py-4 px-4 sm:px-8 text-center text-xs text-slate-500 dark:text-slate-400 font-sans">
-        © {new Date().getFullYear()} BreachBarrier Security. All rights reserved. Enterprise-grade managed defense & offensive security operations.
+      <div className="border-t border-[#D6D0C2] dark:border-[#262838] py-4 px-4 sm:px-8 text-xs text-slate-500 dark:text-slate-400 font-sans max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© {new Date().getFullYear()} BreachBarrier Security. All rights reserved. Enterprise-grade managed defense &amp; offensive security operations.</span>
+        <div className="flex items-center gap-3 font-mono text-[11px]">
+          <Link to="/admin" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors flex items-center gap-1.5 text-slate-400 hover:text-slate-900 dark:hover:text-white">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Admin Portal</span>
+          </Link>
+        </div>
       </div>
 
     </footer>

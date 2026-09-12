@@ -7,6 +7,7 @@ import TargetCursor from './components/TargetCursor';
 import AiChatbot from './components/AiChatbot';
 import PageTransition from './components/PageTransition';
 import { ThemeProvider } from './context/ThemeContext';
+import { AdminAuthProvider } from './context/AdminAuthContext';
 
 // Pages
 import Home from './pages/Home';
@@ -17,6 +18,12 @@ import ProcessPage from './pages/ProcessPage';
 import WhyUsPage from './pages/WhyUsPage';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
+
+// Admin Pages (Proposal Section 7)
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminUsers from './pages/admin/AdminUsers';
 
 // Service Pages
 import SocMdrService from './pages/services/SocMdrService';
@@ -57,31 +64,54 @@ function AnimatedRoutes() {
         <Route path="/services/compliance" element={<Navigate to="/services/asm" replace />} />
         <Route path="/services/vulnerability-management" element={<PageTransition><VulnService /></PageTransition>} />
         
+        {/* Custom Admin Panel Routes (Proposal Section 7) */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/admin/dashboard" replace />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="users" element={<AdminUsers />} />
+        </Route>
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
   );
 }
 
+function SiteShell({ children }) {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith('/admin');
+
+  if (isAdmin) {
+    return <div className="min-h-screen">{children}</div>;
+  }
+
+  return (
+    <div className="min-h-screen bg-[#F4F4F6] text-[#0A0A0C] dark:bg-[#0A0A0E] dark:text-[#F8FAFC] transition-colors duration-200 relative">
+      <Navbar />
+      <main className="relative z-10">{children}</main>
+      <Footer />
+      <AiChatbot />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <TargetCursor 
-          spinDuration={2}
-          hideDefaultCursor={true}
-          parallaxOn={true}
-        />
-        <div className="min-h-screen bg-[#F4F4F6] text-[#0A0A0C] dark:bg-[#0A0A0E] dark:text-[#F8FAFC] transition-colors duration-200 relative">
-          <Navbar />
-          <main className="relative z-10">
+      <AdminAuthProvider>
+        <Router>
+          <ScrollToTop />
+          <TargetCursor 
+            spinDuration={2}
+            hideDefaultCursor={true}
+            parallaxOn={true}
+          />
+          <SiteShell>
             <AnimatedRoutes />
-          </main>
-          <Footer />
-          <AiChatbot />
-        </div>
-      </Router>
+          </SiteShell>
+        </Router>
+      </AdminAuthProvider>
     </ThemeProvider>
   );
 }
