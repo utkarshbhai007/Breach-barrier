@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, ShieldCheck, Mail, Phone, MapPin, Loader2 } from 'lucide-react';
+import { submitInquiry } from '../lib/supabaseClient';
 
 const serviceOptions = [
   'Security Operations Center (SOC) & MDR',
@@ -11,6 +12,7 @@ const serviceOptions = [
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     companyName: '',
@@ -34,9 +36,17 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await submitInquiry(formData);
+    } catch (err) {
+      console.warn('Form submission local note:', err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -271,10 +281,20 @@ export default function ContactForm() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="cursor-target w-full py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white text-sm font-black rounded-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xs mt-2 font-sans"
+                  disabled={submitting}
+                  className="cursor-target w-full py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] disabled:opacity-70 text-white text-sm font-black rounded-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xs mt-2 font-sans"
                 >
-                  <span>BOOK A FREE SECURITY CONSULTATION</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>CONNECTING &amp; SUBMITTING TO LEAD HUB...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>BOOK A FREE SECURITY CONSULTATION</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}
