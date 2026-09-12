@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { Users, Lock, Mail, ArrowRight, AlertCircle, KeyRound, Copy, Check } from 'lucide-react';
+import { Users, Lock, Mail, ArrowRight, AlertCircle, KeyRound, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
 
 export default function EmployeeLogin() {
-  const { loginEmployee, isAuthenticated, isEmployee, fixedEmployee } = useAdminAuth();
+  const { loginEmployee, isAuthenticated, isEmployee } = useAdminAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [email, setEmail] = useState('team@zeroward.in');
-  const [password, setPassword] = useState('Employee@ZeroWard2026');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [copied, setCopied] = useState(false);
 
   const from = location.state?.from?.pathname || '/employee/dashboard';
 
@@ -21,22 +22,28 @@ export default function EmployeeLogin() {
     }
   }, [isAuthenticated, isEmployee, navigate, from]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    const res = loginEmployee(email, password);
-    if (res.success) {
-      navigate('/employee/dashboard', { replace: true });
-    } else {
-      setError(res.error || 'Invalid Employee credentials.');
+    if (!email || !password) {
+      setError('Please enter both Employee Email ID and Password.');
+      return;
     }
-  };
 
-  const handleCopyCredentials = () => {
-    navigator.clipboard?.writeText(`ID: ${fixedEmployee.email}\nPassword: ${fixedEmployee.password}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setLoading(true);
+    try {
+      const res = await loginEmployee(email, password);
+      if (res.success) {
+        navigate('/employee/dashboard', { replace: true });
+      } else {
+        setError(res.error || 'Authentication failed. Please check with your Administrator.');
+      }
+    } catch (err) {
+      setError('Authentication server error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,7 +61,7 @@ export default function EmployeeLogin() {
               ZEROWARD <span className="text-amber-600 dark:text-amber-500">EMPLOYEE</span>
             </h1>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-medium font-sans">
-              Team Member Portal • Operational Lead Inquiry Viewer
+              Team Member Portal • Customer Inquiry Review Center
             </p>
           </div>
         </div>
@@ -68,38 +75,11 @@ export default function EmployeeLogin() {
                 <KeyRound className="w-3.5 h-3.5 text-amber-500" />
                 <span>EMPLOYEE AUTHENTICATION</span>
               </h2>
-              <p className="text-[11px] text-slate-500 mt-0.5">Team inquiry review portal</p>
+              <p className="text-[11px] text-slate-500 mt-0.5">Assigned Team Account Login</p>
             </div>
-            <span className="text-[10px] text-amber-600 dark:text-amber-400 font-mono font-bold bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-2 py-0.5 rounded">
-              TEAM ACCESS
+            <span className="text-[10px] text-emerald-500 font-mono font-bold bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">
+              SSL ENCRYPTED
             </span>
-          </div>
-
-          {/* Fixed Credentials Info Card */}
-          <div className="p-3.5 bg-slate-50 dark:bg-[#181A28] border border-slate-200 dark:border-slate-800 rounded-xl space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono uppercase font-bold text-slate-500 dark:text-slate-400">
-                FIXED EMPLOYEE CREDENTIALS:
-              </span>
-              <button
-                type="button"
-                onClick={handleCopyCredentials}
-                className="text-[10px] font-mono text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer font-bold"
-              >
-                {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
-                <span>{copied ? 'Copied!' : 'Copy'}</span>
-              </button>
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-              <div className="bg-white dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
-                <span className="text-[9px] text-slate-400 block uppercase">Work ID</span>
-                <span className="font-bold text-slate-900 dark:text-white select-all">{fixedEmployee.email}</span>
-              </div>
-              <div className="bg-white dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
-                <span className="text-[9px] text-slate-400 block uppercase">Password</span>
-                <span className="font-bold text-amber-600 dark:text-amber-400 select-all">{fixedEmployee.password}</span>
-              </div>
-            </div>
           </div>
 
           {error && (
@@ -120,9 +100,10 @@ export default function EmployeeLogin() {
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
                 <input
                   type="email"
+                  placeholder="name@zeroward.in"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors"
+                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors font-sans"
                   required
                 />
               </div>
@@ -135,21 +116,39 @@ export default function EmployeeLogin() {
               <div className="relative">
                 <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Enter your assigned password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors"
+                  className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors font-sans"
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3.5 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-white cursor-pointer"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer mt-2"
+              disabled={loading}
+              className="w-full py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer mt-2 disabled:opacity-70"
             >
-              <span>SIGN IN TO EMPLOYEE PORTAL</span>
-              <ArrowRight className="w-4 h-4" />
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>VERIFYING ACCOUNT...</span>
+                </>
+              ) : (
+                <>
+                  <span>SIGN IN TO EMPLOYEE PORTAL</span>
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
             </button>
           </form>
 
@@ -159,8 +158,8 @@ export default function EmployeeLogin() {
               to="/admin"
               className="text-xs text-slate-600 dark:text-slate-400 hover:text-[#DC2626] dark:hover:text-[#EF4444] font-medium transition-colors inline-flex items-center gap-1"
             >
-              <span>Are you the administrator?</span>
-              <span className="font-bold underline">Go to Admin Login →</span>
+              <span>Administrator?</span>
+              <span className="font-bold underline">Go to Admin Login Portal →</span>
             </Link>
           </div>
 
@@ -168,7 +167,7 @@ export default function EmployeeLogin() {
 
         {/* Footer info */}
         <p className="text-center text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-          ZEROWARD • Employee Lead Terminal • Proposal v2.4
+          ZEROWARD • Live Cryptographic Security • SHA-256 Hashed
         </p>
 
       </div>

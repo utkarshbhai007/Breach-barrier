@@ -299,13 +299,24 @@ export default function AdminDashboard() {
         ) : filteredInquiries.length === 0 ? (
           <div className="p-12 text-center text-slate-500 space-y-3">
             <Inbox className="w-8 h-8 mx-auto text-slate-400" />
-            <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">No customer inquiries match your current filter.</p>
-            <button
-              onClick={() => { setSearchTerm(''); setStatusFilter('ALL'); setIndustryFilter('ALL'); }}
-              className="text-xs text-[#DC2626] dark:text-[#EF4444] font-bold hover:underline font-mono"
-            >
-              Clear all filters
-            </button>
+            <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+              {inquiries.length === 0 
+                ? 'No customer inquiries received yet.'
+                : 'No inquiries match your current search and filter criteria.'}
+            </p>
+            <p className="text-xs text-slate-500 max-w-md mx-auto font-sans">
+              {inquiries.length === 0
+                ? 'When visitors submit the consultation form on the website, incoming leads will be captured and stored in your Supabase database in real time.'
+                : 'Try adjusting your search query or selecting "All Statuses".'}
+            </p>
+            {inquiries.length > 0 && (
+              <button
+                onClick={() => { setSearchTerm(''); setStatusFilter('ALL'); setIndustryFilter('ALL'); }}
+                className="text-xs text-[#DC2626] dark:text-[#EF4444] font-bold hover:underline font-mono"
+              >
+                Clear all filters
+              </button>
+            )}
           </div>
         ) : (
           <div className="overflow-x-auto">

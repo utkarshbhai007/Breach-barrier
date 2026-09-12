@@ -3,7 +3,7 @@
 -- For Supabase PostgreSQL (Run in Supabase SQL Editor)
 -- =========================================================
 
--- 1. Create inquiries Table
+-- 1. Create inquiries Table (Real Leads Only)
 CREATE TABLE IF NOT EXISTS public.inquiries (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc'::text, now()),
@@ -39,14 +39,16 @@ CREATE POLICY "Allow update inquiries" ON public.inquiries
 CREATE POLICY "Allow delete inquiries" ON public.inquiries
   FOR DELETE USING (true);
 
--- 2. Create admin_users Table (for managing team members)
+-- 2. Create admin_users Table (Real Accounts with Password Hash)
 CREATE TABLE IF NOT EXISTS public.admin_users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc'::text, now()),
   email TEXT NOT NULL UNIQUE,
   full_name TEXT NOT NULL,
   role TEXT NOT NULL DEFAULT 'READ_ONLY', -- SUPER_ADMIN or READ_ONLY
-  status TEXT NOT NULL DEFAULT 'ACTIVE'  -- ACTIVE or SUSPENDED
+  status TEXT NOT NULL DEFAULT 'ACTIVE',  -- ACTIVE or SUSPENDED
+  password_hash TEXT NOT NULL,
+  salt TEXT NOT NULL DEFAULT 'bb_secure_salt_2026'
 );
 
 -- Enable RLS
@@ -60,12 +62,22 @@ CREATE POLICY "Allow select admin_users" ON public.admin_users
 CREATE POLICY "Allow modify admin_users" ON public.admin_users
   FOR ALL USING (true);
 
--- Insert Default Super Admin record
-INSERT INTO public.admin_users (email, full_name, role, status)
-VALUES ('admin@zeroward.in', 'Zeroward Super Admin', 'SUPER_ADMIN', 'ACTIVE')
-ON CONFLICT (email) DO NOTHING;
+-- Insert Default Super Admin with SHA-256 Hashed Password ('Admin@ZeroWard2026')
+INSERT INTO public.admin_users (email, full_name, role, status, password_hash, salt)
+VALUES (
+  'admin@zeroward.in', 
+  'Zeroward Super Admin', 
+  'SUPER_ADMIN', 
+  'ACTIVE',
+  'cd5effca995e4b5993caacafb889e50f0245e3854bbe164fd400cb32f0920efb',
+  'bb_secure_salt_2026'
+)
+ON CONFLICT (email) DO UPDATE SET
+  password_hash = EXCLUDED.password_hash,
+  role = EXCLUDED.role;
 
 -- Create Performance Indexes
 CREATE INDEX IF NOT EXISTS idx_inquiries_created_at ON public.inquiries (created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_inquiries_status ON public.inquiries (status);
 CREATE INDEX IF NOT EXISTS idx_inquiries_email ON public.inquiries (email);
+CREATE INDEX IF NOT EXISTS idx_admin_users_email ON public.admin_users (email);

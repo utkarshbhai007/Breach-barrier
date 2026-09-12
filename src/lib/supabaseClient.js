@@ -1,93 +1,63 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase Configuration from Project Credentials
+// Supabase Project Credentials provided by User
 export const SUPABASE_URL = 'https://icaanytcntdnfggywtmp.supabase.co';
 export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljYWFueXRjbnRkbmZnZ3l3dG1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkyMTg5MTksImV4cCI6MjEwNDc5NDkxOX0.0QSDmynyZssdlxQp6nuMWQHdzwK1sgSx8PKquxOvf48';
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const LOCAL_STORAGE_KEY = 'zeroward_cached_inquiries';
-const LOCAL_USERS_KEY = 'zeroward_cached_admin_users';
+const LOCAL_STORAGE_KEY = 'zeroward_live_inquiries';
+const LOCAL_USERS_KEY = 'zeroward_live_admin_users';
+const DEFAULT_SALT = 'bb_secure_salt_2026';
 
-// Initial Demo/Fallback Inquiries if database table is newly initialized
-const INITIAL_FALLBACK_INQUIRIES = [
-  {
-    id: 'demo-lead-01',
-    created_at: new Date(Date.now() - 1000 * 60 * 25).toISOString(), // 25 mins ago
-    full_name: 'Vikram Malhotra',
-    company_name: 'Apex FinTech Solutions',
-    email: 'v.malhotra@apexfintech.io',
-    phone: '+91 98201 44521',
-    industry: 'Financial Services & Banking',
-    employees: '51-200',
-    services: ['Security Operations Center (SOC) & MDR', 'Penetration Testing (VAPT)'],
-    message: 'Need 24/7 SOC monitoring for upcoming RBI audit and compliance filing.',
-    status: 'NEW',
-    notes: 'Priority prospect — request SOW quote within 24h.',
-    source: 'Website Contact Form'
-  },
-  {
-    id: 'demo-lead-02',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 4).toISOString(), // 4 hours ago
-    full_name: 'Sarah Jenkins',
-    company_name: 'CloudScale SaaS Canada',
-    email: 'sjenkins@cloudscale.ca',
-    phone: '+1 416 890 2234',
-    industry: 'Technology & SaaS',
-    employees: '1-50',
-    services: ['Penetration Testing (VAPT)', 'Attack Surface Management (ASM)'],
-    message: 'Annual web app and external API pen-test required before our SOC 2 Type II assessment.',
-    status: 'CONTACTED',
-    notes: 'Intro call scheduled with Technical Lead.',
-    source: 'Consultation Form'
-  },
-  {
-    id: 'demo-lead-03',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 28).toISOString(), // Yesterday
-    full_name: 'Rajesh Nair',
-    company_name: 'MediCare Diagnostics',
-    email: 'rnair@medicarelab.in',
-    phone: '+91 99400 12890',
-    industry: 'Healthcare & Life Sciences',
-    employees: '201-1000',
-    services: ['Incident Response (IR) & Digital Forensics', 'Vulnerability Management'],
-    message: 'Looking for Zero-Day Retainer Contract for our healthcare hospital network.',
-    status: 'IN_PROGRESS',
-    notes: 'Sent pricing tier and SLA contract agreement.',
-    source: 'Direct Consultation'
-  }
-];
+// Cryptographic Password Hashing using Web Crypto SHA-256
+export async function hashPassword(password, salt = DEFAULT_SALT) {
+  const text = password + ':' + salt;
+  const msgUint8 = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
-const INITIAL_FALLBACK_USERS = [
-  {
-    id: 'user-01',
-    email: 'admin@zeroward.in',
-    full_name: 'Zeroward Super Admin',
-    role: 'SUPER_ADMIN',
-    status: 'ACTIVE',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 24 * 30).toISOString()
-  },
-  {
-    id: 'user-02',
-    email: 'team@zeroward.in',
-    full_name: 'Operations Reviewer',
-    role: 'READ_ONLY',
-    status: 'ACTIVE',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10).toISOString()
-  }
-];
+// Initial Primary Super Admin Seed (Pre-hashed Admin@ZeroWard2026)
+const INITIAL_SUPER_ADMIN = {
+  id: 'usr_superadmin_01',
+  email: 'admin@zeroward.in',
+  full_name: 'Zeroward Super Admin',
+  role: 'SUPER_ADMIN',
+  status: 'ACTIVE',
+  password_hash: 'cd5effca995e4b5993caacafb889e50f0245e3854bbe164fd400cb32f0920efb',
+  salt: DEFAULT_SALT,
+  created_at: new Date().toISOString()
+};
 
-// Helper to get local cache
-function getLocalInquiries() {
+function getLocalUsers() {
   try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const raw = localStorage.getItem(LOCAL_USERS_KEY);
     if (!raw) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(INITIAL_FALLBACK_INQUIRIES));
-      return INITIAL_FALLBACK_INQUIRIES;
+      localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify([INITIAL_SUPER_ADMIN]));
+      return [INITIAL_SUPER_ADMIN];
     }
     return JSON.parse(raw);
   } catch {
-    return INITIAL_FALLBACK_INQUIRIES;
+    return [INITIAL_SUPER_ADMIN];
+  }
+}
+
+function saveLocalUsers(users) {
+  try {
+    localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users));
+  } catch (e) {
+    console.warn('Local users save error:', e);
+  }
+}
+
+function getLocalInquiries() {
+  try {
+    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
   }
 }
 
@@ -95,18 +65,102 @@ function saveLocalInquiries(list) {
   try {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
   } catch (e) {
-    console.warn('LocalStorage save failed', e);
+    console.warn('Local inquiries save error:', e);
   }
 }
 
 /**
- * Submit Inquiry from Public Website Form
+ * Real Live Authentication against Supabase Database / Secure Hash
+ */
+export async function authenticateUser(email, password, expectedPortal = 'admin') {
+  const cleanEmail = (email || '').trim().toLowerCase();
+  const cleanPassword = (password || '').trim();
+
+  if (!cleanEmail || !cleanPassword) {
+    return { success: false, error: 'Please provide both Email ID and Password.' };
+  }
+
+  let userRecord = null;
+
+  // 1. Try querying Supabase admin_users table
+  try {
+    const { data, error } = await supabase
+      .from('admin_users')
+      .select('*')
+      .ilike('email', cleanEmail)
+      .maybeSingle();
+
+    if (!error && data) {
+      userRecord = data;
+    }
+  } catch (err) {
+    console.warn('Supabase auth network query note:', err);
+  }
+
+  // 2. Fallback to local stored users if table not yet run in Supabase SQL editor
+  if (!userRecord) {
+    const localUsers = getLocalUsers();
+    userRecord = localUsers.find(u => u.email.toLowerCase() === cleanEmail);
+  }
+
+  if (!userRecord) {
+    return { 
+      success: false, 
+      error: `No account found with email "${cleanEmail}". Please check your credentials or contact the administrator.` 
+    };
+  }
+
+  if (userRecord.status !== 'ACTIVE') {
+    return { 
+      success: false, 
+      error: 'This account is suspended or inactive. Please contact the administrator.' 
+    };
+  }
+
+  // 3. Verify Password Hash
+  const userSalt = userRecord.salt || DEFAULT_SALT;
+  const inputHash = await hashPassword(cleanPassword, userSalt);
+
+  if (inputHash !== userRecord.password_hash) {
+    return { 
+      success: false, 
+      error: 'Incorrect password. Please verify and try again.' 
+    };
+  }
+
+  // 4. Role & Portal Verification
+  if (expectedPortal === 'admin' && userRecord.role !== 'SUPER_ADMIN') {
+    return { 
+      success: false, 
+      error: 'Access Denied: This account is an Employee account. Please log in via the Employee Portal (/employee).' 
+    };
+  }
+
+  if (expectedPortal === 'employee' && userRecord.role === 'SUPER_ADMIN') {
+    // Allow Super Admin to also view Employee portal if desired, or guide them
+  }
+
+  return { 
+    success: true, 
+    user: {
+      id: userRecord.id,
+      email: userRecord.email,
+      full_name: userRecord.full_name,
+      role: userRecord.role,
+      status: userRecord.status,
+      portal: expectedPortal
+    } 
+  };
+}
+
+/**
+ * Submit Inquiry from Website Contact Form (Real Leads Only)
  */
 export async function submitInquiry(data) {
   const payload = {
     id: crypto.randomUUID ? crypto.randomUUID() : 'lead_' + Date.now(),
     created_at: new Date().toISOString(),
-    full_name: data.fullName || data.full_name || 'Anonymous Inquiry',
+    full_name: data.fullName || data.full_name || 'Anonymous Prospect',
     company_name: data.companyName || data.company_name || '',
     email: data.email || '',
     phone: data.phone || '',
@@ -119,11 +173,11 @@ export async function submitInquiry(data) {
     source: data.source || 'Website Contact Form'
   };
 
-  // Always update local cache so dashboard is instant
-  const localList = getLocalInquiries();
-  saveLocalInquiries([payload, ...localList]);
+  // Add to local storage
+  const current = getLocalInquiries();
+  saveLocalInquiries([payload, ...current]);
 
-  // Attempt insert into Supabase
+  // Insert into Supabase
   try {
     const { data: inserted, error } = await supabase
       .from('inquiries')
@@ -131,18 +185,18 @@ export async function submitInquiry(data) {
       .select();
 
     if (error) {
-      console.warn('Supabase insert note: Table may be newly initialized. Local queue active.', error.message);
-      return { success: true, isLocalFallback: true, data: payload };
+      console.warn('Supabase inquiries insert note (Check if table exists):', error.message);
+      return { success: true, isLive: false, data: payload };
     }
-    return { success: true, isLocalFallback: false, data: inserted };
-  } catch (err) {
-    console.warn('Supabase network catch, saved locally.', err);
-    return { success: true, isLocalFallback: true, data: payload };
+    return { success: true, isLive: true, data: inserted };
+  } catch (e) {
+    console.warn('Supabase inquiries network catch:', e);
+    return { success: true, isLive: false, data: payload };
   }
 }
 
 /**
- * Fetch All Inquiries for Admin Dashboard
+ * Fetch Inquiries (Real Leads Only — No Dummy Data)
  */
 export async function fetchInquiries() {
   try {
@@ -151,73 +205,50 @@ export async function fetchInquiries() {
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (!error && data && data.length > 0) {
-      // Sync to local cache
+    if (!error && data) {
       saveLocalInquiries(data);
       return { data, isSupabaseLive: true };
     }
   } catch (err) {
-    console.warn('Supabase fetch notice, loading cached leads:', err);
+    console.warn('Supabase inquiries fetch notice:', err);
   }
 
-  // Fallback to local storage
-  const localData = getLocalInquiries();
-  return { data: localData, isSupabaseLive: false };
+  return { data: getLocalInquiries(), isSupabaseLive: false };
 }
 
-/**
- * Update Inquiry Status (Super Admin only)
- */
 export async function updateInquiryStatus(id, newStatus) {
-  // Update local
-  const localList = getLocalInquiries();
-  const updated = localList.map(item => item.id === id ? { ...item, status: newStatus } : item);
+  const list = getLocalInquiries();
+  const updated = list.map(item => item.id === id ? { ...item, status: newStatus } : item);
   saveLocalInquiries(updated);
 
-  // Attempt Supabase update
   try {
-    await supabase
-      .from('inquiries')
-      .update({ status: newStatus })
-      .eq('id', id);
+    await supabase.from('inquiries').update({ status: newStatus }).eq('id', id);
   } catch (e) {
     console.warn('Supabase remote status sync notice:', e);
   }
   return true;
 }
 
-/**
- * Update Inquiry Notes (Super Admin only)
- */
 export async function updateInquiryNotes(id, notes) {
-  const localList = getLocalInquiries();
-  const updated = localList.map(item => item.id === id ? { ...item, notes } : item);
+  const list = getLocalInquiries();
+  const updated = list.map(item => item.id === id ? { ...item, notes } : item);
   saveLocalInquiries(updated);
 
   try {
-    await supabase
-      .from('inquiries')
-      .update({ notes })
-      .eq('id', id);
+    await supabase.from('inquiries').update({ notes }).eq('id', id);
   } catch (e) {
     console.warn('Supabase remote notes sync notice:', e);
   }
   return true;
 }
 
-/**
- * Delete Inquiry (Super Admin only)
- */
 export async function deleteInquiry(id) {
-  const localList = getLocalInquiries();
-  const filtered = localList.filter(item => item.id !== id);
+  const list = getLocalInquiries();
+  const filtered = list.filter(item => item.id !== id);
   saveLocalInquiries(filtered);
 
   try {
-    await supabase
-      .from('inquiries')
-      .delete()
-      .eq('id', id);
+    await supabase.from('inquiries').delete().eq('id', id);
   } catch (e) {
     console.warn('Supabase remote delete sync notice:', e);
   }
@@ -225,68 +256,83 @@ export async function deleteInquiry(id) {
 }
 
 /**
- * Manage Admin Users (Proposal Section 7.1)
+ * Manage Admin & Employee Users (Real Password Hash Stored)
  */
 export async function fetchAdminUsers() {
   try {
     const { data, error } = await supabase
       .from('admin_users')
-      .select('*')
+      .select('id, created_at, email, full_name, role, status')
       .order('created_at', { ascending: true });
 
     if (!error && data && data.length > 0) {
-      localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(data));
       return data;
     }
   } catch (e) {
-    console.warn('Supabase admin_users fetch notice:', e);
+    console.warn('Supabase fetchAdminUsers notice:', e);
   }
 
-  try {
-    const raw = localStorage.getItem(LOCAL_USERS_KEY);
-    return raw ? JSON.parse(raw) : INITIAL_FALLBACK_USERS;
-  } catch {
-    return INITIAL_FALLBACK_USERS;
-  }
+  const local = getLocalUsers();
+  return local.map(({ password_hash, salt, ...safeUser }) => safeUser);
 }
 
-export async function addAdminUser(user) {
+/**
+ * Admin creates an Employee account with their assigned password
+ */
+export async function addAdminUser({ email, full_name, role = 'READ_ONLY', password }) {
+  const cleanEmail = email.trim().toLowerCase();
+  const userSalt = 'bb_salt_' + Date.now();
+  const passwordHash = await hashPassword(password.trim(), userSalt);
+
   const newUser = {
     id: crypto.randomUUID ? crypto.randomUUID() : 'usr_' + Date.now(),
     created_at: new Date().toISOString(),
-    email: user.email,
-    full_name: user.full_name,
-    role: user.role || 'READ_ONLY',
-    status: 'ACTIVE'
+    email: cleanEmail,
+    full_name: full_name.trim(),
+    role: role || 'READ_ONLY',
+    status: 'ACTIVE',
+    password_hash: passwordHash,
+    salt: userSalt
   };
 
-  const current = await fetchAdminUsers();
-  const updated = [...current, newUser];
-  localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(updated));
+  // Save to local cache
+  const current = getLocalUsers().filter(u => u.email.toLowerCase() !== cleanEmail);
+  saveLocalUsers([...current, newUser]);
 
+  // Insert into Supabase
   try {
-    await supabase.from('admin_users').insert([newUser]);
+    const { error } = await supabase
+      .from('admin_users')
+      .insert([newUser]);
+
+    if (error) {
+      console.warn('Supabase admin_users insert error (Run supabase_schema.sql in editor):', error.message);
+    }
   } catch (e) {
-    console.warn('Supabase remote user insert notice:', e);
+    console.warn('Supabase admin_users network insert notice:', e);
   }
-  return newUser;
+
+  const { password_hash, salt, ...safeUser } = newUser;
+  return safeUser;
 }
 
+/**
+ * Delete User
+ */
 export async function deleteAdminUser(id) {
-  const current = await fetchAdminUsers();
-  const updated = current.filter(u => u.id !== id);
-  localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(updated));
+  const current = getLocalUsers().filter(u => u.id !== id);
+  saveLocalUsers(current);
 
   try {
     await supabase.from('admin_users').delete().eq('id', id);
   } catch (e) {
-    console.warn('Supabase remote user delete notice:', e);
+    console.warn('Supabase admin_users delete notice:', e);
   }
   return true;
 }
 
 /**
- * Export Inquiries to CSV File
+ * Export Inquiries to CSV
  */
 export function exportInquiriesToCSV(inquiries, filename = 'Zeroward_Inquiries_Export.csv') {
   if (!inquiries || !inquiries.length) return;
