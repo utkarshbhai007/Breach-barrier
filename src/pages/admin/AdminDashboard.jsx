@@ -148,14 +148,20 @@ export default function AdminDashboard() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-slate-900 dark:text-white font-mono">
-              INQUIRY MANAGEMENT <span className="text-[#DC2626] dark:text-[#EF4444]">DASHBOARD</span>
+              {isSuperAdmin ? (
+                <>INQUIRY MANAGEMENT <span className="text-[#DC2626] dark:text-[#EF4444]">DASHBOARD</span></>
+              ) : (
+                <>CUSTOMER INQUIRIES <span className="text-amber-600 dark:text-amber-500">VIEWER</span></>
+              )}
             </h1>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold">
               {filteredInquiries.length} LEADS
             </span>
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 font-sans">
-            Centralized hub capturing website consultation inquiries, SLAs, and prospect requirements.
+            {isSuperAdmin
+              ? 'Centralized Super Admin control hub capturing website consultation inquiries, SLAs, and prospect requirements.'
+              : 'Team review hub for examining prospect requirements, SLAs, and consultation messages.'}
           </p>
         </div>
 
@@ -170,20 +176,17 @@ export default function AdminDashboard() {
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
           </button>
 
-          {/* Export CSV Button (Proposal Section 7.1 & 7.3) */}
-          <button
-            onClick={handleExport}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-sm ${
-              isSuperAdmin
-                ? 'bg-[#0F172A] dark:bg-[#161826] text-white hover:bg-slate-800 border border-slate-700 cursor-pointer'
-                : 'bg-slate-200 dark:bg-slate-800 text-slate-400 border border-slate-300 dark:border-slate-700 cursor-not-allowed'
-            }`}
-            title={isSuperAdmin ? "Export leads as CSV / Spreadsheet (Proposal 7.3)" : "Export requires Super Admin account"}
-          >
-            <Download className="w-4 h-4 text-[#EF4444]" />
-            <span>EXPORT CSV</span>
-            {!isSuperAdmin && <Lock className="w-3 h-3 text-slate-400" />}
-          </button>
+          {/* Export CSV Button (Super Admin Only) */}
+          {isSuperAdmin && (
+            <button
+              onClick={handleExport}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#0F172A] dark:bg-[#161826] text-white hover:bg-slate-800 border border-slate-700 cursor-pointer shadow-sm"
+              title="Export leads as CSV / Spreadsheet (Proposal 7.3)"
+            >
+              <Download className="w-4 h-4 text-[#EF4444]" />
+              <span>EXPORT CSV</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -499,7 +502,7 @@ export default function AdminDashboard() {
                     {STATUS_CONFIG[selectedLead.status]?.label || selectedLead.status}
                   </span>
                 </div>
-                {isSuperAdmin ? (
+                {isSuperAdmin && (
                   <select
                     value={selectedLead.status}
                     onChange={(e) => handleStatusChange(selectedLead.id, e.target.value)}
@@ -512,10 +515,6 @@ export default function AdminDashboard() {
                     <option value="WON">WON</option>
                     <option value="ARCHIVED">ARCHIVED</option>
                   </select>
-                ) : (
-                  <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
-                    <Lock className="w-3 h-3" /> Read-Only
-                  </span>
                 )}
               </div>
 
@@ -580,25 +579,17 @@ export default function AdminDashboard() {
                   </div>
                 </div>
 
-                {/* Internal Notes (Proposal 7.1) */}
-                <div className="space-y-1.5">
-                  <div className="flex items-center justify-between">
+                {/* Internal Notes: Super Admin edit mode, or clean read-only if note exists */}
+                {isSuperAdmin ? (
+                  <div className="space-y-1.5">
                     <span className="text-[10px] font-bold text-slate-400 uppercase font-mono tracking-wider">INTERNAL AUDIT NOTES</span>
-                    {!isSuperAdmin && (
-                      <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
-                        <Lock className="w-3 h-3" /> Read-Only
-                      </span>
-                    )}
-                  </div>
-                  <textarea
-                    rows={3}
-                    disabled={!isSuperAdmin}
-                    value={editNotes}
-                    onChange={(e) => setEditNotes(e.target.value)}
-                    placeholder={isSuperAdmin ? "Add team follow-up notes, quote numbers, or contract status..." : "No notes or read-only access"}
-                    className="w-full p-3 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444] disabled:opacity-60"
-                  />
-                  {isSuperAdmin && (
+                    <textarea
+                      rows={3}
+                      value={editNotes}
+                      onChange={(e) => setEditNotes(e.target.value)}
+                      placeholder="Add team follow-up notes, quote numbers, or contract status..."
+                      className="w-full p-3 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444]"
+                    />
                     <button
                       type="button"
                       onClick={handleSaveNotes}
@@ -606,9 +597,15 @@ export default function AdminDashboard() {
                     >
                       Save Internal Notes
                     </button>
-                  )}
-                </div>
-
+                  </div>
+                ) : selectedLead.notes ? (
+                  <div className="space-y-1.5">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase font-mono tracking-wider">NOTES</span>
+                    <div className="p-3 bg-slate-50 dark:bg-[#181A28] rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300">
+                      {selectedLead.notes}
+                    </div>
+                  </div>
+                ) : null}
               </div>
 
             </div>

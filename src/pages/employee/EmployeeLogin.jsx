@@ -1,41 +1,40 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { ShieldCheck, Lock, Mail, ArrowRight, AlertCircle, KeyRound, Copy, Check } from 'lucide-react';
+import { Users, Lock, Mail, ArrowRight, AlertCircle, KeyRound, Copy, Check } from 'lucide-react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
 
-export default function AdminLogin() {
-  const { loginAdmin, isAuthenticated, isSuperAdmin, fixedAdmin } = useAdminAuth();
+export default function EmployeeLogin() {
+  const { loginEmployee, isAuthenticated, isEmployee, fixedEmployee } = useAdminAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [email, setEmail] = useState('admin@zeroward.in');
-  const [password, setPassword] = useState('Admin@ZeroWard2026');
+  const [email, setEmail] = useState('team@zeroward.in');
+  const [password, setPassword] = useState('Employee@ZeroWard2026');
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
 
-  const from = location.state?.from?.pathname || '/admin/dashboard';
+  const from = location.state?.from?.pathname || '/employee/dashboard';
 
-  // If already logged in as Super Admin, redirect to admin dashboard
   React.useEffect(() => {
-    if (isAuthenticated && isSuperAdmin) {
+    if (isAuthenticated && isEmployee) {
       navigate(from, { replace: true });
     }
-  }, [isAuthenticated, isSuperAdmin, navigate, from]);
+  }, [isAuthenticated, isEmployee, navigate, from]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
-    const res = loginAdmin(email, password);
+    const res = loginEmployee(email, password);
     if (res.success) {
-      navigate('/admin/dashboard', { replace: true });
+      navigate('/employee/dashboard', { replace: true });
     } else {
-      setError(res.error || 'Invalid Admin credentials.');
+      setError(res.error || 'Invalid Employee credentials.');
     }
   };
 
   const handleCopyCredentials = () => {
-    navigator.clipboard?.writeText(`ID: ${fixedAdmin.email}\nPassword: ${fixedAdmin.password}`);
+    navigator.clipboard?.writeText(`ID: ${fixedEmployee.email}\nPassword: ${fixedEmployee.password}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -47,15 +46,15 @@ export default function AdminLogin() {
         
         {/* Brand Banner */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0F172A] dark:bg-[#161826] border-2 border-[#DC2626] dark:border-[#EF4444] text-[#EF4444] shadow-xl">
-            <ShieldCheck className="w-7 h-7" />
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0F172A] dark:bg-[#161826] border-2 border-amber-500 text-amber-500 shadow-xl">
+            <Users className="w-7 h-7" />
           </div>
           <div>
             <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#0F172A] dark:text-white font-mono">
-              ZEROWARD <span className="text-[#DC2626] dark:text-[#EF4444]">ADMIN</span>
+              ZEROWARD <span className="text-amber-600 dark:text-amber-500">EMPLOYEE</span>
             </h1>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-medium font-sans">
-              Super Admin Control Portal • Full Lead Management &amp; Data Export
+              Team Member Portal • Operational Lead Inquiry Viewer
             </p>
           </div>
         </div>
@@ -66,13 +65,13 @@ export default function AdminLogin() {
           <div className="border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center justify-between">
             <div>
               <h2 className="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white font-mono flex items-center gap-1.5">
-                <KeyRound className="w-3.5 h-3.5 text-[#DC2626] dark:text-[#EF4444]" />
-                <span>ADMIN AUTHENTICATION</span>
+                <KeyRound className="w-3.5 h-3.5 text-amber-500" />
+                <span>EMPLOYEE AUTHENTICATION</span>
               </h2>
-              <p className="text-[11px] text-slate-500 mt-0.5">Fixed Super Admin account verification</p>
+              <p className="text-[11px] text-slate-500 mt-0.5">Team inquiry review portal</p>
             </div>
-            <span className="text-[10px] text-[#DC2626] dark:text-[#EF4444] font-mono font-bold bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900 px-2 py-0.5 rounded">
-              FIXED ACCESS
+            <span className="text-[10px] text-amber-600 dark:text-amber-400 font-mono font-bold bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-2 py-0.5 rounded">
+              TEAM ACCESS
             </span>
           </div>
 
@@ -80,12 +79,12 @@ export default function AdminLogin() {
           <div className="p-3.5 bg-slate-50 dark:bg-[#181A28] border border-slate-200 dark:border-slate-800 rounded-xl space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[10px] font-mono uppercase font-bold text-slate-500 dark:text-slate-400">
-                FIXED SUPER ADMIN CREDENTIALS:
+                FIXED EMPLOYEE CREDENTIALS:
               </span>
               <button
                 type="button"
                 onClick={handleCopyCredentials}
-                className="text-[10px] font-mono text-[#DC2626] dark:text-[#EF4444] hover:underline flex items-center gap-1 cursor-pointer font-bold"
+                className="text-[10px] font-mono text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer font-bold"
               >
                 {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
                 <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -93,12 +92,12 @@ export default function AdminLogin() {
             </div>
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
               <div className="bg-white dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
-                <span className="text-[9px] text-slate-400 block uppercase">Admin ID</span>
-                <span className="font-bold text-slate-900 dark:text-white select-all">{fixedAdmin.email}</span>
+                <span className="text-[9px] text-slate-400 block uppercase">Work ID</span>
+                <span className="font-bold text-slate-900 dark:text-white select-all">{fixedEmployee.email}</span>
               </div>
               <div className="bg-white dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
                 <span className="text-[9px] text-slate-400 block uppercase">Password</span>
-                <span className="font-bold text-[#DC2626] dark:text-[#EF4444] select-all">{fixedAdmin.password}</span>
+                <span className="font-bold text-amber-600 dark:text-amber-400 select-all">{fixedEmployee.password}</span>
               </div>
             </div>
           </div>
@@ -115,7 +114,7 @@ export default function AdminLogin() {
             
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider block font-sans">
-                Admin ID / Email
+                Employee Email ID
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -123,7 +122,7 @@ export default function AdminLogin() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444] transition-colors"
+                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors"
                   required
                 />
               </div>
@@ -131,7 +130,7 @@ export default function AdminLogin() {
 
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider block font-sans">
-                Admin Password
+                Password
               </label>
               <div className="relative">
                 <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -139,7 +138,7 @@ export default function AdminLogin() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444] transition-colors"
+                  className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition-colors"
                   required
                 />
               </div>
@@ -147,21 +146,21 @@ export default function AdminLogin() {
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer mt-2"
+              className="w-full py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer mt-2"
             >
-              <span>SIGN IN TO ADMIN PORTAL</span>
+              <span>SIGN IN TO EMPLOYEE PORTAL</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
 
-          {/* Switch to Employee Portal Link */}
+          {/* Switch to Super Admin Portal Link */}
           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-center">
             <Link
-              to="/employee"
+              to="/admin"
               className="text-xs text-slate-600 dark:text-slate-400 hover:text-[#DC2626] dark:hover:text-[#EF4444] font-medium transition-colors inline-flex items-center gap-1"
             >
-              <span>Are you a team member?</span>
-              <span className="font-bold underline">Go to Employee Login →</span>
+              <span>Are you the administrator?</span>
+              <span className="font-bold underline">Go to Admin Login →</span>
             </Link>
           </div>
 
@@ -169,7 +168,7 @@ export default function AdminLogin() {
 
         {/* Footer info */}
         <p className="text-center text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-          ZEROWARD • Super Admin Terminal • Proposal v2.4
+          ZEROWARD • Employee Lead Terminal • Proposal v2.4
         </p>
 
       </div>

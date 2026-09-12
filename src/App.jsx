@@ -19,11 +19,12 @@ import WhyUsPage from './pages/WhyUsPage';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
 
-// Admin Pages (Proposal Section 7)
+// Admin & Employee Pages (Proposal Section 7)
 import AdminLayout from './pages/admin/AdminLayout';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminUsers from './pages/admin/AdminUsers';
+import EmployeeLogin from './pages/employee/EmployeeLogin';
 
 // Service Pages
 import SocMdrService from './pages/services/SocMdrService';
@@ -64,12 +65,19 @@ function AnimatedRoutes() {
         <Route path="/services/compliance" element={<Navigate to="/services/asm" replace />} />
         <Route path="/services/vulnerability-management" element={<PageTransition><VulnService /></PageTransition>} />
         
-        {/* Custom Admin Panel Routes (Proposal Section 7) */}
+        {/* Super Admin Routes (/admin) */}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin" element={<AdminLayout portalType="admin" />}>
           <Route index element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="users" element={<AdminUsers />} />
+        </Route>
+
+        {/* Employee Team Routes (/employee) */}
+        <Route path="/employee/login" element={<EmployeeLogin />} />
+        <Route path="/employee" element={<AdminLayout portalType="employee" />}>
+          <Route index element={<Navigate to="/employee/dashboard" replace />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
@@ -80,9 +88,9 @@ function AnimatedRoutes() {
 
 function SiteShell({ children }) {
   const { pathname } = useLocation();
-  const isAdmin = pathname.startsWith('/admin');
+  const isPortal = pathname.startsWith('/admin') || pathname.startsWith('/employee');
 
-  if (isAdmin) {
+  if (isPortal) {
     return <div className="min-h-screen">{children}</div>;
   }
 
