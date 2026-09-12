@@ -58,19 +58,19 @@ export default function WhyNeedCybersecurity() {
                   24×7 Active SOC
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-sans font-normal">
+              <p className="text-sm font-medium text-slate-900 dark:text-slate-100 leading-relaxed font-sans">
                 BreachBarrier Security helps businesses of every size — startups, SMEs, healthcare providers, financial institutions, and enterprises — strengthen their security posture through proactive, affordable cybersecurity solutions, so you can focus on growth instead of threats.
               </p>
             </div>
 
-            <div className="relative z-10 pt-3 border-t border-slate-200/90 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-[11px] font-bold text-slate-600 dark:text-slate-400">
+            <div className="relative z-10 pt-3 border-t border-slate-200/90 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-slate-800 dark:text-slate-200">
               <span className="flex items-center gap-1.5 text-[#DC2626] dark:text-[#EF4444]">
                 ✓ Proactive Threat Containment
               </span>
-              <span className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+              <span className="flex items-center gap-1.5 text-slate-800 dark:text-slate-200">
                 ✓ Rapid Incident Containment
               </span>
-              <span className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+              <span className="flex items-center gap-1.5 text-slate-800 dark:text-slate-200">
                 ✓ Continuous Attack Surface Visibility
               </span>
             </div>
@@ -91,10 +91,10 @@ export default function WhyNeedCybersecurity() {
                   <div className="w-10 h-10 border border-slate-300 dark:border-slate-700 flex items-center justify-center bg-[#EAE7E0] dark:bg-slate-800 group-hover:bg-[#DC2626] dark:group-hover:bg-[#EF4444] group-hover:text-white dark:group-hover:text-black transition-colors text-[#0F172A] dark:text-white rounded-lg">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white uppercase tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-snug">
+                  <h3 className="font-heading text-sm sm:text-base font-extrabold text-[#0F172A] dark:text-white uppercase tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans font-normal">
+                  <p className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>

@@ -170,23 +170,23 @@ export default function SelectedWork() {
 
                       {/* Title & Tagline */}
                       <div className="space-y-1.5">
-                        <h4 className="font-heading text-base sm:text-lg font-bold text-[#0F172A] dark:text-white group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-snug">
+                        <h4 className="font-heading text-lg sm:text-xl font-bold text-[#0F172A] dark:text-white group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-snug">
                           {s.title}
                         </h4>
-                        <p className="text-xs font-semibold text-[#DC2626] dark:text-[#EF4444] italic font-sans">
+                        <p className="text-sm font-bold text-[#DC2626] dark:text-[#EF4444] italic font-sans">
                           "{s.tagline}"
                         </p>
                       </div>
 
                       {/* Key Deliverables Bullet Points */}
                       <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 space-y-2">
-                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider font-sans">
+                        <div className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider font-sans">
                           KEY DELIVERABLES:
                         </div>
-                        <ul className="space-y-1.5">
+                        <ul className="space-y-2">
                           {s.deliverables.map((d, dIdx) => (
-                            <li key={dIdx} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300 font-sans leading-snug">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#DC2626] dark:text-[#EF4444] shrink-0 mt-0.5" />
+                            <li key={dIdx} className="flex items-start gap-2 text-sm font-medium text-slate-800 dark:text-slate-100 font-sans leading-snug">
+                              <CheckCircle2 className="w-4 h-4 text-[#DC2626] dark:text-[#EF4444] shrink-0 mt-0.5" />
                               <span>{d}</span>
                             </li>
                           ))}
@@ -196,8 +196,8 @@ export default function SelectedWork() {
 
                     {/* Bottom Action Footer */}
                     <div className="relative z-10 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between mt-5">
-                      <span className="text-xs font-sans font-bold text-slate-500 dark:text-slate-400 group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors">
-                        EXPLORE SERVICE CAPABILITY
+                      <span className="text-xs sm:text-sm font-sans font-bold text-slate-800 dark:text-slate-200 group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors">
+                        EXPLORE SERVICE SPECIFICATION
                       </span>
                       <div className="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 group-hover:bg-[#DC2626] dark:group-hover:bg-[#EF4444] group-hover:text-white dark:group-hover:text-black flex items-center justify-center text-slate-500 dark:text-slate-400 transition-colors">
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

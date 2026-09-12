@@ -61,11 +61,11 @@ export default function SecurityPostureChecker() {
             <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
               
               {/* Q1: Infrastructure */}
-              <div className="space-y-1.5 p-3.5 bg-[#F8FAFC] dark:bg-[#151624] rounded-xl border border-slate-200/70 dark:border-[#27293D]">
-                <label className="text-[11px] font-bold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
-                  <span className="text-[#DC2626]">+</span> 1. INFRASTRUCTURE
+              <div className="space-y-2 p-4 bg-[#F8FAFC] dark:bg-[#151624] rounded-2xl border border-slate-200/90 dark:border-[#27293D]">
+                <label className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
+                  <span className="text-[#DC2626] font-bold">+</span> 1. INFRASTRUCTURE
                 </label>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="grid grid-cols-3 gap-1.5">
                   {[
                     { id: 'cloud', label: 'CLOUD' },
                     { id: 'hybrid', label: 'HYBRID' },
@@ -74,10 +74,10 @@ export default function SecurityPostureChecker() {
                     <button
                       key={opt.id}
                       onClick={() => setInfra(opt.id)}
-                      className={`cursor-target py-1.5 px-1 text-[10px] font-bold rounded-lg transition-all text-center ${
+                      className={`cursor-target py-2 px-1.5 text-xs font-bold rounded-xl transition-all text-center ${
                         infra === opt.id 
                           ? 'bg-[#DC2626] text-white shadow-xs' 
-                          : 'bg-white dark:bg-[#1B1D2E] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-200 dark:border-slate-700'
+                          : 'bg-white dark:bg-[#1B1D2E] text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-300 dark:border-slate-700'
                       }`}
                     >
                       {opt.label}
@@ -87,11 +87,11 @@ export default function SecurityPostureChecker() {
               </div>
 
               {/* Q2: MFA */}
-              <div className="space-y-1.5 p-3.5 bg-[#F8FAFC] dark:bg-[#151624] rounded-xl border border-slate-200/70 dark:border-[#27293D]">
-                <label className="text-[11px] font-bold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
-                  <span className="text-[#DC2626]">+</span> 2. MFA ENFORCEMENT
+              <div className="space-y-2 p-4 bg-[#F8FAFC] dark:bg-[#151624] rounded-2xl border border-slate-200/90 dark:border-[#27293D]">
+                <label className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
+                  <span className="text-[#DC2626] font-bold">+</span> 2. MFA ENFORCEMENT
                 </label>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="grid grid-cols-3 gap-1.5">
                   {[
                     { id: 'full', label: '100%' },
                     { id: 'partial', label: 'PARTIAL' },
@@ -100,10 +100,10 @@ export default function SecurityPostureChecker() {
                     <button
                       key={opt.id}
                       onClick={() => setMfa(opt.id)}
-                      className={`cursor-target py-1.5 px-1 text-[10px] font-bold rounded-lg transition-all text-center ${
+                      className={`cursor-target py-2 px-1.5 text-xs font-bold rounded-xl transition-all text-center ${
                         mfa === opt.id 
                           ? 'bg-[#DC2626] text-white shadow-xs' 
-                          : 'bg-white dark:bg-[#1B1D2E] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-200 dark:border-slate-700'
+                          : 'bg-white dark:bg-[#1B1D2E] text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-300 dark:border-slate-700'
                       }`}
                     >
                       {opt.label}
@@ -113,11 +113,11 @@ export default function SecurityPostureChecker() {
               </div>
 
               {/* Q3: SOC Monitoring */}
-              <div className="space-y-1.5 p-3.5 bg-[#F8FAFC] dark:bg-[#151624] rounded-xl border border-slate-200/70 dark:border-[#27293D]">
-                <label className="text-[11px] font-bold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
-                  <span className="text-[#DC2626]">+</span> 3. SOC MONITORING
+              <div className="space-y-2 p-4 bg-[#F8FAFC] dark:bg-[#151624] rounded-2xl border border-slate-200/90 dark:border-[#27293D]">
+                <label className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
+                  <span className="text-[#DC2626] font-bold">+</span> 3. SOC MONITORING
                 </label>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="grid grid-cols-3 gap-1.5">
                   {[
                     { id: '247', label: '24/7/365' },
                     { id: 'office_hours', label: '8×5' },
@@ -126,10 +126,10 @@ export default function SecurityPostureChecker() {
                     <button
                       key={opt.id}
                       onClick={() => setSoc(opt.id)}
-                      className={`cursor-target py-1.5 px-1 text-[10px] font-bold rounded-lg transition-all text-center ${
+                      className={`cursor-target py-2 px-1.5 text-xs font-bold rounded-xl transition-all text-center ${
                         soc === opt.id 
                           ? 'bg-[#DC2626] text-white shadow-xs' 
-                          : 'bg-white dark:bg-[#1B1D2E] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-200 dark:border-slate-700'
+                          : 'bg-white dark:bg-[#1B1D2E] text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-300 dark:border-slate-700'
                       }`}
                     >
                       {opt.label}
@@ -139,11 +139,11 @@ export default function SecurityPostureChecker() {
               </div>
 
               {/* Q4: Compliance */}
-              <div className="space-y-1.5 p-3.5 bg-[#F8FAFC] dark:bg-[#151624] rounded-xl border border-slate-200/70 dark:border-[#27293D]">
-                <label className="text-[11px] font-bold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
-                  <span className="text-[#DC2626]">+</span> 4. COMPLIANCE TARGET
+              <div className="space-y-2 p-4 bg-[#F8FAFC] dark:bg-[#151624] rounded-2xl border border-slate-200/90 dark:border-[#27293D]">
+                <label className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white uppercase flex items-center gap-1.5">
+                  <span className="text-[#DC2626] font-bold">+</span> 4. COMPLIANCE TARGET
                 </label>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="grid grid-cols-3 gap-1.5">
                   {[
                     { id: 'iso', label: 'ISO / SOC2' },
                     { id: 'hipaa', label: 'HIPAA' },
@@ -152,10 +152,10 @@ export default function SecurityPostureChecker() {
                     <button
                       key={opt.id}
                       onClick={() => setCompliance(opt.id)}
-                      className={`cursor-target py-1.5 px-1 text-[10px] font-bold rounded-lg transition-all text-center ${
+                      className={`cursor-target py-2 px-1.5 text-xs font-bold rounded-xl transition-all text-center ${
                         compliance === opt.id 
                           ? 'bg-[#DC2626] text-white shadow-xs' 
-                          : 'bg-white dark:bg-[#1B1D2E] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-200 dark:border-slate-700'
+                          : 'bg-white dark:bg-[#1B1D2E] text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#25283E] border border-slate-300 dark:border-slate-700'
                       }`}
                     >
                       {opt.label}
@@ -167,7 +167,7 @@ export default function SecurityPostureChecker() {
             </div>
 
             {/* Right: Compact Live Telemetry Gauge with Subtle Backdrop Image (5 cols) */}
-            <div className="lg:col-span-5 relative p-5 bg-[#F8FAFC] dark:bg-[#151624] rounded-xl border border-slate-200/80 dark:border-[#27293D] space-y-3.5 overflow-hidden">
+            <div className="lg:col-span-5 relative p-6 bg-[#F8FAFC] dark:bg-[#151624] rounded-2xl border border-slate-200 dark:border-[#27293D] space-y-4 overflow-hidden">
               <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <img
                   src="https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=600&q=80"
@@ -180,19 +180,19 @@ export default function SecurityPostureChecker() {
               {/* Top Row: Score + Grade */}
               <div className="relative z-10 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">BENCHMARK SCORE</span>
-                  <div className="text-3xl font-black text-[#0F172A] dark:text-white tracking-tight">{score} <span className="text-sm font-normal text-slate-400">/ 100</span></div>
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block">BENCHMARK SCORE</span>
+                  <div className="text-3xl sm:text-4xl font-black text-[#0F172A] dark:text-white tracking-tight">{score} <span className="text-sm font-normal text-slate-500">/ 100</span></div>
                 </div>
                 <div className="text-right">
-                  <span className={`px-2.5 py-1 text-xs font-black rounded-lg border ${result.color}`}>
+                  <span className={`px-3 py-1.5 text-xs font-black rounded-xl border ${result.color}`}>
                     {result.grade}
                   </span>
-                  <div className="text-[10px] font-bold text-slate-700 dark:text-slate-300 pt-1">{result.text}</div>
+                  <div className="text-xs font-bold text-slate-800 dark:text-slate-200 pt-1.5">{result.text}</div>
                 </div>
               </div>
 
               {/* Progress Bar */}
-              <div className="relative z-10 w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div className="relative z-10 w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
                 <div 
                   className={`h-full transition-all duration-500 rounded-full ${
                     score >= 80 ? 'bg-emerald-500' : score >= 60 ? 'bg-blue-500' : score >= 40 ? 'bg-amber-500' : 'bg-red-500'
@@ -203,12 +203,12 @@ export default function SecurityPostureChecker() {
 
               {/* Bottom Action Strip */}
               <div className="relative z-10 pt-1 flex items-center justify-between gap-3 text-xs">
-                <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug line-clamp-2">
-                  <span className="font-bold text-slate-800 dark:text-slate-200">Action:</span> {result.action}
+                <p className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 leading-snug">
+                  <span className="font-bold text-slate-900 dark:text-white">Action:</span> {result.action}
                 </p>
                 <Link
                   to="/contact"
-                  className="cursor-target shrink-0 px-3.5 py-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-[11px] font-bold rounded-lg flex items-center gap-1 transition-colors shadow-xs"
+                  className="cursor-target shrink-0 px-4 py-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
                 >
                   <span>CLAIM AUDIT</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

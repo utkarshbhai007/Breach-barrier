@@ -12,7 +12,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
 import About from './pages/About';
 import IndustriesPage from './pages/IndustriesPage';
-import ResourcesPage from './pages/ResourcesPage';
+import ServicesPage from './pages/ServicesPage';
 import ProcessPage from './pages/ProcessPage';
 import WhyUsPage from './pages/WhyUsPage';
 import FaqPage from './pages/FaqPage';
@@ -38,14 +38,15 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
         <Route path="/industries" element={<PageTransition><IndustriesPage /></PageTransition>} />
-        <Route path="/resources" element={<PageTransition><ResourcesPage /></PageTransition>} />
+        <Route path="/resources" element={<Navigate to="/faq" replace />} />
         <Route path="/process" element={<PageTransition><ProcessPage /></PageTransition>} />
         <Route path="/why-choose-us" element={<PageTransition><WhyUsPage /></PageTransition>} />
         <Route path="/faq" element={<PageTransition><FaqPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         
-        {/* Core 5 Services */}
+        {/* Core 5 Services Individual Spec Pages */}
         <Route path="/services/soc-mdr" element={<PageTransition><SocMdrService /></PageTransition>} />
         <Route path="/services/soc" element={<Navigate to="/services/soc-mdr" replace />} />
         <Route path="/services/mdr" element={<Navigate to="/services/soc-mdr" replace />} />

@@ -37,10 +37,9 @@ export default function Footer() {
             <li><Link to="/" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">About Us</Link></li>
             <li><Link to="/why-choose-us" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Why Choose Us</Link></li>
-            <li><Link to="/services/soc-mdr" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Services</Link></li>
+            <li><Link to="/services" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors font-bold text-[#DC2626] dark:text-[#EF4444]">All Services</Link></li>
             <li><Link to="/industries" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Industries</Link></li>
             <li><Link to="/process" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Deployment Process</Link></li>
-            <li><Link to="/resources" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Resources</Link></li>
             <li><Link to="/faq" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">FAQ & SOC Guide</Link></li>
             <li><Link to="/contact" className="hover:text-[#DC2626] dark:hover:text-[#EF4444] transition-colors">Contact Us</Link></li>
           </ul>

@@ -231,21 +231,21 @@ export default function ThreatSimulator() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-bold text-[#0F172A] dark:text-white leading-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A] dark:text-white leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 pt-0.5 line-clamp-1">
+                    <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 pt-1 line-clamp-1">
                       {item.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <div className="relative z-10 pt-2 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-[#DC2626] dark:text-[#EF4444]">
-                  <span className="flex items-center gap-1.5 text-[11px]">
-                    <Play className={`w-3 h-3 ${isSelected && isRunning ? 'animate-spin' : 'fill-[#DC2626] dark:fill-[#EF4444]'}`} />
+                <div className="relative z-10 pt-2.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-[#DC2626] dark:text-[#EF4444]">
+                  <span className="flex items-center gap-1.5 text-xs">
+                    <Play className={`w-3.5 h-3.5 ${isSelected && isRunning ? 'animate-spin' : 'fill-[#DC2626] dark:fill-[#EF4444]'}`} />
                     <span>{isSelected && isRunning ? 'Containing Threat...' : 'Simulate Attack'}</span>
                   </span>
-                  <span className="text-[10px] text-slate-400 font-mono">avg {item.timeToContain}</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400 font-mono font-bold">avg {item.timeToContain}</span>
                 </div>
               </button>
             );
@@ -260,12 +260,12 @@ export default function ThreatSimulator() {
             <div className="space-y-0.5">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-[#DC2626] dark:text-[#EF4444]" />
-                <span className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider">
+                <span className="text-sm font-bold text-[#0F172A] dark:text-white uppercase tracking-wider">
                   Automated Defense Pipeline
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono">({current.target})</span>
+                <span className="text-xs text-slate-500 font-mono">({current.target})</span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
                 Watching telemetry signals, isolating host, and securing credentials in real time.
               </p>
             </div>
@@ -300,28 +300,28 @@ export default function ThreatSimulator() {
                   <div className="space-y-2">
                     {/* Header */}
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold text-slate-400">
+                      <span className="text-xs font-bold text-slate-600 dark:text-slate-400">
                         STEP 0{idx + 1}
                       </span>
-                      <span className="text-[10px] font-mono font-bold text-[#DC2626] dark:text-[#EF4444]">
+                      <span className="text-xs font-mono font-bold text-[#DC2626] dark:text-[#EF4444]">
                         +{step.time}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-xs font-bold text-[#0F172A] dark:text-white leading-tight">
+                    <h4 className="text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-tight">
                       {step.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug font-normal">
+                    <p className="text-xs text-slate-800 dark:text-slate-200 leading-snug font-medium">
                       {step.desc}
                     </p>
                   </div>
 
                   {/* Status Footer */}
                   <div className="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                       {step.status}
                     </span>
                     {isPassed ? (

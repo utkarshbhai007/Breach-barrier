@@ -130,20 +130,26 @@ export default function Navbar() {
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
-          {/* Services Dropdown */}
+          {/* Services Link & Dropdown */}
           <div 
             ref={dropdownRef}
-            className="relative"
+            className="relative flex items-center"
             onMouseEnter={() => setServicesDropdown(true)}
             onMouseLeave={() => setServicesDropdown(false)}
           >
-            <button
-              onClick={() => setServicesDropdown(!servicesDropdown)}
+            <Link
+              to="/services"
               className={`cursor-target flex items-center gap-1 transition-colors uppercase font-bold text-xs hover:text-[#DC2626] dark:hover:text-[#EF4444] py-1 ${
                 isServicesActive ? 'text-[#DC2626] dark:text-[#EF4444]' : ''
               }`}
             >
               <span>SERVICES</span>
+            </Link>
+            <button
+              onClick={() => setServicesDropdown(!servicesDropdown)}
+              aria-label="Toggle services dropdown"
+              className="cursor-target p-1 hover:text-[#DC2626] dark:hover:text-[#EF4444]"
+            >
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-[#DC2626] dark:text-[#EF4444]' : ''}`} />
             </button>
 
@@ -160,7 +166,10 @@ export default function Navbar() {
                   <div className="space-y-4">
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1 pb-2 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                       <span>CORE CAPABILITIES</span>
-                      <span className="text-[#DC2626] dark:text-[#EF4444] font-mono font-bold">5 SERVICES</span>
+                      <Link to="/services" className="text-[#DC2626] dark:text-[#EF4444] font-mono font-bold hover:underline flex items-center gap-1">
+                        <span>VIEW ALL 5 TOGETHER</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </Link>
                     </div>
 
                     {serviceCategories.map((cat, cIdx) => (
@@ -211,11 +220,6 @@ export default function Navbar() {
 
           <Link to="/industries" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/industries' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
             INDUSTRIES
-          </Link>
-          <span className="text-slate-300 dark:text-slate-700">/</span>
-
-          <Link to="/resources" className={`transition-colors hover:text-[#DC2626] dark:hover:text-[#EF4444] ${location.pathname === '/resources' ? 'text-[#DC2626] dark:text-[#EF4444]' : ''}`}>
-            RESOURCES
           </Link>
           <span className="text-slate-300 dark:text-slate-700">/</span>
 
@@ -286,12 +290,19 @@ export default function Navbar() {
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               className="w-full py-2 flex items-center justify-between font-bold text-left"
             >
-              <span>SERVICES (5 CORE SERVICES)</span>
+              <span>SERVICES (5 CORE CAPABILITIES)</span>
               <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180 text-[#DC2626]' : ''}`} />
             </button>
 
             {mobileServicesOpen && (
               <div className="pl-3 py-1 space-y-2 bg-slate-50 dark:bg-slate-900/60 rounded-xl p-3 mt-1 border border-slate-100 dark:border-slate-800">
+                <Link
+                  to="/services"
+                  className="flex items-center justify-between p-2 rounded-lg bg-red-50 dark:bg-red-950/50 text-[#DC2626] dark:text-[#EF4444] font-bold border border-red-200 dark:border-red-900/50 text-[11px]"
+                >
+                  <span>VIEW ALL 5 SERVICES TOGETHER</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
                 {allServices.map((s, idx) => {
                   const Icon = s.icon;
                   return (
@@ -310,7 +321,6 @@ export default function Navbar() {
           </div>
 
           <Link to="/industries" className="block py-2 border-b border-slate-100 dark:border-slate-800 font-bold">INDUSTRIES</Link>
-          <Link to="/resources" className="block py-2 border-b border-slate-100 dark:border-slate-800 font-bold">RESOURCES</Link>
           <Link to="/contact" className="block py-2 border-b border-slate-100 dark:border-slate-800 font-bold">CONTACT</Link>
           
           <div className="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">

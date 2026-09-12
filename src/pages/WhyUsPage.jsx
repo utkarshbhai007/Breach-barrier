@@ -31,7 +31,7 @@ export default function WhyUsPage() {
       <section className="border-b border-[#D6D0C2] bg-[#EAE7E0] dark:bg-[#0A0A0E] py-14 px-4 sm:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="border border-black dark:border-[#27293D] bg-white dark:bg-[#13141F] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(220,38,38,0.3)] overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse min-w-[700px]">
+            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b border-black dark:border-slate-800 bg-[#0A0A0C] text-white">
                   <th className="p-4 uppercase font-bold tracking-wider">DEFENSE CAPABILITY</th>
@@ -45,8 +45,8 @@ export default function WhyUsPage() {
                   <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
                     <td className="p-4 font-bold text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800">{row.feature}</td>
                     <td className="p-4 font-bold text-[#DC2626] dark:text-[#EF4444] bg-red-50/50 dark:bg-red-950/20 border-r border-slate-200 dark:border-slate-800">{row.us}</td>
-                    <td className="p-4 text-slate-600 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800">{row.inHouse}</td>
-                    <td className="p-4 text-slate-600 dark:text-slate-300">{row.passiveMSSP}</td>
+                    <td className="p-4 font-medium text-slate-800 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800">{row.inHouse}</td>
+                    <td className="p-4 font-medium text-slate-800 dark:text-slate-200">{row.passiveMSSP}</td>
                   </tr>
                 ))}
               </tbody>
@@ -60,8 +60,8 @@ export default function WhyUsPage() {
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8">
           <div className="border border-black dark:border-[#27293D] p-8 bg-white dark:bg-[#13141F] space-y-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/50 text-xs font-semibold text-[#DC2626] dark:text-[#EF4444] font-sans">The Passive MSSP Flaw</div>
-            <h3 className="font-brutal text-3xl font-black text-black dark:text-white">CCTV OPERATOR VS ARMED GUARDS</h3>
-            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            <h3 className="font-brutal text-2xl sm:text-3xl font-black text-black dark:text-white">CCTV OPERATOR VS ARMED GUARDS</h3>
+            <p className="text-sm font-medium text-slate-800 dark:text-slate-100 leading-relaxed">
               Traditional vendors act like CCTV operators who watch cameras and call to say "Sir, someone is in your shop." 
               BreachBarrier Security is the armed response team that detects, rushes in, locks down the infected host, and neutralizes the attacker before you even wake up.
             </p>
@@ -69,8 +69,8 @@ export default function WhyUsPage() {
 
           <div className="border border-black p-8 bg-[#E2F952] space-y-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-[#0A0A0C]">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/10 border border-black/20 text-xs font-semibold text-black font-sans">Smart Prioritization</div>
-            <h3 className="font-brutal text-3xl font-black !text-[#0A0A0C]">FIXING THE FRONT DOOR FIRST</h3>
-            <p className="text-xs !text-[#0A0A0C] leading-relaxed font-bold">
+            <h3 className="font-brutal text-2xl sm:text-3xl font-black !text-[#0A0A0C]">FIXING THE FRONT DOOR FIRST</h3>
+            <p className="text-sm font-bold !text-[#0A0A0C] leading-relaxed">
               We don't waste your engineering bandwidth on 200 minor low-risk vulnerabilities. We prioritize the exact critical weak points that active ransomware gangs are exploiting in the wild right now.
             </p>
           </div>

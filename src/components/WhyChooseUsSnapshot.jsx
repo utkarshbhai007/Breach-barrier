@@ -57,53 +57,51 @@ export default function WhyChooseUsSnapshot() {
           </Link>
         </div>
 
-        {/* 3 Top Cards Grid with Image Backgrounds & Light Glassmorphic Overlays */}
+        {/* 3 Top Cards Grid with Image Backgrounds & Glassmorphic Overlays */}
         <div className="grid md:grid-cols-3 gap-6">
           {topReasons.map((r, idx) => {
             const Icon = r.icon;
             return (
               <div
                 key={idx}
-                className="group relative border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#6D28D9] transition-all duration-300 flex flex-col justify-between p-6 sm:p-8 min-h-[220px]"
+                className="group relative bg-white dark:bg-[#13141E] border border-slate-200 dark:border-[#27293D] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#DC2626] dark:hover:border-[#EF4444] transition-all duration-300 flex flex-col justify-between p-6 sm:p-8 min-h-[240px]"
               >
                 {/* Background Image Layer with Zoom Effect */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 z-0 overflow-hidden opacity-10 dark:opacity-20 group-hover:opacity-15 transition-opacity">
                   <img
                     src={r.image}
                     alt={r.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  {/* Clean Light Theme Mask */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/80 backdrop-blur-[1px]" />
                 </div>
 
                 {/* Card Content */}
                 <div className="relative z-10 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
-                    <span className="text-xs font-semibold text-[#6D28D9] font-sans">Reason {r.num}</span>
-                    <span className="px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 bg-slate-100 rounded-full border border-slate-200 uppercase font-sans">
+                  <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-3">
+                    <span className="text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans">Reason {r.num}</span>
+                    <span className="px-2.5 py-0.5 text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 uppercase font-sans">
                       {r.tag}
                     </span>
                   </div>
 
                   <div className="space-y-2">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-center text-[#6D28D9] shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900/50 flex items-center justify-center text-[#DC2626] dark:text-[#EF4444] shrink-0 shadow-xs">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A] uppercase tracking-tight group-hover:text-[#6D28D9] transition-colors leading-tight">
+                      <h3 className="font-heading text-base sm:text-lg font-bold text-[#0F172A] dark:text-white uppercase tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
                         {r.title}
                       </h3>
                     </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans font-normal pt-1">
+                    <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans pt-1">
                       {r.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Highlight */}
-                <div className="relative z-10 pt-4 border-t border-slate-100/90 flex items-center justify-between mt-3 text-[11px] font-bold text-slate-400 group-hover:text-[#6D28D9] transition-colors">
+                <div className="relative z-10 pt-4 border-t border-slate-100/90 dark:border-slate-800 flex items-center justify-between mt-3 text-xs font-bold text-slate-700 dark:text-slate-300 group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors">
                   <span>ENTERPRISE GUARANTEE</span>
                   <span>→</span>
                 </div>

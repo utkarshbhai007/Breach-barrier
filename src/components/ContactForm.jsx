@@ -67,41 +67,41 @@ export default function ContactForm() {
                 </h2>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed font-normal font-sans">
+              <p className="text-sm text-slate-200 leading-relaxed font-medium font-sans">
                 Let's discuss how BreachBarrier Security can protect your organization with 24×7 enterprise-grade security at a fraction of the cost of an in-house team.
               </p>
 
               {/* Contact Details List */}
-              <div className="space-y-2.5 pt-3 border-t border-slate-800/80 text-xs">
-                <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-                  <div className="w-7 h-7 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
-                    <Mail className="w-3.5 h-3.5" />
+              <div className="space-y-3 pt-3 border-t border-slate-800/80 text-sm">
+                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div className="w-8 h-8 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
-                  <a href="mailto:info@breachbarriersecurity.com" className="text-slate-200 text-xs font-medium hover:text-[#EF4444] transition-colors font-sans">
+                  <a href="mailto:info@breachbarriersecurity.com" className="text-white text-sm font-semibold hover:text-[#EF4444] transition-colors font-sans">
                     info@breachbarriersecurity.com
                   </a>
                 </div>
 
-                <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-                  <div className="w-7 h-7 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
-                    <Phone className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div className="w-8 h-8 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
+                    <Phone className="w-4 h-4" />
                   </div>
-                  <a href="tel:+916355496696" className="text-slate-200 text-xs font-medium hover:text-[#EF4444] transition-colors font-sans">
+                  <a href="tel:+916355496696" className="text-white text-sm font-semibold hover:text-[#EF4444] transition-colors font-sans">
                     +91 63554 96696
                   </a>
                 </div>
 
-                <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-                  <div className="w-7 h-7 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
-                    <MapPin className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div className="w-8 h-8 rounded-lg bg-red-950/60 border border-red-800/50 flex items-center justify-center text-[#EF4444] shrink-0">
+                    <MapPin className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-200 text-xs font-medium font-sans">India (Global Delivery Center)</span>
+                  <span className="text-white text-sm font-semibold font-sans">India (Global Delivery Center)</span>
                 </div>
               </div>
             </div>
 
             {/* Assessment Included Badge */}
-            <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 text-[11px] text-[#EF4444] font-semibold flex items-center gap-2.5 font-sans">
+            <div className="p-3.5 bg-slate-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-[#EF4444] font-bold flex items-center gap-2.5 font-sans">
               <ShieldCheck className="w-4 h-4 shrink-0 text-emerald-400" />
               <span>Free Initial Security Architecture Assessment Included</span>
             </div>
@@ -126,51 +126,51 @@ export default function ContactForm() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
+              <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 
                 {/* Row 1: Name & Company */}
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">FULL NAME *</label>
+                <div className="grid sm:grid-cols-2 gap-3.5">
+                  <div className="space-y-1.5">
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">FULL NAME *</label>
                     <input
                       type="text"
                       required
                       placeholder="Ravi Makwana"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="cursor-target w-full py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">COMPANY NAME *</label>
+                  <div className="space-y-1.5">
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">COMPANY NAME *</label>
                     <input
                       type="text"
                       required
                       placeholder="Acme Corp"
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                      className="cursor-target w-full py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     />
                   </div>
                 </div>
 
                 {/* Row 2: Email & Phone */}
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">BUSINESS EMAIL *</label>
+                <div className="grid sm:grid-cols-2 gap-3.5">
+                  <div className="space-y-1.5">
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">BUSINESS EMAIL *</label>
                     <input
                       type="email"
                       required
                       placeholder="ravi@breachbarriersecurity.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="cursor-target w-full py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">
-                        PHONE NUMBER <span className="text-slate-400 font-normal normal-case">(Optional)</span>
+                      <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">
+                        PHONE NUMBER <span className="text-slate-500 font-normal normal-case">(Optional)</span>
                       </label>
                     </div>
                     <input
@@ -178,19 +178,19 @@ export default function ContactForm() {
                       placeholder="+91 63554 96696"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="cursor-target w-full py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     />
                   </div>
                 </div>
 
                 {/* Row 3: Industry & Employees */}
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">INDUSTRY</label>
+                <div className="grid sm:grid-cols-2 gap-3.5">
+                  <div className="space-y-1.5">
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">INDUSTRY</label>
                     <select
                       value={formData.industry}
                       onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                      className="cursor-target w-full py-2 px-2.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     >
                       <option>Technology & SaaS</option>
                       <option>Financial Services</option>
@@ -203,12 +203,12 @@ export default function ContactForm() {
                     </select>
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">EMPLOYEES</label>
+                  <div className="space-y-1.5">
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">EMPLOYEES</label>
                     <select
                       value={formData.employees}
                       onChange={(e) => setFormData({ ...formData, employees: e.target.value })}
-                      className="cursor-target w-full py-2 px-2.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                      className="cursor-target w-full py-2.5 px-3 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                     >
                       <option>1-50</option>
                       <option>51-200</option>
@@ -219,13 +219,13 @@ export default function ContactForm() {
                 </div>
 
                 {/* Row 4: Services You Need (Multiple Choice) */}
-                <div className="space-y-1.5 pt-0.5">
+                <div className="space-y-2 pt-1">
                   <div className="flex items-center justify-between">
-                    <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">
-                      SERVICES YOU NEED <span className="text-[#DC2626] dark:text-[#EF4444] font-semibold text-[10px] normal-case">(Select multiple)</span>
+                    <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">
+                      SERVICES YOU NEED <span className="text-[#DC2626] dark:text-[#EF4444] font-bold text-xs normal-case">(Select multiple)</span>
                     </label>
                     {formData.services.length > 0 && (
-                      <span className="text-[10px] text-slate-500 font-medium">
+                      <span className="text-xs text-slate-700 dark:text-slate-300 font-bold">
                         {formData.services.length} selected
                       </span>
                     )}
@@ -238,14 +238,14 @@ export default function ContactForm() {
                           type="button"
                           key={svc}
                           onClick={() => toggleService(svc)}
-                          className={`cursor-target p-2.5 rounded-xl text-left border text-[11px] transition-all flex items-center justify-between gap-1.5 font-sans ${
+                          className={`cursor-target p-3 rounded-xl text-left border text-xs transition-all flex items-center justify-between gap-2 font-sans ${
                             isSelected
                               ? 'bg-red-50 dark:bg-red-950/40 text-[#DC2626] dark:text-[#EF4444] border-2 border-[#DC2626] dark:border-[#EF4444] font-bold shadow-xs'
-                              : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-red-300 dark:hover:border-red-800 hover:bg-white font-medium'
+                              : 'bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:border-red-300 dark:hover:border-red-800 hover:bg-white font-semibold'
                           }`}
                         >
                           <span className="leading-snug">{svc}</span>
-                          <span className={`w-4 h-4 rounded-md flex items-center justify-center shrink-0 text-[10px] font-bold transition-colors ${
+                          <span className={`w-4 h-4 rounded-md flex items-center justify-center shrink-0 text-xs font-bold transition-colors ${
                             isSelected ? 'bg-[#DC2626] dark:bg-[#EF4444] text-white dark:text-black' : 'border border-slate-300 dark:border-slate-600 text-transparent'
                           }`}>
                             ✓
@@ -257,21 +257,21 @@ export default function ContactForm() {
                 </div>
 
                 {/* Row 5: Message */}
-                <div className="space-y-1">
-                  <label className="font-bold text-slate-700 dark:text-slate-300 block text-[11px] uppercase tracking-wider font-sans">YOUR MESSAGE / SCOPE CHALLENGES</label>
+                <div className="space-y-1.5">
+                  <label className="font-extrabold text-slate-900 dark:text-white block text-xs uppercase tracking-wider font-sans">YOUR MESSAGE / SCOPE CHALLENGES</label>
                   <textarea
                     rows={2}
                     placeholder="Tell us about your security goals, compliance deadlines, or current tooling..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="cursor-target w-full py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-xs text-slate-900 dark:text-white font-sans"
+                    className="cursor-target w-full py-2.5 px-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-[#DC2626] dark:focus:border-[#EF4444] focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-all text-sm font-medium text-slate-900 dark:text-white font-sans"
                   />
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="cursor-target w-full py-3 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white dark:text-black text-xs font-bold rounded-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xs mt-1 font-sans"
+                  className="cursor-target w-full py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white text-sm font-black rounded-xl tracking-wider flex items-center justify-center gap-2 transition-all shadow-xs mt-2 font-sans"
                 >
                   <span>BOOK A FREE SECURITY CONSULTATION</span>
                   <ArrowUpRight className="w-4 h-4" />

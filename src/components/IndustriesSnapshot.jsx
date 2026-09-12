@@ -170,13 +170,13 @@ export default function IndustriesSnapshot() {
 
                   {/* Title, Category & Description */}
                   <div className="space-y-1">
-                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
+                    <h3 className="font-heading text-base sm:text-lg font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
                       {ind.title}
                     </h3>
-                    <div className="text-[10px] font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider">
+                    <div className="text-xs font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider">
                       {ind.category}
                     </div>
-                    <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-0.5 line-clamp-2">
+                    <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium pt-0.5 line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
@@ -188,13 +188,13 @@ export default function IndustriesSnapshot() {
                     {ind.chips.map((chip, cIdx) => (
                       <span
                         key={cIdx}
-                        className="px-2 py-0.5 text-[9px] font-bold tracking-wider text-slate-600 dark:text-slate-300 bg-white/80 dark:bg-slate-800/80 rounded-full border border-slate-200/80 dark:border-slate-700/80 uppercase group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors"
+                        className="px-2 py-0.5 text-[10px] font-bold tracking-wider text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-800/90 rounded-full border border-slate-300 dark:border-slate-700 uppercase group-hover:border-slate-400 dark:group-hover:border-slate-500 transition-colors"
                       >
                         {chip}
                       </span>
                     ))}
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400 font-bold hidden sm:inline">
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold hidden sm:inline">
                     //{ind.id}
                   </span>
                 </div>
@@ -236,14 +236,14 @@ export default function IndustriesSnapshot() {
                   </div>
 
                   {/* Title, Category & Description */}
-                  <div className="space-y-0.5">
-                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
+                  <div className="space-y-1">
+                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A] dark:text-white tracking-tight group-hover:text-[#DC2626] dark:group-hover:text-[#EF4444] transition-colors leading-tight">
                       {ind.title}
                     </h3>
-                    <div className="text-[9.5px] font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider truncate">
+                    <div className="text-[10px] font-bold text-[#DC2626] dark:text-[#EF4444] uppercase tracking-wider truncate">
                       {ind.category}
                     </div>
-                    <p className="text-[10.5px] text-slate-600 dark:text-slate-300 leading-snug font-normal line-clamp-2">
+                    <p className="text-xs text-slate-800 dark:text-slate-200 leading-snug font-medium line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
@@ -255,7 +255,7 @@ export default function IndustriesSnapshot() {
                     {ind.chips.map((chip, cIdx) => (
                       <span
                         key={cIdx}
-                        className="px-1.5 py-0.5 text-[8.5px] font-bold tracking-wider text-slate-600 dark:text-slate-300 bg-white/80 dark:bg-slate-800/80 rounded-full border border-slate-200/80 dark:border-slate-700/80 uppercase group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors"
+                        className="px-2 py-0.5 text-[9.5px] font-bold tracking-wider text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-800/90 rounded-full border border-slate-300 dark:border-slate-700 uppercase group-hover:border-slate-400 dark:group-hover:border-slate-500 transition-colors"
                       >
                         {chip}
                       </span>

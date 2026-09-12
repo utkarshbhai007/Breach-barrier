@@ -70,20 +70,20 @@ export default function FaqPage() {
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 transition-colors"
                 >
-                  <span className="font-mono-code text-xs sm:text-sm font-black text-black uppercase tracking-wide">
+                  <span className="font-heading text-sm sm:text-base font-extrabold text-black uppercase tracking-wide">
                     {faq.q}
                   </span>
-                  <div className={`w-7 h-7 border border-black flex items-center justify-center bg-[#F2EFE9] shrink-0 transition-transform ${isOpen ? 'rotate-180 bg-[#E2F952]' : ''}`}>
+                  <div className={`w-8 h-8 border border-black flex items-center justify-center bg-[#F2EFE9] shrink-0 transition-transform ${isOpen ? 'rotate-180 bg-[#E2F952]' : ''}`}>
                     <ChevronDown className="w-4 h-4 text-black" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-200 text-xs text-slate-700 space-y-3 font-mono leading-relaxed bg-[#F2EFE9]">
+                  <div className="px-6 pb-6 pt-3 border-t border-slate-200 text-sm font-medium text-slate-900 space-y-3 font-sans leading-relaxed bg-[#F8FAFC]">
                     <p>{faq.a}</p>
-                    <div className="p-3 bg-white border border-[#DC2626] text-[11px] text-black">
+                    <div className="p-4 bg-white border-2 border-[#DC2626] text-xs sm:text-sm text-black rounded-xl">
                       <strong className="text-[#DC2626] font-bold">REAL-LIFE ANALOGY: </strong>
-                      {faq.analogy}
+                      <span>{faq.analogy}</span>
                     </div>
                   </div>
                 )}

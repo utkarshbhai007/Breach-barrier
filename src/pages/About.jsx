@@ -126,10 +126,10 @@ export default function About() {
               </div>
 
               <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-2">
-                <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider font-sans">
+                <div className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider font-sans">
                   SECURITY ARCHITECTURE
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+                <p className="text-sm font-medium text-slate-800 dark:text-slate-200 font-sans leading-relaxed">
                   Proactive adversary simulation, defensive perimeter engineering, and 24/7 active threat containment operations.
                 </p>
               </div>
@@ -145,14 +145,14 @@ export default function About() {
                 "CYBERSECURITY IS NOT A CHECKBOX. IT IS AN ONGOING BATTLE OF WITS."
               </h3>
 
-              <div className="space-y-3.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              <div className="space-y-4 text-sm sm:text-base text-slate-800 dark:text-slate-200 font-sans leading-relaxed font-medium">
                 <p>
                   Modern adversaries do not operate within regular business hours, and they do not exploit theoretical risks—they exploit operational blind spots. Having spent years conducting hands-on offensive research, analyzing weaponized exploits, and breaking through real-world perimeters, I have seen how fragile traditional, passive defenses become under focused pressure.
                 </p>
                 <p>
                   I founded BreachBarrier Security with a direct mandate to close the gap between how security is promised and how attacks actually occur. We do not bury our clients in automated vulnerability reports or superficial checklist audits. We examine your architecture through the eyes of an advanced adversary, neutralize exploitable vectors before they can be leveraged, and back your business with continuous, 24/7 active containment.
                 </p>
-                <div className="p-4 bg-white/80 dark:bg-slate-900/80 border-l-4 border-[#DC2626] dark:border-[#EF4444] rounded-r-xl font-medium text-[#0F172A] dark:text-white italic">
+                <div className="p-4 bg-white/80 dark:bg-slate-900/80 border-l-4 border-[#DC2626] dark:border-[#EF4444] rounded-r-xl font-bold text-[#0F172A] dark:text-white italic">
                   "Our commitment to every partner is simple: enterprise-grade security architecture, transparent communication, and 100% accountability in defending what you've built."
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function About() {
               The Challenge
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl font-black uppercase text-[#0F172A] dark:text-white">WHY WE EXIST</h2>
-            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-sans font-medium">
+            <p className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-sans font-medium">
               Cyberattacks are increasing exponentially every year, but most growing businesses cannot afford the millions required for an internal 24/7 Security Operations Center. We close that gap: 24/7 managed defense and offensive security delivered remotely, giving organizations continuous enterprise protection and expert support at a fraction of the cost.
             </p>
             <div className="p-4 bg-[#F2EFE9] dark:bg-[#1A1C2A] border-l-4 border-[#DC2626] dark:border-[#EF4444] text-xs font-bold text-[#0F172A] dark:text-white">
@@ -197,7 +197,7 @@ export default function About() {
                 Purpose
               </span>
               <h3 className="font-heading text-xl font-black uppercase text-[#0F172A] dark:text-white">OUR MISSION</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans">
                 To empower organizations with proactive, 24×7 cybersecurity services across 5 core disciplines: Security Operations Center (SOC) & MDR, Incident Response (IR) & Forensics, Penetration Testing (VAPT), Attack Surface Management (ASM), and Vulnerability Management.
               </p>
             </div>
@@ -207,7 +207,7 @@ export default function About() {
                 Horizon
               </span>
               <h3 className="font-heading text-xl font-black uppercase text-[#0F172A] dark:text-white">OUR VISION</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans">
                 To become a globally trusted cybersecurity powerhouse recognized for technical excellence and relentless defense — delivering elite security capabilities from India to enterprises across Canada and worldwide.
               </p>
             </div>
@@ -235,11 +235,11 @@ export default function About() {
                   key={idx}
                   className="border border-[#D6D0C2] dark:border-[#26283A] bg-white dark:bg-[#13141E] p-6 space-y-3 hover:border-black dark:hover:border-[#EF4444] hover:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] transition-all"
                 >
-                  <div className="w-9 h-9 border border-slate-300 dark:border-slate-700 flex items-center justify-center bg-[#EAE7E0] dark:bg-slate-800 text-[#DC2626] dark:text-[#EF4444] rounded-lg">
-                    <Icon className="w-4 h-4" />
+                  <div className="w-10 h-10 border border-slate-300 dark:border-slate-700 flex items-center justify-center bg-[#EAE7E0] dark:bg-slate-800 text-[#DC2626] dark:text-[#EF4444] rounded-lg">
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xs font-black text-[#0F172A] dark:text-white uppercase tracking-wider">{v.name}</h3>
-                  <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-sans">{v.desc}</p>
+                  <h3 className="text-sm font-black text-[#0F172A] dark:text-white uppercase tracking-wider">{v.name}</h3>
+                  <p className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans">{v.desc}</p>
                 </div>
               );
             })}
@@ -258,13 +258,13 @@ export default function About() {
           <div className="border border-black dark:border-[#26283A] divide-y divide-black dark:divide-[#26283A] bg-[#F2EFE9] dark:bg-[#151722] shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] dark:shadow-[6px_6px_0px_0px_rgba(220,38,38,0.7)]">
             {whyChooseUsFull.map((item, idx) => (
               <div key={idx} className="p-6 bg-white dark:bg-[#13141E] hover:bg-[#F2EFE9] dark:hover:bg-[#1A1C2A] transition-colors grid md:grid-cols-12 gap-4 items-center">
-                <div className="md:col-span-1 text-xs font-black text-[#DC2626] dark:text-[#EF4444]">
+                <div className="md:col-span-1 text-sm font-black text-[#DC2626] dark:text-[#EF4444]">
                   {item.num}
                 </div>
-                <div className="md:col-span-4 text-xs font-black text-[#0F172A] dark:text-white uppercase tracking-wider">
+                <div className="md:col-span-4 text-sm font-black text-[#0F172A] dark:text-white uppercase tracking-wider">
                   {item.title}
                 </div>
-                <div className="md:col-span-7 text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
+                <div className="md:col-span-7 text-sm font-medium text-slate-800 dark:text-slate-200 font-sans leading-relaxed">
                   {item.meaning}
                 </div>
               </div>
@@ -285,11 +285,11 @@ export default function About() {
             {processSteps.map((p, idx) => (
               <div key={idx} className="border border-black dark:border-[#26283A] bg-white dark:bg-[#13141E] p-6 space-y-3 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(220,38,38,0.6)] flex flex-col justify-between">
                 <div className="space-y-2">
-                  <span className="text-xs font-semibold text-[#DC2626] dark:text-[#EF4444] font-sans">Step {p.step}</span>
-                  <h3 className="text-xs font-black text-[#0F172A] dark:text-white uppercase tracking-wider leading-snug">{p.title}</h3>
-                  <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-sans">{p.desc}</p>
+                  <span className="text-xs font-bold text-[#DC2626] dark:text-[#EF4444] font-sans">Step {p.step}</span>
+                  <h3 className="text-sm font-black text-[#0F172A] dark:text-white uppercase tracking-wider leading-snug">{p.title}</h3>
+                  <p className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans">{p.desc}</p>
                 </div>
-                <div className="text-[10px] text-slate-400 font-medium pt-2 border-t border-slate-100 dark:border-slate-800 font-sans">
+                <div className="text-xs text-slate-600 dark:text-slate-400 font-bold pt-2 border-t border-slate-100 dark:border-slate-800 font-sans">
                   Milestone {p.step}
                 </div>
               </div>
