@@ -24,13 +24,14 @@ export default function AiChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: "👋 Hello! I am the BreachBarrier Security AI Assistant.\n\nAsk me about our 5 core services, 24/7 SOC & MDR operations, incident response, penetration testing, pricing, or Founder Ravi Makwana's security architecture.",
+      text: "👋 Hello! I am the BreachBarrier Security AI Assistant.\n\nAsk me anything about our 24/7 SOC & MDR, ISO 27001 compliance, industries served, 5 core services, or how to schedule a consultation with our architecture team.",
       time: 'LIVE',
       quickActions: [
-        "5 Core Services",
-        "SOC & MDR",
-        "Penetration Testing",
-        "Founder Ravi Makwana"
+        "What industries do you serve?",
+        "Do you provide 24×7 monitoring?",
+        "Can you help with ISO 27001?",
+        "Where is your team based?",
+        "How do I schedule a consultation?"
       ]
     }
   ]);
@@ -48,14 +49,18 @@ export default function AiChatbot() {
   }, [messages, isOpen, isTyping]);
 
   const quickPrompts = [
+    "What industries do you serve?",
+    "Do you provide 24×7 monitoring?",
+    "Can you help us become ISO 27001 compliant?",
+    "How do I schedule a consultation?",
+    "Where is your team based, and who do you serve?",
     "5 Core Services",
-    "What is SOC & MDR?",
-    "Incident Response & Forensics",
     "Penetration Testing (VAPT)",
+    "Incident Response & Forensics",
     "Attack Surface Management",
     "Vulnerability Management",
-    "Who is Ravi Makwana?",
-    "Pricing & In-House Cost"
+    "Pricing & In-House Cost",
+    "Founder Ravi Makwana"
   ];
 
   const getBotResponse = (query) => {
@@ -65,104 +70,122 @@ export default function AiChatbot() {
     if (q === 'hi' || q === 'hello' || q === 'hey' || q.includes('good morning') || q.includes('good evening') || q.includes('kem cho') || q.includes('namaste')) {
       return {
         text: "Hello! Welcome to BreachBarrier Security. How can I assist you with your cybersecurity architecture today?",
-        quickActions: ["5 Core Services", "Book Consultation", "Explore SOC & MDR"]
+        quickActions: ["What industries do you serve?", "Do you provide 24×7 monitoring?", "How do I schedule a consultation?"]
       };
     }
 
-    // 2. 5 Core Services Overview
+    // 2. Resource Q5: Where is your team based, and who do you serve?
+    if (q.includes('where is your team') || q.includes('team based') || (q.includes('who') && q.includes('serve')) || q.includes('where are you') || q.includes('location') || q.includes('india') || q.includes('canada')) {
+      return {
+        text: "🌍 Team Location & Global Coverage:\n\nWe are based in India and deliver enterprise-grade managed cybersecurity services to organizations across Canada, North America, and other global international markets.\n\nOur centralized delivery hub provides 24×7×365 follow-the-sun defense with rapid SLA guarantees and high operational efficiency.",
+        link: { text: "Learn About Our Global Delivery Hub ↗", path: "/about" },
+        quickActions: ["What industries do you serve?", "Do you provide 24×7 monitoring?", "How do I schedule a consultation?"]
+      };
+    }
+
+    // 3. Resource Q1: What industries do you serve?
+    if (q.includes('industry') || q.includes('industries') || q.includes('sector') || q.includes('vertical') || q.includes('healthcare') || q.includes('fintech') || q.includes('retail') || q.includes('manufacturing')) {
+      return {
+        text: "🏢 Industries We Serve:\n\nWe serve Healthcare, Financial Services, Technology & SaaS, Manufacturing, Education, Retail & E-commerce, Government & Public Sector, and Small & Medium Businesses worldwide.\n\nEach sector receives tailored defense blueprints, specific regulatory compliance mapping (HIPAA, PCI-DSS, SOC 2, PIPEDA), and continuous threat hunting.",
+        link: { text: "Explore All 8 Industry Defense Matrices ↗", path: "/industries" },
+        quickActions: ["Do you provide 24×7 monitoring?", "Can you help with ISO 27001?", "How do I schedule a consultation?"]
+      };
+    }
+
+    // 4. Resource Q2 & SOC: Do you provide 24×7 monitoring?
+    if (q.includes('24/7') || q.includes('24×7') || q.includes('24x7') || q.includes('monitoring') || q.includes('soc') || q.includes('mdr') || q.includes('threat hunting') || q.includes('siem')) {
+      return {
+        text: "🕒 24×7×365 Continuous Monitoring (SOC & MDR):\n\nYes. Our Security Operations Center (SOC) provides continuous 24×7×365 monitoring, real-time threat detection, and rapid active containment through our dedicated global delivery hub.\n\nKey Deliverables:\n• 24/7/365 Network & Endpoint Telemetry Monitoring\n• 15-Minute Critical Incident Response SLA (Guaranteed)\n• Automated Threat Containment (sub-second isolation)\n• Monthly Executive Security Dashboards & C-Suite Metrics",
+        link: { text: "Explore SOC & MDR Service ↗", path: "/services/soc-mdr" },
+        quickActions: ["Can you help with ISO 27001?", "How do I schedule a consultation?", "5 Core Services"]
+      };
+    }
+
+    // 5. Resource Q3 & Compliance: Can you help us become ISO 27001 compliant?
+    if (q.includes('iso') || q.includes('27001') || q.includes('compliance') || q.includes('soc 2') || q.includes('audit') || q.includes('hipaa') || q.includes('pipeda') || q.includes('gdpr')) {
+      return {
+        text: "🛡️ ISO 27001 & Compliance Readiness:\n\nYes. We support end-to-end ISO 27001 and SOC 2 readiness, security policies development, risk assessments, gap analysis, automated Vanta/Drata evidence syncing, and complete audit support with certified assessors.\n\nWe ensure your systems stay audit-ready year-round rather than rushing before an inspection.",
+        link: { text: "Schedule Compliance Architecture Audit ↗", path: "/contact" },
+        quickActions: ["Penetration Testing (VAPT)", "How do I schedule a consultation?", "5 Core Services"]
+      };
+    }
+
+    // 6. Resource Q4 & Consultation: How do I schedule a consultation?
+    if (q.includes('schedule') || q.includes('consultation') || q.includes('book') || q.includes('appointment') || q.includes('how do i schedule') || q.includes('talk to') || q.includes('contact') || q.includes('phone') || q.includes('email')) {
+      return {
+        text: "📅 Scheduling a Consultation:\n\nSimply complete our contact form or book a consultation — we provide a free initial security architecture assessment with our Technical Lead & Founder Ravi Makwana.\n\n• Response SLA: Within 2 hours guaranteed\n• Email: info@breachbarriersecurity.com\n• Phone: +91 63554 96696\n• No obligation, 100% confidential security review.",
+        link: { text: "Book Free Security Consultation ↗", path: "/contact" },
+        quickActions: ["5 Core Services", "What industries do you serve?", "Do you provide 24×7 monitoring?"]
+      };
+    }
+
+    // 7. 5 Core Services Overview
     if (q.includes('5 core') || q.includes('services') || q.includes('what do you do') || q.includes('offerings') || q.includes('capabilities') || q.includes('categories')) {
       return {
         text: "BreachBarrier Security delivers 5 Core Services across 2 Strategic Categories:\n\n🛡️ CATEGORY 1: MANAGED DEFENSE (Protect & Respond)\n1. Security Operations Center (SOC) & MDR — True 24/7 Threat Hunting & Neutralization\n2. Incident Response (IR) & Digital Forensics — Your Digital Fire Department\n\n🎯 CATEGORY 2: OFFENSIVE SECURITY (Test & Prevent)\n3. Penetration Testing (VAPT) — Find Your Weak Spots Before Hackers Do\n4. Attack Surface Management (ASM) — See Your Business Through an Attacker's Eyes\n5. Vulnerability Management — Proactive Patching & Risk Prioritization",
-        link: { text: "View Full Services Matrix ↗", path: "/#services" },
-        quickActions: ["SOC & MDR Details", "Penetration Testing", "Attack Surface Management"]
+        link: { text: "View All 5 Services Together ↗", path: "/services" },
+        quickActions: ["SOC & MDR Details", "Penetration Testing", "How do I schedule a consultation?"]
       };
     }
 
-    // 3. SOC & MDR
-    if (q.includes('soc') || q.includes('mdr') || q.includes('monitoring') || q.includes('siem') || q.includes('24/7') || q.includes('threat hunting')) {
-      return {
-        text: "Security Operations Center (SOC) & MDR\nTagline: \"True 24/7 Threat Hunting & Neutralization.\"\n\nKey Deliverables:\n• 24/7/365 Network & Endpoint Telemetry Monitoring\n• 15-Minute Critical Incident Response SLA (Guaranteed)\n• Automated Threat Containment (sub-second quarantine)\n• Monthly Executive Security Dashboards & C-Suite Metrics\n\nAnalogy: Like a 24/7 command center watching every camera, paired with an elite armed response force that catches intruders in seconds.",
-        link: { text: "Explore SOC & MDR Service ↗", path: "/services/soc-mdr" },
-        quickActions: ["Book SOC Consultation", "Difference with In-House SOC"]
-      };
-    }
-
-    // 4. Incident Response & Forensics
+    // 8. Incident Response & Forensics
     if (q.includes('incident') || q.includes('response') || q.includes('ir') || q.includes('forensic') || q.includes('ransomware') || q.includes('breach') || q.includes('emergency')) {
       return {
-        text: "Incident Response (IR) & Digital Forensics\nTagline: \"Your Digital Fire Department.\"\n\nKey Deliverables:\n• Zero-Day Retainer Contracts with priority standby\n• Rapid Ransomware Containment halting lateral spread\n• Root-Cause Analysis & Court-Admissible Forensics\n• Post-Breach Clean Infrastructure Recovery Assistance\n\nWe act like an emergency hospital trauma unit to stop the bleeding first, followed by lead detectives investigating patient zero.",
+        text: "Incident Response (IR) & Digital Forensics\nTagline: \"Your Digital Fire Department.\"\n\nKey Deliverables:\n• Zero-Day Retainer Contracts with priority standby\n• Rapid Ransomware Containment halting lateral spread\n• Root-Cause Analysis & Court-Admissible Forensics\n• Post-Breach Clean Infrastructure Recovery Assistance\n\nWe act like an emergency hospital trauma unit to stop the bleeding first, followed by forensic detectives investigating patient zero.",
         link: { text: "View Incident Response Details ↗", path: "/services/incident-response" },
-        quickActions: ["Emergency Retainer Scope", "Speak With Architect"]
+        quickActions: ["How do I schedule a consultation?", "5 Core Services"]
       };
     }
 
-    // 5. Penetration Testing (VAPT)
+    // 9. Penetration Testing (VAPT)
     if (q.includes('pentest') || q.includes('pen-test') || q.includes('vapt') || q.includes('penetration') || q.includes('ethical hack') || q.includes('web test') || q.includes('mobile test')) {
       return {
         text: "Penetration Testing (VAPT)\nTagline: \"Find Your Weak Spots Before Hackers Do.\"\n\nKey Deliverables:\n• Web & Mobile Application Testing (OWASP Top 10)\n• Internal & External Network Penetration Testing\n• Actionable Technical Remediation Guides with code fixes\n• Board-Level Executive Risk Reports & Free Re-Testing Pass\n\nOur tests are performed 100% manually by certified ethical hackers to uncover real-world exploit chains that scanners miss.",
         link: { text: "Explore Penetration Testing ↗", path: "/services/pentesting" },
-        quickActions: ["Schedule Pen-Test", "View Methodology"]
+        quickActions: ["Schedule Pen-Test", "5 Core Services"]
       };
     }
 
-    // 6. Attack Surface Management (ASM)
+    // 10. Attack Surface Management (ASM)
     if (q.includes('asm') || q.includes('attack surface') || q.includes('dark web') || q.includes('external asset') || q.includes('shadow it') || q.includes('credential leak')) {
       return {
         text: "Attack Surface Management (ASM)\nTagline: \"See Your Business Through an Attacker’s Eyes.\"\n\nKey Deliverables:\n• Continuous External Asset Discovery (domains, IPs, APIs)\n• Dark Web Credential Leak Surveillance for corporate accounts\n• Shadow IT & Orphaned Staging Environment Detection\n• Real-Time Exposure Alerts for opened ports & misconfigurations\n\nZero agents required — 100% non-intrusive external reconnaissance.",
         link: { text: "Explore Attack Surface Management ↗", path: "/services/asm" },
-        quickActions: ["Audit External Surface", "Book Consultation"]
+        quickActions: ["How do I schedule a consultation?", "5 Core Services"]
       };
     }
 
-    // 7. Vulnerability Management
+    // 11. Vulnerability Management
     if (q.includes('vuln') || q.includes('patch') || q.includes('cve') || q.includes('scanner') || q.includes('nessus') || q.includes('qualys')) {
       return {
         text: "Vulnerability Management\nTagline: \"Proactive Patching & Risk Prioritization.\"\n\nKey Deliverables:\n• Automated Internal & Multi-Cloud Scanning\n• Risk-Based Patch Prioritization targeting active exploits (CISA KEV)\n• Compliance-Driven Vulnerability Tracking\n\nWe prioritize fixing the vulnerable front doors that adversaries are actively exploiting, rather than wasting engineering hours on low-risk noise.",
         link: { text: "Explore Vulnerability Management ↗", path: "/services/vulnerability-management" },
-        quickActions: ["Streamline Patching", "Book Consultation"]
+        quickActions: ["How do I schedule a consultation?", "5 Core Services"]
       };
     }
 
-    // 8. Founder Ravi Makwana
+    // 12. Founder Ravi Makwana
     if (q.includes('ravi') || q.includes('makwana') || q.includes('founder') || q.includes('advisor') || q.includes('architect') || q.includes('who is the founder') || q.includes('who is ravi')) {
       return {
         text: "Ravi Makwana\nFounder & Principal Security Advisor, BreachBarrier Architect\n\n\"Cybersecurity is not a checkbox. It is an ongoing battle of wits.\"\n\nRavi founded BreachBarrier Security to close the gap between superficial compliance promises and real-world adversary tactics. With years of hands-on offensive research, weaponized exploit analysis, and perimeter engineering, he leads BreachBarrier's proactive defense model.",
         link: { text: "Read Founder's Full Message ↗", path: "/about" },
-        quickActions: ["Read Founder's Message", "Book Consultation"]
+        quickActions: ["How do I schedule a consultation?", "5 Core Services"]
       };
     }
 
-    // 9. Pricing & In-House Cost Comparison
+    // 13. Pricing & In-House Cost Comparison
     if (q.includes('price') || q.includes('pricing') || q.includes('cost') || q.includes('rate') || q.includes('how much') || q.includes('sow') || q.includes('quote') || q.includes('in-house')) {
       return {
         text: "BreachBarrier Security provides custom Statements of Work (SOW) based on your organization's exact infrastructure size and endpoints.\n\n💰 Why BreachBarrier beats an In-House SOC:\n• Building an in-house SOC costs upwards of $300k+/year (hiring, training 5+ 24/7 engineers, SIEM licenses, turnover overhead).\n• BreachBarrier delivers turnkey Tier-3 24/7 SOC operations and offensive security with up to 80% cost savings.\n\nWe include a free initial architecture assessment with every inquiry.",
         link: { text: "Request Custom SOW & Pricing ↗", path: "/contact" },
-        quickActions: ["Book Free Assessment", "Talk to Architect"]
+        quickActions: ["How do I schedule a consultation?", "What industries do you serve?"]
       };
     }
 
-    // 10. Compliance & Regulations
-    if (q.includes('compliance') || q.includes('iso') || q.includes('soc 2') || q.includes('hipaa') || q.includes('gdpr') || q.includes('pipeda') || q.includes('audit')) {
-      return {
-        text: "Compliance & Audit Readiness\n\nWe assist organizations in satisfying continuous technical security controls for:\n• ISO 27001 (Annex A security controls & continuous telemetry)\n• SOC 2 Type I & II (Trust Services Criteria & audit evidence)\n• HIPAA & Canadian PIPEDA data security standards\n• Mandatory annual Penetration Testing requirements\n\nWe ensure your documentation and logs are always organized so audits are stress-free.",
-        link: { text: "Schedule Compliance Assessment ↗", path: "/contact" },
-        quickActions: ["SOC 2 Pen-Testing", "Contact Team"]
-      };
-    }
-
-    // 11. Contact & Booking
-    if (q.includes('contact') || q.includes('phone') || q.includes('email') || q.includes('call') || q.includes('book') || q.includes('schedule') || q.includes('reach') || q.includes('address')) {
-      return {
-        text: "Direct Contact Information:\n\n📧 Email: info@breachbarriersecurity.com\n📞 Phone: +91 63554 96696\n🌐 Global Delivery: India Hub serving Canada & international enterprises\n⏱️ Response Time: Within 2 hours for consultation requests\n\nYou can book a direct consultation with Founder Ravi Makwana and our security architects right now.",
-        link: { text: "Open Consultation Form ↗", path: "/contact" },
-        quickActions: ["Open Contact Form", "5 Core Services"]
-      };
-    }
-
-    // 12. Smart Fallback with Guided Options
+    // 14. Smart Fallback with Guided Options
     return {
-      text: "I want to make sure you get the exact information you need. Could you clarify your question, or pick from our most common topics below?\n\n• 24/7 SOC & MDR Monitoring\n• Penetration Testing (VAPT)\n• Incident Response & Forensics\n• Attack Surface Management (ASM)\n• Vulnerability Management\n• Founder Ravi Makwana's Architecture\n• Custom Statement of Work (SOW) & Pricing",
-      quickActions: ["5 Core Services", "SOC & MDR", "Penetration Testing", "Book Consultation"]
+      text: "I want to make sure you get the exact information you need. Could you clarify your question, or pick from our most common topics below?\n\n• What industries do you serve?\n• Do you provide 24×7 monitoring?\n• Can you help us become ISO 27001 compliant?\n• How do I schedule a consultation?\n• Where is your team based, and who do you serve?\n• 5 Core Services & SOC/MDR Operations",
+      quickActions: ["What industries do you serve?", "Do you provide 24×7 monitoring?", "Can you help with ISO 27001?", "How do I schedule a consultation?"]
     };
   };
 
@@ -202,10 +225,11 @@ export default function AiChatbot() {
         text: "👋 Chat reset. I am BreachBarrier Security AI Assistant. What would you like to explore?",
         time: 'LIVE',
         quickActions: [
-          "5 Core Services",
-          "SOC & MDR",
-          "Penetration Testing",
-          "Founder Ravi Makwana"
+          "What industries do you serve?",
+          "Do you provide 24×7 monitoring?",
+          "Can you help with ISO 27001?",
+          "Where is your team based?",
+          "How do I schedule a consultation?"
         ]
       }
     ]);
