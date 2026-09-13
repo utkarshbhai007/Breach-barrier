@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Col 1: Brand & Slogan (4 cols) */}
         <div className="lg:col-span-4 space-y-4">
           <Link to="/" className="inline-block">
-            <BreachBarrierLogo className="h-14 sm:h-16 md:h-20 max-h-[84px]" />
+            <BreachBarrierLogo className="h-[65px] sm:h-[80px] md:h-[95px] max-h-[105px]" />
           </Link>
 
           <p className="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed max-w-sm">

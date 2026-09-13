@@ -110,7 +110,7 @@ export default function Navbar() {
         
         {/* Brand Logo */}
         <Link to="/" className="flex items-center group py-0.5">
-          <BreachBarrierLogo className="h-11 sm:h-13 md:h-15 lg:h-16 max-h-[64px]" />
+          <BreachBarrierLogo className="h-[52px] sm:h-[62px] md:h-[72px] lg:h-[78px] max-h-[85px]" />
         </Link>
 
         {/* Center Nav */}

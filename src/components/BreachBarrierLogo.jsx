@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function BreachBarrierLogo({ 
-  className = "h-12 sm:h-14 md:h-16",
+  className = "h-[54px] sm:h-[64px] md:h-[76px]",
   alt = "BreachBarrier Security - 24/7 Managed SOC & Cybersecurity Operations"
 }) {
   return (
