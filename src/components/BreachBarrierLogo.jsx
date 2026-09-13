@@ -13,11 +13,11 @@ export default function BreachBarrierLogo({
         className={`dark:hidden w-auto object-contain select-none shrink-0 drop-shadow-xs ${className}`}
         draggable={false}
       />
-      {/* Dark Mode: new-logo-dark.png with white font */}
+      {/* Dark Mode: new-logo-dark.png with white font and vibrant red accent */}
       <img 
         src="/new-logo-dark.png" 
         alt={alt}
-        className={`hidden dark:block w-auto object-contain select-none shrink-0 drop-shadow-sm ${className}`}
+        className={`hidden dark:block w-auto object-contain select-none shrink-0 ${className}`}
         draggable={false}
       />
     </div>
