@@ -105,8 +105,9 @@ export default function Navbar() {
   const isServicesActive = location.pathname.startsWith('/services');
 
   return (
-    <header className="sticky top-0 z-50 bg-[#EAE7E0]/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md border-b border-[#D6D0C2] dark:border-[#262736] transition-colors duration-200">
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2.5">
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#EAE7E0]/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md border-b border-[#D6D0C2] dark:border-[#262736] transition-colors duration-200 shadow-xs">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2 sm:py-2.5">
         
         {/* Brand Logo */}
         <Link to="/" className="flex items-center group py-0.5">
@@ -351,5 +352,8 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    {/* Spacer to keep page content flowing cleanly below fixed navbar */}
+    <div className="h-[68px] sm:h-[82px] md:h-[92px] lg:h-[98px] w-full shrink-0 pointer-events-none" aria-hidden="true" />
+    </>
   );
 }
