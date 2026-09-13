@@ -109,8 +109,8 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-8 py-2.5">
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center group py-1">
-          <BreachBarrierLogo className="h-10 sm:h-12 md:h-13 max-h-[52px]" />
+        <Link to="/" className="flex items-center group py-0.5">
+          <BreachBarrierLogo className="h-11 sm:h-13 md:h-15 lg:h-16 max-h-[64px]" />
         </Link>
 
         {/* Center Nav */}
