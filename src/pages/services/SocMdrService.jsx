@@ -6,6 +6,9 @@ export default function SocMdrService() {
   return (
     <ServicePageLayout
       title="Security Operations Center (SOC) & MDR"
+      seoTitle="24/7 Managed SOC & MDR Services | Breach Barrier Security"
+      seoDescription="True 24/7 threat detection, continuous hunting, and rapid containment with guaranteed 15-minute SLA by Breach Barrier Security."
+      seoKeywords="Managed SOC, MDR Services, 24/7 Threat Hunting, SIEM EDR, Breach Barrier SOC, Breach Barrier Security"
       tagline="TRUE 24/7 THREAT HUNTING & NEUTRALIZATION"
       subtitle="A unified command center combining 24/7 continuous SIEM telemetry monitoring with automated Managed Detection & Response (MDR) to intercept and quarantine threats in seconds."
       analogy="A 24/7 high-tech command center monitoring every motion sensor and camera across your enterprise, backed by an armed rapid-response team that physically intercepts an intruder in seconds without waiting for permission."

@@ -6,6 +6,9 @@ export default function ForensicsService() {
   return (
     <ServicePageLayout
       title="Incident Response (IR) & Digital Forensics"
+      seoTitle="Incident Response & Digital Forensics | Breach Barrier Security"
+      seoDescription="Rapid ransomware containment, breach investigation, forensic root-cause analysis, and emergency incident response by Breach Barrier Security."
+      seoKeywords="Incident Response, Digital Forensics, Ransomware Containment, Breach Investigation, Emergency IR, Breach Barrier Forensics, Breach Barrier Security"
       tagline="YOUR DIGITAL FIRE DEPARTMENT"
       subtitle="When an incident strikes, our emergency team rushes in to extinguish the attack, contain ransomware immediately, and perform forensic root-cause analysis so you recover rapidly."
       analogy="Your emergency fire department arriving on scene in minutes to stop the flames and rescue the building, followed by lead forensic investigators uncovering exactly how the spark occurred."

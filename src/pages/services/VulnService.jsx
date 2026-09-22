@@ -6,6 +6,9 @@ export default function VulnService() {
   return (
     <ServicePageLayout
       title="Vulnerability Management"
+      seoTitle="Vulnerability Management Services | Breach Barrier Security"
+      seoDescription="Proactive risk-based vulnerability prioritization, automated scanning, and patch verification targeting weaponized CVEs by Breach Barrier Security."
+      seoKeywords="Vulnerability Management, CVE Prioritization, Patch Management, Vulnerability Assessment, Risk Prioritization, Breach Barrier Security, Breach Barrier"
       tagline="PROACTIVE PATCHING & RISK PRIORITIZATION"
       subtitle="Continuous automated internal and cloud scanning paired with threat intelligence to prioritize and patch the exact vulnerabilities that adversaries are actively exploiting."
       analogy="Continuously inspecting every lock and window in your high-rise, and immediately fixing the compromised front door lock that burglars are actively targeting before worrying about scuffed paint."

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import InteractiveCyberGridCTA from '../components/InteractiveCyberGridCTA';
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 
 export default function About() {
   const values = [
@@ -83,6 +84,13 @@ export default function About() {
 
   return (
     <div className="bg-[#EAE7E0] dark:bg-[#0A0A0E] text-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-200">
+      <SEO
+        title="About Us | Breach Barrier Security — Enterprise Cyber Defense"
+        description="Learn about Breach Barrier Security, our mission, 24/7 global cybersecurity delivery center, leadership by Ravi Makwana, and our commitment to enterprise defense."
+        keywords="About Breach Barrier Security, Breach Barrier company, Ravi Makwana, cybersecurity leadership, 24/7 SOC team, Breach Barrier"
+        canonicalPath="/about"
+        breadcrumbs={[{ name: 'About Us', path: '/about' }]}
+      />
       
       {/* 1. Header Hero */}
       <PageHero

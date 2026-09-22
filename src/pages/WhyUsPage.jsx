@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Check, X } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 
 export default function WhyUsPage() {
   const comparisons = [
@@ -17,6 +18,13 @@ export default function WhyUsPage() {
 
   return (
     <div className="bg-[#EAE7E0] text-black">
+      <SEO
+        title="Why Choose Breach Barrier Security | 80% Cost Savings vs In-House SOC"
+        description="Why leading enterprises choose Breach Barrier Security: 24/7 dedicated coverage, guaranteed 15-minute response SLA, enterprise-grade tooling, and up to 80% cost savings."
+        keywords="Why Breach Barrier Security, Breach Barrier vs MSSP, In-house SOC comparison, Managed SOC ROI, Cybersecurity cost savings, Breach Barrier"
+        canonicalPath="/why-choose-us"
+        breadcrumbs={[{ name: 'Why Choose Us', path: '/why-choose-us' }]}
+      />
       
       {/* Header Hero */}
       <PageHero

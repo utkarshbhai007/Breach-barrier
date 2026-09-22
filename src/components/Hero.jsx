@@ -35,13 +35,18 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8 relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
         
-        {/* Top Tag Badge */}
+        {/* Top Tag Badge with exact brand keywords */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D6D0C2] bg-white/90 backdrop-blur-xs text-xs font-mono font-bold tracking-wider uppercase text-[#DC2626] shadow-xs">
+          <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse" />
+          <span>BREACH BARRIER SECURITY • 24/7 MANAGED SOC &amp; MDR</span>
+        </div>
 
         {/* Centered Headline with BlurText */}
         <div className="space-y-3">
           <h1 className="font-hero-brutal text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight uppercase flex flex-col items-center justify-center">
+            <span className="sr-only">Breach Barrier Security — 24/7 Managed SOC &amp; Cybersecurity Operations. </span>
             <BlurText
               text="SECURE YOUR BUSINESS."
               delay={120}

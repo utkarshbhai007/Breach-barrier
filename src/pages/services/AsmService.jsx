@@ -6,6 +6,9 @@ export default function AsmService() {
   return (
     <ServicePageLayout
       title="Attack Surface Management (ASM)"
+      seoTitle="Attack Surface Management (ASM) | Breach Barrier Security"
+      seoDescription="Continuous external asset discovery, shadow IT identification, and dark web credential leak monitoring by Breach Barrier Security."
+      seoKeywords="Attack Surface Management, ASM, Dark Web Monitoring, Shadow IT, External Risk Assessment, Breach Barrier Security, Breach Barrier"
       tagline="SEE YOUR BUSINESS THROUGH AN ATTACKER’S EYES"
       subtitle="Continuous external asset discovery, dark web credential leak surveillance, and shadow IT detection — uncovering exposed digital blind spots before hackers can weaponize them."
       analogy="Flying an autonomous security drone continuously over your organization's perimeter to spot unlocked side windows, orphaned staging servers, or leaked corporate master keys before burglars do."

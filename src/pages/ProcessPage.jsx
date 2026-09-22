@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, Shield, Activity, Layers, FileCheck, BarChart3, ArrowUpRight } from 'lucide-react';
 
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 
 export default function ProcessPage() {
   const steps = [
@@ -58,6 +59,13 @@ export default function ProcessPage() {
 
   return (
     <div className="bg-[#EAE7E0] text-black">
+      <SEO
+        title="Our Cybersecurity Process & Onboarding Roadmap | Breach Barrier Security"
+        description="Discover our proven 6-step cyber defense onboarding framework: Discovery, Architecture, SIEM Integration, 24/7 Continuous Monitoring, and Compliance."
+        keywords="Cybersecurity Process, SOC Onboarding, SIEM Deployment, Cyber Defense Framework, Breach Barrier Security, Breach Barrier"
+        canonicalPath="/process"
+        breadcrumbs={[{ name: 'Process', path: '/process' }]}
+      />
       
       {/* Header Hero */}
       <PageHero

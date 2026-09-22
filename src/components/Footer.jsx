@@ -22,8 +22,8 @@ export default function Footer() {
 
           <div className="pt-2 flex items-center gap-3 text-xs text-[#DC2626] dark:text-[#EF4444] font-bold">
             <Globe className="w-4 h-4" />
-            <a href="https://breachbarriersecurity.com" target="_blank" rel="noreferrer" className="hover:underline">
-              breachbarriersecurity.com
+            <a href="https://www.breachbarriersecurity.com" className="hover:underline">
+              www.breachbarriersecurity.com
             </a>
           </div>
         </div>

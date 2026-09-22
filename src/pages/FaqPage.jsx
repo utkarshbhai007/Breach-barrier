@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ArrowUpRight, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 
 export default function FaqPage() {
   const faqs = [
@@ -46,6 +47,13 @@ export default function FaqPage() {
 
   return (
     <div className="bg-[#EAE7E0] text-black">
+      <SEO
+        title="Frequently Asked Questions (FAQ) | Breach Barrier Security"
+        description="Answers to common questions about 24/7 SOC & MDR pricing, SLAs, remote delivery model, ISO 27001 readiness, and onboarding with Breach Barrier Security."
+        keywords="Breach Barrier FAQ, SOC Pricing, Cybersecurity FAQ, MDR SLA Questions, Breach Barrier Security, Breach Barrier"
+        canonicalPath="/faq"
+        breadcrumbs={[{ name: 'FAQ', path: '/faq' }]}
+      />
       
       {/* Header Hero */}
       <PageHero

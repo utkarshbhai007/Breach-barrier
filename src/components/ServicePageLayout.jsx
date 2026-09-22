@@ -6,6 +6,7 @@ import InteractiveCyberGridCTA from './InteractiveCyberGridCTA';
 import GradientWaves from './GradientWaves';
 import BlurText from './BlurText';
 import FoldText from './FoldText';
+import SEO from './SEO';
 
 export default function ServicePageLayout({ 
   title, 
@@ -16,12 +17,29 @@ export default function ServicePageLayout({
   benefits, 
   tools, 
   serviceCode = "SOC_01",
-  cta 
+  cta,
+  seoTitle,
+  seoDescription,
+  seoKeywords
 }) {
   const location = useLocation();
 
+  const computedTitle = seoTitle || `${title} | Breach Barrier Security`;
+  const computedDesc = seoDescription || subtitle || 'Enterprise cybersecurity managed operations by Breach Barrier Security.';
+  const computedKeywords = seoKeywords || `${title}, Breach Barrier Security, Breach Barrier, Managed SOC, Cybersecurity, Threat Hunting`;
+
   return (
     <div className="bg-[#EAE7E0] text-[#0F172A]">
+      <SEO 
+        title={computedTitle}
+        description={computedDesc}
+        keywords={computedKeywords}
+        canonicalPath={location.pathname}
+        breadcrumbs={[
+          { name: 'Services', path: '/services' },
+          { name: title, path: location.pathname }
+        ]}
+      />
       
       {/* Centered Service Hero Section with GradientWaves HUD */}
       <section className="relative border-b border-[#D6D0C2] bg-[#EAE7E0] overflow-hidden py-16 sm:py-20 px-4 sm:px-8">

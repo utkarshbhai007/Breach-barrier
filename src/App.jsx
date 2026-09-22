@@ -32,10 +32,24 @@ import PentestService from './pages/services/PentestService';
 import ForensicsService from './pages/services/ForensicsService';
 import AsmService from './pages/services/AsmService';
 import VulnService from './pages/services/VulnService';
+import { initGA, trackPageView } from './utils/analytics';
 
-function ScrollToTop() {
+function RouteTracker() {
   const { pathname } = useLocation();
-  React.useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+
+  React.useEffect(() => {
+    initGA();
+  }, []);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    // Give title time to update from page SEO component
+    const timer = setTimeout(() => {
+      trackPageView(pathname, document.title);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   return null;
 }
 
@@ -109,7 +123,7 @@ export default function App() {
     <ThemeProvider>
       <AdminAuthProvider>
         <Router>
-          <ScrollToTop />
+          <RouteTracker />
           <TargetCursor 
             spinDuration={2}
             hideDefaultCursor={true}

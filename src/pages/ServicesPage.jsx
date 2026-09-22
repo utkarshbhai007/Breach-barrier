@@ -12,6 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import InteractiveCyberGridCTA from '../components/InteractiveCyberGridCTA';
+import SEO from '../components/SEO';
 
 export default function ServicesPage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -133,6 +134,13 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-[#EAE7E0] dark:bg-[#0A0A0E] text-[#0F172A] dark:text-[#F8FAFC] min-h-screen transition-colors duration-200">
+      <SEO
+        title="Cybersecurity Services | Breach Barrier Security"
+        description="Explore enterprise cybersecurity services by Breach Barrier Security: 24/7 Managed SOC & MDR, VAPT, Incident Response, Forensics, and Attack Surface Management."
+        keywords="Cybersecurity Services, Managed SOC, MDR Services, Penetration Testing, VAPT, Incident Response, Attack Surface Management, Vulnerability Management"
+        canonicalPath="/services"
+        breadcrumbs={[{ name: 'Services', path: '/services' }]}
+      />
       
       {/* 1. Hero Section */}
       <PageHero

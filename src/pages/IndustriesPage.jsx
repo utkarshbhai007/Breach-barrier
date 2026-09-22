@@ -19,6 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import InteractiveCyberGridCTA from '../components/InteractiveCyberGridCTA';
+import SEO from '../components/SEO';
 
 export default function IndustriesPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -199,6 +200,13 @@ export default function IndustriesPage() {
 
   return (
     <div className="bg-[#EAE7E0] dark:bg-[#0A0A0E] text-[#0F172A] dark:text-[#F8FAFC] min-h-screen transition-colors duration-200">
+      <SEO
+        title="Industry Cybersecurity Solutions | Breach Barrier Security"
+        description="Tailored cybersecurity compliance and defense solutions for Healthcare, Financial Services, SaaS & Tech, Retail, and Manufacturing by Breach Barrier Security."
+        keywords="Industry Cybersecurity, Healthcare HIPAA, Fintech PCI DSS, SaaS Security, Manufacturing OT Security, Breach Barrier Security, Breach Barrier"
+        canonicalPath="/industries"
+        breadcrumbs={[{ name: 'Industries', path: '/industries' }]}
+      />
       
       {/* 1. Header Hero */}
       <PageHero
