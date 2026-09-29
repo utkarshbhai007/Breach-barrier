@@ -4,20 +4,26 @@ const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 let isInitialized = false;
 
 export function initGA() {
-  if (!GA_MEASUREMENT_ID) {
-    if (import.meta.env.DEV) {
-      console.info('[Analytics] VITE_GA_MEASUREMENT_ID not set. Add it to your .env to enable Google Analytics tracking.');
-    }
+  if (isInitialized || typeof window === 'undefined') return;
+
+  // If gtag is already loaded via index.html, use it directly
+  if (window.gtag) {
+    isInitialized = true;
     return;
   }
 
-  if (isInitialized || typeof window === 'undefined') return;
+  if (!GA_MEASUREMENT_ID) {
+    return;
+  }
 
-  // Inject gtag.js script
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
+  // Inject gtag.js script if not already present in DOM
+  const existingScript = document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
+  if (!existingScript) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+  }
 
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -35,7 +41,7 @@ export function initGA() {
 }
 
 export function trackPageView(path, title) {
-  if (typeof window === 'undefined' || !window.gtag || !GA_MEASUREMENT_ID) return;
+  if (typeof window === 'undefined' || !window.gtag) return;
 
   window.gtag('event', 'page_view', {
     page_path: path,
@@ -45,7 +51,7 @@ export function trackPageView(path, title) {
 }
 
 export function trackEvent(action, category, label, value) {
-  if (typeof window === 'undefined' || !window.gtag || !GA_MEASUREMENT_ID) return;
+  if (typeof window === 'undefined' || !window.gtag) return;
 
   window.gtag('event', action, {
     event_category: category,
