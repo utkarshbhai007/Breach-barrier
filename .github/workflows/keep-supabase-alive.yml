@@ -1,0 +1,28 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    # Runs every 3 days at midnight UTC (00:00 UTC)
+    - cron: '0 0 */3 * *'
+  # Allows manual execution anytime via GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    name: Ping Supabase REST API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Supabase Keepalive Ping
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          node scripts/keep-supabase-alive.js
