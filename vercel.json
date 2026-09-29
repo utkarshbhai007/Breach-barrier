@@ -1,14 +1,25 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [
         {
           "type": "host",
           "value": "breachbarriersecurity.com"
         }
       ],
-      "destination": "https://www.breachbarriersecurity.com/:path*",
+      "destination": "https://www.breachbarriersecurity.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [
+        {
+          "type": "host",
+          "value": "breachbarriersecurity.com"
+        }
+      ],
+      "destination": "https://www.breachbarriersecurity.com/:path+",
       "permanent": true
     }
   ],

@@ -8,4 +8,3 @@ Disallow: /private
 Disallow: /private/
 
 Sitemap: https://www.breachbarriersecurity.com/sitemap.xml
-Host: https://www.breachbarriersecurity.com
