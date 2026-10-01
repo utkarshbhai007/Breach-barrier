@@ -24,18 +24,22 @@ CREATE TABLE IF NOT EXISTS public.inquiries (
 ALTER TABLE public.inquiries ENABLE ROW LEVEL SECURITY;
 
 -- Allow anonymous users (website visitors) to submit inquiries
+DROP POLICY IF EXISTS "Allow anonymous inserts" ON public.inquiries;
 CREATE POLICY "Allow anonymous inserts" ON public.inquiries
   FOR INSERT WITH CHECK (true);
 
 -- Allow authenticated and anon select for Admin Dashboard
+DROP POLICY IF EXISTS "Allow select inquiries" ON public.inquiries;
 CREATE POLICY "Allow select inquiries" ON public.inquiries
   FOR SELECT USING (true);
 
 -- Allow updates for inquiries (e.g. changing status, adding notes)
+DROP POLICY IF EXISTS "Allow update inquiries" ON public.inquiries;
 CREATE POLICY "Allow update inquiries" ON public.inquiries
   FOR UPDATE USING (true);
 
 -- Allow delete inquiries (Super Admin only in application layer)
+DROP POLICY IF EXISTS "Allow delete inquiries" ON public.inquiries;
 CREATE POLICY "Allow delete inquiries" ON public.inquiries
   FOR DELETE USING (true);
 
@@ -55,14 +59,19 @@ CREATE TABLE IF NOT EXISTS public.admin_users (
 ALTER TABLE public.admin_users ENABLE ROW LEVEL SECURITY;
 
 -- Allow select on admin_users
+DROP POLICY IF EXISTS "Allow select admin_users" ON public.admin_users;
 CREATE POLICY "Allow select admin_users" ON public.admin_users
   FOR SELECT USING (true);
 
 -- Allow insert/update/delete on admin_users
+DROP POLICY IF EXISTS "Allow modify admin_users" ON public.admin_users;
 CREATE POLICY "Allow modify admin_users" ON public.admin_users
   FOR ALL USING (true);
 
--- Insert Default Super Admin with SHA-256 Hashed Password ('M33t₹$1907+()')
+-- Remove legacy Zeroward admin if exists
+DELETE FROM public.admin_users WHERE email = 'admin@zeroward.in';
+
+-- Insert or update Default Super Admin with SHA-256 Hashed Password ('M33t₹$1907+()')
 INSERT INTO public.admin_users (email, full_name, role, status, password_hash, salt)
 VALUES (
   'Admin_@_breachbarrier.com', 
@@ -74,7 +83,9 @@ VALUES (
 )
 ON CONFLICT (email) DO UPDATE SET
   password_hash = EXCLUDED.password_hash,
-  role = EXCLUDED.role;
+  full_name = EXCLUDED.full_name,
+  role = EXCLUDED.role,
+  status = EXCLUDED.status;
 
 -- Create Performance Indexes
 CREATE INDEX IF NOT EXISTS idx_inquiries_created_at ON public.inquiries (created_at DESC);
