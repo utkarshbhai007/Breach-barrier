@@ -73,8 +73,17 @@ DELETE FROM public.admin_users WHERE email = 'admin@zeroward.in';
 
 -- Insert or update Default Super Admin with SHA-256 Hashed Password ('M33t₹$1907+()')
 INSERT INTO public.admin_users (email, full_name, role, status, password_hash, salt)
-VALUES (
+VALUES 
+(
   'Admin_@_breachbarrier.com', 
+  'Breach Barrier Security Super Admin', 
+  'SUPER_ADMIN', 
+  'ACTIVE',
+  '7dc510fc2c7ed7bb975dadcd06adb85a205e39bce789ec26b14c24c5369c6421',
+  'bb_secure_salt_2026'
+),
+(
+  'admin@breachbarrier.com', 
   'Breach Barrier Security Super Admin', 
   'SUPER_ADMIN', 
   'ACTIVE',

@@ -90,16 +90,20 @@ export default function AdminLogin() {
           )}
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider block font-sans">
-                Admin Email ID
+                Admin Email ID / Username
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
                 <input
-                  type="email"
+                  type="text"
+                  inputMode="email"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck="false"
                   placeholder="Admin_@_breachbarrier.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

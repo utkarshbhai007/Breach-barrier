@@ -106,6 +106,18 @@ export async function authenticateUser(email, password, expectedPortal = 'admin'
 
     if (!error && data) {
       userRecord = data;
+    } else {
+      const adminAliases = ['admin_@_breachbarrier.com', 'admin_@breachbarrier.com', 'admin@breachbarrier.com'];
+      if (adminAliases.includes(cleanEmail)) {
+        const { data: aliasData } = await supabase
+          .from('admin_users')
+          .select('*')
+          .in('email', ['Admin_@_breachbarrier.com', 'admin_@_breachbarrier.com', 'admin@breachbarrier.com'])
+          .maybeSingle();
+        if (aliasData) {
+          userRecord = aliasData;
+        }
+      }
     }
   } catch (err) {
     console.warn('Supabase auth network query note:', err);
@@ -114,7 +126,15 @@ export async function authenticateUser(email, password, expectedPortal = 'admin'
   // 2. Fallback to local stored users if table not yet run in Supabase SQL editor
   if (!userRecord) {
     const localUsers = getLocalUsers();
-    userRecord = localUsers.find(u => u.email.toLowerCase() === cleanEmail);
+    userRecord = localUsers.find(u => {
+      const uEmail = (u.email || '').toLowerCase();
+      if (uEmail === cleanEmail) return true;
+      const adminAliases = ['admin_@_breachbarrier.com', 'admin_@breachbarrier.com', 'admin@breachbarrier.com'];
+      if (adminAliases.includes(cleanEmail) && (adminAliases.includes(uEmail) || u.role === 'SUPER_ADMIN')) {
+        return true;
+      }
+      return false;
+    });
   }
 
   if (!userRecord) {
