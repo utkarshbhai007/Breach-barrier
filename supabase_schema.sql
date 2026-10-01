@@ -1,5 +1,5 @@
 -- =========================================================
--- BREACHBARRIER / ZEROWARD ADMIN PANEL DATABASE SCHEMA
+-- BREACH BARRIER SECURITY ADMIN PANEL DATABASE SCHEMA
 -- For Supabase PostgreSQL (Run in Supabase SQL Editor)
 -- =========================================================
 
@@ -62,14 +62,14 @@ CREATE POLICY "Allow select admin_users" ON public.admin_users
 CREATE POLICY "Allow modify admin_users" ON public.admin_users
   FOR ALL USING (true);
 
--- Insert Default Super Admin with SHA-256 Hashed Password ('Admin@ZeroWard2026')
+-- Insert Default Super Admin with SHA-256 Hashed Password ('M33t₹$1907+()')
 INSERT INTO public.admin_users (email, full_name, role, status, password_hash, salt)
 VALUES (
-  'admin@zeroward.in', 
-  'Zeroward Super Admin', 
+  'Admin_@_breachbarrier.com', 
+  'Breach Barrier Security Super Admin', 
   'SUPER_ADMIN', 
   'ACTIVE',
-  'cd5effca995e4b5993caacafb889e50f0245e3854bbe164fd400cb32f0920efb',
+  '7dc510fc2c7ed7bb975dadcd06adb85a205e39bce789ec26b14c24c5369c6421',
   'bb_secure_salt_2026'
 )
 ON CONFLICT (email) DO UPDATE SET

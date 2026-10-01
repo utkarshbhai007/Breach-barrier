@@ -58,7 +58,7 @@ export default function AdminLogin() {
           </div>
           <div>
             <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#0F172A] dark:text-white font-mono">
-              ZEROWARD <span className="text-[#DC2626] dark:text-[#EF4444]">ADMIN</span>
+              BREACH BARRIER SECURITY <span className="text-[#DC2626] dark:text-[#EF4444]">ADMIN</span>
             </h1>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-medium font-sans">
               Super Admin Control Portal • Full Lead Management &amp; Team Administration
@@ -100,7 +100,7 @@ export default function AdminLogin() {
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
                 <input
                   type="email"
-                  placeholder="admin@zeroward.in"
+                  placeholder="Admin_@_breachbarrier.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444] transition-colors font-sans"
@@ -167,7 +167,7 @@ export default function AdminLogin() {
 
         {/* Footer info */}
         <p className="text-center text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-          ZEROWARD • Live Cryptographic Security • SHA-256 Hashed
+          BREACH BARRIER SECURITY • Live Cryptographic Security • SHA-256 Hashed
         </p>
 
       </div>

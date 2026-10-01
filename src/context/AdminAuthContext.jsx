@@ -3,12 +3,12 @@ import { authenticateUser } from '../lib/supabaseClient';
 
 const AdminAuthContext = createContext(null);
 
-const STORAGE_AUTH_KEY = 'zeroward_live_auth_session';
+const STORAGE_AUTH_KEY = 'breachbarrier_live_auth_session';
 
 export function AdminAuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_AUTH_KEY);
+      const stored = localStorage.getItem(STORAGE_AUTH_KEY) || localStorage.getItem('zeroward_live_auth_session');
       return stored ? JSON.parse(stored) : null;
     } catch {
       return null;
@@ -36,6 +36,7 @@ export function AdminAuthProvider({ children }) {
   const logout = () => {
     setCurrentUser(null);
     localStorage.removeItem(STORAGE_AUTH_KEY);
+    localStorage.removeItem('zeroward_live_auth_session');
   };
 
   return (

@@ -98,7 +98,8 @@ export default function AdminUsers() {
   };
 
   const handleDeleteUser = async (userId, userEmail) => {
-    if (userEmail === 'admin@zeroward.in') {
+    const emailLower = (userEmail || '').toLowerCase();
+    if (emailLower === 'admin_@_breachbarrier.com' || emailLower === 'admin@zeroward.in') {
       alert('Cannot delete the primary Super Admin account.');
       return;
     }
@@ -110,7 +111,7 @@ export default function AdminUsers() {
 
   const handleCopyInvite = () => {
     if (!newCreatedUser) return;
-    const msg = `*ZEROWARD Employee Portal Access*\n` +
+    const msg = `*BREACH BARRIER SECURITY Employee Portal Access*\n` +
       `Portal Link: ${newCreatedUser.portalUrl}\n` +
       `Login ID / Email: ${newCreatedUser.email}\n` +
       `Password: ${newCreatedUser.rawPassword}\n` +
@@ -267,7 +268,7 @@ export default function AdminUsers() {
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
                 <input
                   type="email"
-                  placeholder="priya@zeroward.in"
+                  placeholder="priya@breachbarrier.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-9 pr-3 py-2.5 bg-slate-50 dark:bg-[#181A28] border border-slate-300 dark:border-slate-700 rounded-xl font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#DC2626] dark:focus:border-[#EF4444]"
@@ -385,7 +386,7 @@ export default function AdminUsers() {
                         </span>
                       </td>
                       <td className="py-3 px-4 text-right">
-                        {u.email !== 'admin@zeroward.in' ? (
+                        {u.email?.toLowerCase() !== 'admin_@_breachbarrier.com' && u.email?.toLowerCase() !== 'admin@zeroward.in' ? (
                           <button
                             onClick={() => handleDeleteUser(u.id, u.email)}
                             className="p-1.5 text-slate-400 hover:text-red-600 transition-colors"

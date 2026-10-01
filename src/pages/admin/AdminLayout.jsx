@@ -91,7 +91,7 @@ export default function AdminLayout({ portalType = 'admin' }) {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-mono text-xs font-black tracking-widest text-white">ZEROWARD</span>
+                  <span className="font-mono text-xs font-black tracking-widest text-white">BREACH BARRIER SECURITY</span>
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold border ${
                     isEmployeePortal
                       ? 'bg-amber-950 text-amber-400 border-amber-800'

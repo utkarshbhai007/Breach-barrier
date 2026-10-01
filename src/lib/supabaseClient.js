@@ -6,8 +6,8 @@ export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY || 'placeholder-anon-key');
 
-const LOCAL_STORAGE_KEY = 'zeroward_live_inquiries';
-const LOCAL_USERS_KEY = 'zeroward_live_admin_users';
+const LOCAL_STORAGE_KEY = 'breachbarrier_live_inquiries';
+const LOCAL_USERS_KEY = 'breachbarrier_live_admin_users';
 const DEFAULT_SALT = 'bb_secure_salt_2026';
 
 // Cryptographic Password Hashing using Web Crypto SHA-256
@@ -19,26 +19,40 @@ export async function hashPassword(password, salt = DEFAULT_SALT) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Initial Primary Super Admin Seed (Pre-hashed Admin@ZeroWard2026)
+// Initial Primary Super Admin Seed
 const INITIAL_SUPER_ADMIN = {
   id: 'usr_superadmin_01',
-  email: 'admin@zeroward.in',
-  full_name: 'Zeroward Super Admin',
+  email: 'Admin_@_breachbarrier.com',
+  full_name: 'Breach Barrier Security Super Admin',
   role: 'SUPER_ADMIN',
   status: 'ACTIVE',
-  password_hash: 'cd5effca995e4b5993caacafb889e50f0245e3854bbe164fd400cb32f0920efb',
+  password_hash: '7dc510fc2c7ed7bb975dadcd06adb85a205e39bce789ec26b14c24c5369c6421',
   salt: DEFAULT_SALT,
   created_at: new Date().toISOString()
 };
 
 function getLocalUsers() {
   try {
-    const raw = localStorage.getItem(LOCAL_USERS_KEY);
+    let raw = localStorage.getItem(LOCAL_USERS_KEY);
     if (!raw) {
-      localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify([INITIAL_SUPER_ADMIN]));
-      return [INITIAL_SUPER_ADMIN];
+      raw = localStorage.getItem('zeroward_live_admin_users');
     }
-    return JSON.parse(raw);
+    let users = raw ? JSON.parse(raw) : [];
+    // Ensure primary Super Admin is always synced with the latest credentials
+    const adminIdx = users.findIndex(
+      u => u.role === 'SUPER_ADMIN' ||
+           (u.email && (u.email.toLowerCase() === 'admin_@_breachbarrier.com' || u.email.toLowerCase() === 'admin@zeroward.in'))
+    );
+    if (adminIdx >= 0) {
+      users[adminIdx] = {
+        ...users[adminIdx],
+        ...INITIAL_SUPER_ADMIN
+      };
+    } else {
+      users.unshift(INITIAL_SUPER_ADMIN);
+    }
+    localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users));
+    return users;
   } catch {
     return [INITIAL_SUPER_ADMIN];
   }
@@ -54,7 +68,7 @@ function saveLocalUsers(users) {
 
 function getLocalInquiries() {
   try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const raw = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem('zeroward_live_inquiries');
     return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
@@ -334,7 +348,7 @@ export async function deleteAdminUser(id) {
 /**
  * Export Inquiries to CSV
  */
-export function exportInquiriesToCSV(inquiries, filename = 'Zeroward_Inquiries_Export.csv') {
+export function exportInquiriesToCSV(inquiries, filename = 'BreachBarrier_Inquiries_Export.csv') {
   if (!inquiries || !inquiries.length) return;
 
   const headers = [

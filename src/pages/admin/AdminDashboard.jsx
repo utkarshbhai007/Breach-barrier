@@ -624,7 +624,7 @@ export default function AdminDashboard() {
             {/* Drawer Footer Actions */}
             <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
               <a
-                href={`mailto:${selectedLead.email}?subject=Zeroward / BreachBarrier Cybersecurity Follow-Up`}
+                href={`mailto:${selectedLead.email}?subject=Breach Barrier Security Cybersecurity Follow-Up`}
                 className="flex-1 py-2.5 bg-[#DC2626] hover:bg-[#B91C1C] dark:bg-[#EF4444] dark:hover:bg-[#DC2626] text-white text-center font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-xs"
               >
                 Send Email Reply
